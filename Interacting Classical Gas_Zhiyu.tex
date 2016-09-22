@@ -6,6 +6,7 @@
  \usepackage{subfigure}
  \usepackage{enumerate}
  \usepackage{verbatim}% for \begin{comment} \end{comment}
+ \usepackage{color}
  \begin{document}
  \title{Interacting Classical Gas}
  \author{Zhiyu}
@@ -48,6 +49,131 @@ with the transformation:
 \end{equation}
 
 In this manner, we reduced number of the parameters in our model into three: $\tilde{H}$, $\tilde{F_0}$, $N$. Equivalently, we set $\sigma$, $\omega$ and $m$ to 1 in our numerical simulation. Throughout, we will use ``E" and ``$F_0$" to denote their reduced version  $\tilde{H}$, $\tilde{F_0}$.
+
+\subsection{overview of the system}
+\paragraph{relation between Radius and Energy}
+radius R is defined as the mean-square-root of each particles position $\left\lbrace x_i\right\rbrace$. When E is very large, the interaction energy can be omitted, so E is dominated by the kinetic energy and potential energy of harmonic oscillators. Thus, $E=2*\frac{1}{2}\omega_0^2*\sum_{i}x_i^2=N\omega_0^2R^2$ 
+\begin{figure}[hbtp]
+\centering
+\includegraphics[scale=0.5]{D:/OriginUserfiles/MPI_internship/E_R_fitting.jpg}
+-\caption{E-R} This picture shows $E=kR^2$ when energy is large. ($k=N\omega_0^2$)
+\end{figure}
+
+\paragraph{Ground states}
+For the ground state of this system, one could predict that \\(1) When the sigma is larger than the size of the cloud (in view of the scaling behaviour, large $\sigma$ is equivalent to \textbf{small F0 limit} when we fix $\sigma=1$), it can be easily shown that the ground state is crystal-like, since all every particle keep a equal distance with its nearest neighbours, which is $\frac{2F0}{\omega_0^2}$. The low-lying excitation is particles' independent harmonic oscillation around their equilibrium position.\\(2) When \textbf{F0 is very large} the molecules act like a hardcore gas, while the size of particle is just $\sigma$.
+
+In the picture below, you can see this crossover from the ``solid-like" limit to the ``hardcore gas" limit.
+
+\begin{figure}[hbtp]
+\centering
+\includegraphics[scale=0.3]{D:/matlab2016/MolecularDynamics/figure/groundstate1.eps}
+\caption{particles' position at ground states }
+\end{figure}
+
+\begin{figure}[hbtp]
+\centering
+\includegraphics[scale=0.3]{D:/matlab2016/MolecularDynamics/figure/Eg1.eps}
+\caption{ground state Energy with $F_0$}
+\end{figure}
+
+
+\newpage
+\section{Breathing Frequency}
+Usually, to see the response of a quantum gas to a quench, one start from the ground state and suddenly vary some parameter by a little, for instance, $\omega_0'\rightarrow\omega_0=\omega_0'+\Delta\omega$. In that case, one will observe the radius R oscillating at a certain frequency, which is usually called ``breathing mode".
+In classical version, the ground state may be meaningless--since classical limit is $\bar{h}\rightarrow 0$, no matter how low the kT is, $kT/\bar{h}$ is always zero so that classical ground state is quite different from the quantum one. Instead, one will expect that the thermalized high temperature classical gas may have something in common with the high excited state of quantum gas. In view of this, if we want to do a quench similar to quantum case, we should begin with a thermalized distribution at $\omega_0'$ and evolve to a new thermalized state at varied $\omega_0$. Furthermore, notice that X and P (normalized) are symmetric for harmonic oscillator. If there is no spontaneous symmetry breaking in phase-space, the distribution cloud should be circular when the gas is completely thermalized. The difference between thermalized cloud before and after quench is  circular under different normalization of phase-space. If we look at both of them in the phase-space normalized according to $\omega_0$, we will find the former one is an ellipse while the latter one is a circle.
+If the ellipse is only slightly deviated from circle, the oscillating amplitude will be too small to be distinguished from noise. Therefore, we start from an extreme case -- line distribution (random x, zero p) and observe the oscillation of R(t).
+\begin{figure}[hbtp]
+\center
+\includegraphics[scale=0.8]{D:/matlab2016/MolecularDynamics/figure/latexpic/freq_scanF_differentE_log.eps}
+\caption{breathing mode frequency measured at different E and $F_0$}
+\label{Breathingfrequency1}
+\end{figure}
+
+Without interaction, the breathing mode frequency is exactly 2. When there is interaction, the frequency will drift to some other value near 2. We measure the radius of the cloud $R(t)$ and get the frequency spectrum of its oscillation behaviour by Fourier transform. Then we take the peak frequency near 2 as the breathing mode frequency. The frequency measured in different E and $F_0$ is shown in the Fig.\ref{Breathingfrequency1}.
+
+The mechanism that deviate breathing frequency from 2 is simple in real space. When two particle bounce, they exchange momentum immediately. It can be interpret as particle A carries its momentum $P_A$ and jump $\sigma$ to the right, while particle B carries its momentum $P_B$ and jump $\sigma$ to the left. In this manner, every collision will save a particle some time $\frac{\sigma}{v}$ . Since $v$ is proportional to R while the number of collision each particle experiences in one period of harmonic oscillation can be estimated by N, we will get $\delta\sim N^{\frac{3}{2}}E^{-\frac{1}{2}}$. 
+
+To see this picture better, let us first introduce a approach to simplify this problem:
+
+\subsection{Rotating frame in Phase-space}
+Traditionally, we think of there is a distribution cloud in phase space, and due to harmonic trap, the cloud will rotate at frequency $\omega_0$. When there is interaction, we may think there is a small modification of the frequency $\omega=\omega_0+\delta$. Now we want to understand how $\delta$ is dependent on parameters, so it is better to stand in the rotating frame in the phase space. In this frame, the picture we will see is as follow:\\
+\begin{enumerate}[\textbf{*}]
+\item All particles are stationary when there is no interaction.
+\item The real X and P axis are rotating counter-clockwise, using real X axis to measure distance between particles to determine the interaction at each moment.
+\item When there is interaction, particles will gain a ``velocity" in phase space: $\dot{P}=F/m$ . Other effects are all cancelled by frame rotation.
+\end{enumerate}
+
+
+This picture is actually a classical version of the interaction picture. With this picture, we will soon find the dynamic analysis greatly simplified.
+
+In our system, we choose initial velocity to be zero, which means, the particles are aligned on $X|_{t=0}$ axis in phase-space at the beginning. If the breathing frequency of the system is $\omega=\omega_0+\delta$, we will expect to see a line (which may gradually deform into an oval cloud or even an isotropic cloud) rotating at $\delta$ in rotating frame. If we plot x-p with t, we expect to see a spiral motion. Since the motion we see is an additional rotation in rotating frame, we will call it precession. This precession directly leads to the $\delta$.
+
+
+\begin{figure}[hbtp]
+\centering
+\includegraphics[scale=0.4]{D:/matlab2016/MolecularDynamics/figure/latexpic/rotatingframe_example2.eps} 
+\includegraphics[scale=0.4]{D:/matlab2016/MolecularDynamics/figure/latexpic/rotatingframe_example1.eps} 
+\caption{precession motion in phase-space observed in rotating frame (only show one or two particles' trajectory for clarity)}
+\label{Breathingfrequency2}
+\end{figure}
+
+
+{\color{red}{ONE SET OF PICTURES HERE TO SHOW THE TIME EVOLUTION OF THE CLOUD IN PHASE-SPACE:}}
+N=20, same E and F0, several initial states:
+Stationary frame: T/4 T/2 3T/4 T
+rotating frame: T/4 T/2 3T/4 T
+
+
+
+\subsection{Estimating Breathing Frequency}
+Let us begin with two-particle case. When interaction is very strong, the effect of interaction is equivalent to exchanging momentum when two particles approach each other at distance $\sigma$. In the rotating frame in phase-space, this process can be interpret as follows:
+
+\begin{figure}[hbtp]
+\centering
+\includegraphics[scale=0.4]{D:/matlab2016/MolecularDynamics/figure/latexpic/collision.png}
+\caption{a schematic diagram of the collision process}
+\label{Breathingfrequency3}
+\end{figure}
+
+
+Two particles flip to another line(thick gray line) which deviate a small angle $\alpha$ away from original configuration. Similar process happen when there are more particles. In every period of harmonic oscillation, each particle meet N particles and collide 2N times, while half of the collisions (N times) are between particles with huge difference in momentum, which is just the process shown in figure\ref{Breathingfrequency3}. (As for the remaining half of collisions, colliding particles have small difference in their momentum. Let us say, both particles have positive momentum. In fig.\ref{Breathingfrequency3}, it can be shown that two particles on the same half of the P-axis cannot have strong effect on the rotation of distribution.)
+
+Let us estimate the precession angle $\alpha$ with $\frac{\sigma}{R}$, which follows from the two-particle analysis. Radius of the cloud R can be estimated according to $E=Nm\omega_0^2R^2$
+We will get the precession angular velocity 
+\begin{equation}
+\delta=2\omega_0\frac{N^\frac{3}{2}m^{\frac{1}{2}}E^{-\frac{1}{2}}\sigma\omega_0}{2\pi}
+\label{eq:breathingfrequency1}
+\end{equation}
+\begin{figure}[hbtp]
+\begin{center}
+\includegraphics[scale=0.7]{D:/matlab2016/MolecularDynamics/figure/latexpic/N=5_freq_at_F0=10000_fitting.eps}
+\caption{Frequency measured at N=5} 
+Since the prediction is only an estimation by order, which means there could be some extra effective coefficient before the R. In view of this, the result is satisfying.
+
+\includegraphics[scale=0.4]{D:/matlab2016/MolecularDynamics/figure/latexpic/N=5_freq_at_F0=10000_sup1.eps}
+\includegraphics[scale=0.4]{D:/matlab2016/MolecularDynamics/figure/latexpic/N=5_freq_at_F0=10000_sup2.eps}
+\caption{Spectrum at the beginning and the end of measurement}
+\end{center}
+ Two spectrum above show the error of our frequency measurement. The line width of the peak is significant compared with the $\delta$. The peak width comes from FT in finite time.
+\end{figure}
+
+
+\begin{figure}[hbtp]
+
+\centering
+\includegraphics[scale=0.7]{D:/matlab2016/MolecularDynamics/figure/latexpic/N=20_freq_at_F0=10000_2.eps}
+\caption{N=20}
+\includegraphics[scale=0.4]{D:/matlab2016/MolecularDynamics/figure/latexpic/N=20_freq_at_F0=10000_2_sup1.eps}
+\includegraphics[scale=0.4]{D:/matlab2016/MolecularDynamics/figure/latexpic/N=20_freq_at_F0=10000_2_sup2.eps}
+\end{figure}
+
+When F0 is not that large, the frequency behaviour seems complicated (see fig.\ref{Breathingfrequency1}). Usually, when F0 increase, frequency goes down below 2 first and then rise up and converge to some value higher than 2. The reason could also be well understood with the mechanism described before. In the former discussion, we goes to high F0 limit, which means particles exchange momentum in infinitesimal time. For F0 is not very big, the finite interaction time should be taken into consideration. During this time, the behaviour of each particle in phase space is exactly moving along the direction of the real P axis at 'velocity' $F0/m$. Since the real P axis is rotating counter-clockwise, the particle will follow the circular trajectory(orange and green dashed line in fig.\ref{Breathingfrequency3}) the $\alpha$ that we once use to estimate the precession motion should decrease with the increase of interaction time. There should be some ``critical point" where $\alpha$ goes from plus to minus (dashed green line). At this point, we will see the precession stop so that the frequency is 2. 
+ 
+
+
+ 
+
+Before completing the discussion, it is necessary to point out that none of the argument here require ``energy thermalization". In addition, if the system is completely thermalized in terms of their phase of orbit in phase space, the argument will no longer work -- there is a stable isotropic distribution in phase space, no matter how the cloud rotate, no oscillation can be observed.
 
 
 \section{Thermalization}
@@ -102,9 +228,279 @@ In this case, the system has two frequency components. The first one is the freq
 \label{fig:thermalization1}
 \end{figure}
 
-%-------------%
-\begin{comment}
-\subparagraph{Detailed discussion on two-particle motion}
+
+
+
+\paragraph{More particles}
+Now let's consider the three-particle case. For two particle, the motion is non-chaotic. On the other hand, intuitively, we will say that three-body motion is chaotic so that the system could be ``thermalized" soon. However, in some cases, the time scale of thermalizing could still be very long. Suppose two of them, say, A and B, has small internal energy, which means their distance and relative velocity are both small. Meanwhile, suppose particle C has some energy quite different from A \& B. In this case, A \& B will often be in the interaction, while C will pass both of them at a high speed in each period. How will energy transfer between C and the two-particle system A and B? Since the relative velocity of C and the two-particle system is usually large, C will pass A-B pair in a short time $\tau\sim\frac{\sigma}{R}$ ($\tau\ll\frac{2\pi}{\omega}$). C gives A a push when approaching it, and then push A back when leaving.  As has been discussed in the two-particle case, this process is equivalent to giving A a very small speed($\sim O(\frac{\sigma}{R})$) in the background of a trap. Since both the position and velocity of A and B are close($|x_A-x_B|\sim\sigma$), the velocity increase of A \& B are almost the same (difference$\sim O(\frac{\sigma^2}{R^2})$). In this manner, the passing of particle C only kicks the center of mass of the A-B pair slightly, leaving the internal motion of the pair unaffected. In another word, the existence of C will not have significant effect on the energy transfer between A and B, but only ``dance" with their center of mass. The physics of the ``dance" is similar to the dance between two particle. As is shown in fig.\ref{fig:thermalization4}, the particles with energy close to each other tends to form a pair with small internal energy and the pair's internal energy transfer is relatively stable. %We only need to substitute $m$, $F_0$ \& $\sigma$ with their effective counterparts, e.g. change $m$ to $\mu$ , which is the reduced mass of m \& 2m.
+
+\begin{figure}[hbtp]
+\centering
+\includegraphics[scale=0.35]{D:/matlab2016/MolecularDynamics/figure/latexpic/pair1.eps}
+\caption{evolution of single-particle energy}
+\label{fig:thermalization4}
+\end{figure}
+
+The argument above still holds in many-particle case. Once we start from some configuration where n particles have a set of close energy levels $\left\lbrace E_n\right\rbrace $ and another m particles have another set of energy levels close to each other $\left\lbrace E_m\right\rbrace $, and $\left\lbrace E_n\right\rbrace $ is quite different from $\left\lbrace E_n\right\rbrace $, we will find these two systems oscillating on the energy level diagram at low frequency. 
+The discussion above gives us some pictures about the non-ergodic state. For these state, life time is rather long so that once the system reach such configuration (or certain energy distribution), it will take a long time(more than $10^4$ periods for N=5 case) to decay. 
+
+\subsection{Thermalization condition}
+The main obstruct to get an thermalized state (which can be examined by observing distribution) is the low frequency oscillation mentioned before. Because once these modes are excited, the relaxing time could be very long($\textgreater 10^4$). As a result, to achieve ergodic state, we have to avoid such low frequency oscillation. According to our discussion before, the solution is to make internal energy of each two-particle pair not ``too large". Though it is impossible to express the internal energy of every pair in terms of the total energy $E$, we can estimate it by the average energy, which is $\frac{E}{N}$. At least they are of the same order. The thermalization condition could be given by:
+$F_0\sigma\sim\frac{E}{N}$
+
+
+\begin{figure}[hbtp]
+\centering
+\includegraphics[scale=0.3]{D:/matlab2016/MolecularDynamics/figure/latexpic/distribution1_scanF0_E=100_3.eps}
+\caption{Distribution $scan F_0, E=100, N=5, \sigma=1$}
+\label{fig:thermalization5}
+\includegraphics[scale=0.3]{D:/matlab2016/MolecularDynamics/figure/latexpic/distribution1_scanF0_E=100_3_freq.eps}
+\caption{Frequency scan $F_0$, $E=100$, $N=5$, $\sigma=1$}
+
+\end{figure}
+
+
+
+
+\begin{figure}
+\centering
+\includegraphics[scale=0.3]{D:/matlab2016/MolecularDynamics/figure/latexpic/energyleveljump_fiveparticle_F0=2_1.eps}
+\caption{energy of each particle, $F_0=2$}
+\label{fig:thermalization6}
+
+\centering
+\includegraphics[scale=0.3]{D:/matlab2016/MolecularDynamics/figure/latexpic/energyleveljump_fiveparticle_F0=10_1.eps}
+\caption{energy of each particle, $F_0=10$}
+\label{fig:thermalization7}
+\end{figure}
+
+As is shown in fig.\ref{fig:thermalization5} above, the critical point for reaching Boltzmann distribution is $F_0=5$ (we always set $\sigma=1$), while the average energy $\sim 10$, as we expected, they are of the same order. As a supplementary proof of our argument, fig.\ref{fig:thermalization6} and fig.\ref{fig:thermalization7} show the great difference of single-particle energy between $F_0=2$ $\&$ $F_0=10$ at $E=100$, i.e. in the former one there is always some particle maintained at high excitation, while in the latter the system probably goes to ergodic. To date, we have verified that the threshold of thermalization, which is $\frac{NF_0\sigma}{E}\sim1 $ , and corresponding feature of their energy distribution in two side of the threshold.
+ 
+
+
+
+\newpage
+\subsection{Verifying Boltzmann distribution}
+Thermalization could have different definition. In our system, the ``thermalization" we want to find means ``losing all the memory of initial state". One of the most important information of initial state is energy distribution. We can check whether a system has gone to equilibrium by measuring its energy distribution.
+
+ 
+\paragraph{energy distribution}
+For an isothermal system, the energy distribution of the whole system follows the Boltzmann distribution in equilibrium state. However, to our knowledge, there is not any obvious conclusion about the distribution for an isolated system where the total energy is conserved.
+
+But intuitively, one will expect that if we measure the energy of a subsystem , e.g. one particle, then we will get a Boltzmann distribution because the rest part of the system serves as a bath for this particle. The temperature of this isolated system is defined according to $Nk_BT=E$. It is evident that this argument only hold when the energy of the single particle is not too big --- if one particle take up 50\% of the total energy, the rest could no longer be thought of as a good bath.
+
+In the first picture below, we verify this argument by measuring the energy distribution of every particle at N=10 for different F0 at E=1000 (parameters here satisfy thermalizing condition). In the other two, we tested different N.
+
+\newpage
+\begin{figure}[hbtp]
+\centering
+\includegraphics[scale=0.5]{D:/matlab2016/MolecularDynamics/figure/latexpic/distribution_at_N=5_F0=10000.eps}
+\caption{Energy distribution, N=5, F0=10000}
+\label{fig:thermalization8}
+
+\includegraphics[scale=0.47]{D:/matlab2016/MolecularDynamics/figure/latexpic/distribution_at_N=10_E=1000_edit.eps}
+\caption{Energy distribution, N=10, E=1000}
+\label{fig:thermalization9}
+
+\includegraphics[scale=0.52]{D:/matlab2016/MolecularDynamics/figure/latexpic/distribution2_at_N=20_F0=10000.eps} 
+\caption{Energy distribution, N=20, F0=10000}
+\label{fig:thermalization10}
+\end{figure}
+
+\newpage
+\begin{flushleft}
+To take the first one as an example, Y axis is logarithmically scaled. X axis is the ratio between single particle energy (where half of interaction is taken into account) and total energy of the system. The blue dotted line is the predicted Boltzmann distribution (normalized according to counts). Notice that normalizing of the Boltzmann line only change the intercept, leaving slope untouched, which means the slope is the only thing to compare. In  Energy ratio smaller than 30\%, the experiment (colourful curves) fits well with the prediction. When energy of a single particle is higher, one can think of the "bath" formed by the remaining part has lower temperature, thus counts decrease faster to zero than Boltzmann law.
+
+It is evident form $Nk_BT=E$ that the slope of Boltzmann distribution in this figure only depend on N. That is the reason why we want to measure at different N below. 
+
+In fig.\ref{fig:thermalization9} and fig.\ref{fig:thermalization10}, the curve is slightly deviated from the standard Boltzmann distribution, which is probably due to the contribution of density of states. Possibility is proportional to Boltzmann exponential factor multiplied by density of states. The reason why we did not take DOS into account previously lies in that the DOS is a constant for simple harmonic oscillator. However, for simple harmonic oscillators with short range interaction, the energy shell is deformed in the region of $|x_i-x_j|<\sigma$ so that the DOS is no longer a constant. But since $\sigma<<R$, one can think of this as a small modification. Therefore, the tendency of the curve in fig.\ref{fig:thermalization9} and fig.\ref{fig:thermalization10} is deviated slightly from Boltzmann distribution.
+ 
+\end{flushleft}
+
+
+
+\newpage
+\section{Relaxation in Phase-space}
+To date, we have verified that the energy distribution will go to Boltzmann distribution. However, even if a system have reached Boltzmann distribution, it doesn't mean that the system has completely ``forgotten" its initial state. There is other information that could still exist, for instance, the shape of distribution cloud in phase-space. One of the reasons why we care about this quantity is that it has a strong effect on breathing behaviour. For instance, if the distribution cloud is a thin ellipse (all particles oscillate in phase), the amplitude of oscillation of the cloud radius will be very large. On the contrary, if the cloud is a circle (particles phase of oscillation are completely random), we will not see oscillation at all. Going to equilibrium not only require the thermalization mentioned in last section, but also require reaching a stable configuration in phase-space distribution (relaxation).
+
+
+\paragraph{Shape of Distribution in Phase-space}
+If the oscillating phases of particles are highly correlated, for example, initial state with zero velocity, the shape of cloud will be a thin ellipse. If the phase of oscillation is completely random, the cloud should be isotropic in phase space. In view of this, we defined a shape factor S:
+\\$S=\frac{a-b}{a+b}$, where a and b are long axis and short axis of inertia ellipse in phase space respectively. a,b can be calculated by diagonalizing the inertia matrices I: $I_{xx}=\sum{x^2}, I_{xp}=I_{px}=\sum{xp},I_{pp}=\sum{p^2}$
+S=1 for line-shape distribution, S=0 for circular distribution.
+The time evolution of S will probably show how fast the distribution ``forget" its initial shape.  
+
+
+\begin{figure}[hbtp]
+
+\centering
+\includegraphics[scale=0.3]{D:/matlab2016/MolecularDynamics/figure/latexpic/shapefactor_t=4E4_N=5.eps}
+\caption{N=5,F0=10000,E=1000, initial S=1}
+\end{figure}
+\begin{figure}[hbtp]
+\centering
+\includegraphics[scale=0.3]{D:/matlab2016/MolecularDynamics/figure/latexpic/shapefactor_4E4_N=5_zoomin1.eps} 
+\caption{Zoom in at the beginning part}
+\end{figure}
+\begin{figure}[hbtp]
+\centering
+\includegraphics[scale=0.3]{D:/matlab2016/MolecularDynamics/figure/latexpic/shapefactor_t=4E4_N=5_average.eps}
+\caption{average over every 30s to see the main tendency}
+\label{fig:relaxationPS1}
+\end{figure}
+
+
+From fig.\ref{fig:relaxationPS1}, no evidence shows the shape of cloud will converge. Maybe the fluctuation of S is so large that make it hard to identify the convergence of S. The only way to solve this problem is using more particle simulation to suppress the fluctuation.
+
+\begin{figure}
+\centering
+\includegraphics[scale=0.4]{D:/matlab2016/MolecularDynamics/figure/latexpic/shapefactor_t=5E3_N=20_F1000_E3000.eps} 
+\includegraphics[scale=0.4]{D:/matlab2016/MolecularDynamics/figure/latexpic/shapefactor_t=5E3_N=20_F1000_E3000_average.eps}
+\includegraphics[scale=0.4]{D:/matlab2016/MolecularDynamics/figure/latexpic/shapefactor_t=5E3_N=20_F1000_E3000_sup.eps}
+\caption{N=20, F0=1000, E=3000, initial S=1}
+\begin{flushleft}
+Different from N=5 case, this time the fluctuation of S is not that large. In return, with an average over every 30s, the S only fluctuate between 0.5 and 0.2
+\end{flushleft}
+\label{fig:relaxationPS2}
+\end{figure}
+\begin{figure}
+\centering
+\includegraphics[scale=0.4]{D:/matlab2016/MolecularDynamics/figure/latexpic/shapefactor_t=5E3_N=20_F1000_E10000.eps} 
+\includegraphics[scale=0.4]{D:/matlab2016/MolecularDynamics/figure/latexpic/shapefactor_t=5E3_N=20_F1000_E10000_average.eps}
+\includegraphics[scale=0.4]{D:/matlab2016/MolecularDynamics/figure/latexpic/shapefactor_t=5E3_N=20_F1000_E10000_sup.eps}
+\caption{N=20, F0=1000, E=10000, initial S=1}
+\label{fig:relaxationPS3}
+\end{figure}
+
+For N=20(fig.\ref{fig:relaxationPS3}), the S start evolving from 1 will soon decay and start fluctuating around some lower value(0.1-0.5, perhaps dependent on temperature). To tell whether this value correspond to a stable state of the system, we can set the initial state S to be other value (e.g. zero) to see whether it will come back to the same stable value(see fig.\ref{fig:relaxationPS4}).
+
+\begin{figure}
+\centering
+\includegraphics[scale=0.4]{D:/matlab2016/MolecularDynamics/figure/latexpic/shapefactor_t=5E3_N=20_F1000_E10000_S=0.eps} 
+\includegraphics[scale=0.4]{D:/matlab2016/MolecularDynamics/figure/latexpic/shapefactor_t=5E3_N=20_F1000_E10000_S=0_average.eps}
+\includegraphics[scale=0.4]{D:/matlab2016/MolecularDynamics/figure/latexpic/shapefactor_t=5E3_N=20_F1000_E10000_S=0_sup.eps}
+\caption{N=20, F0=1000, E=10000, Initial S=0.05}
+\label{fig:relaxationPS4}
+\end{figure}
+
+We may zoom in to understand how the distribution cloud is deforming. 
+in fig.\ref{fig:relaxationPS5}, we can see some peaks and dips. The peaks are generated by particle ``bumping" (collision process discribed in Breathing frequency, see fig.\ref{Breathingfrequency2}) along the short axis of the cloud, while the dips are generated by ``bumping" along the long axis. Since these bumping only means momentum exchange, after a whole bumping process, the distribution should almost come back. So these peaks and dips will not affect the plateau value, as is shown in fig.\ref{fig:relaxationPS5}
+\begin{figure}[hbtp]
+\centering
+\includegraphics[scale=0.4]{D:/matlab2016/MolecularDynamics/figure/latexpic/shapefactor_t=5E3_N=20_F1000_E10000_S=0_zoom1.eps}
+\includegraphics[scale=0.4]{D:/matlab2016/MolecularDynamics/figure/latexpic/shapefactor_t=5E3_N=20_F1000_E10000_S=0_zoom2.eps} 
+\includegraphics[scale=0.4]{D:/matlab2016/MolecularDynamics/figure/latexpic/shapefactor_t=5E3_N=20_F1000_E10000_S=0_zoom3.eps} 
+\includegraphics[scale=0.4]{D:/matlab2016/MolecularDynamics/figure/latexpic/shapefactor_t=5E3_N=20_F1000_E10000_S=0_zoom4.eps} 
+\caption{t=5E3, N=20, F=1000, E=10000, initial S=0, zoom in}
+\label{fig:relaxationPS5}
+\end{figure}
+
+In view of this, we take average of a short time to clear this peaks and dips in order to see the time evolution of the overall value of S (the second picture in fig.\ref{fig:relaxationPS2},\ref{fig:relaxationPS3},\ref{fig:relaxationPS4}).
+
+However, there is still no sufficient evidence of convergence for the overall value of S for N=20. 
+\begin{figure}[hbtp]
+
+\centering
+\includegraphics[scale=0.8]{D:/matlab2016/MolecularDynamics/figure/latexpic/shapefactor_t=1500_N=50_F10000_E20000_S=1.eps}
+\includegraphics[scale=0.8]{D:/matlab2016/MolecularDynamics/figure/latexpic/shapefactor_t=1500_N=50_F10000_E20000_S=1_average.eps} 
+\caption{N=50, E=20000, F0=10000 ,t=1500}
+\label{fig:relaxationPS6}
+\end{figure}
+
+\newpage
+\subsection{Correspondence between energy distribution, behaviour of shape-factor and oscillation of R(t)}
+\begin{figure}[hbtp]
+\begin{center}
+\subfigure[$E=3E5$]{
+\begin{minipage}[n]{0.4\textwidth}
+\includegraphics[scale=0.4]{D:/matlab2016/MolecularDynamics/figure/latexpic/example_Energy_relaxed_N=20_F0=1E4_E=3E5.eps}
+\includegraphics[scale=0.4]{D:/matlab2016/MolecularDynamics/figure/latexpic/example_single-particle-Energy_relaxed_N=20_F0=1E4_E=3E5.eps}
+\includegraphics[scale=0.4]{D:/matlab2016/MolecularDynamics/figure/latexpic/example_Shapeav_relaxed_N=20_F0=1E4_E=3E5.eps}   
+\end{minipage}
+}
+\subfigure[$E=2E5$]{
+\begin{minipage}[n]{0.4\textwidth}
+\includegraphics[scale=0.4]{D:/matlab2016/MolecularDynamics/figure/latexpic/example_Energy_relaxed_N=20_F0=1E4_E=2E5.eps}
+\includegraphics[scale=0.4]{D:/matlab2016/MolecularDynamics/figure/latexpic/example_single-particle-Energy_relaxed_N=20_F0=1E4_E=2E5.eps}
+\includegraphics[scale=0.4]{D:/matlab2016/MolecularDynamics/figure/latexpic/example_Shapeav_relaxed_N=20_F0=1E4_E=2E5.eps}   
+\end{minipage}
+}
+\subfigure[$E=1E5$]{
+\begin{minipage}[n]{0.4\textwidth}
+\includegraphics[scale=0.4]{D:/matlab2016/MolecularDynamics/figure/latexpic/example_Energy_relaxed_N=20_F0=1E4_E=1E5.eps}
+
+\includegraphics[scale=0.4]{D:/matlab2016/MolecularDynamics/figure/latexpic/example_Shapeav_relaxed_N=20_F0=1E4_E=1E5.eps}   
+\end{minipage}
+}
+\subfigure[$E=5E4$]{
+\begin{minipage}[n]{0.4\textwidth}
+
+\includegraphics[scale=0.4]{D:/matlab2016/MolecularDynamics/figure/latexpic/example_Shapeav_relaxed_N=20_F0=1E4_E=5E4.eps}   
+\end{minipage}
+}
+\end{center}
+\end{figure}
+
+\newpage
+\subsection{Lyapunov Exponents(unfinished)}
+Lyapunov exponents(LE) describes how fast one orbit diverge from its nearby orbits in phase-space. The largest Lyapunov exponents (LLE) reflects  the time scale that system lose its memory in phase-space. We will measure the LLEs along our trajectory and plot its distribution.
+
+\begin{figure}[hbtp]
+\centering
+\includegraphics[scale=0.5]{D:/matlab2016/MolecularDynamics/figure/latexpic/C_N=5_LLEevolution_F0=1000_E=3000_2.eps}
+\includegraphics[scale=0.5]{D:/matlab2016/MolecularDynamics/figure/latexpic/C_N=5_Energy_F0=1000_E=3000_2.eps} 
+\caption{N=5, F0=1000, E=3000, Gaussian interaction}
+\label{fig:LLEexample1}
+\end{figure}
+\begin{figure}[hbtp]
+\centering
+\includegraphics[scale=0.5]{D:/matlab2016/MolecularDynamics/figure/latexpic/C_N=5_LLEevolution_F0=1000_E=10000_1.eps}
+\caption{N=5, F0=1000, E=10000, Gaussian interaction}
+\label{fig:LLEexample2}
+\end{figure}
+\begin{figure}[hbtp]
+\centering
+\includegraphics[scale=0.5]{D:/matlab2016/MolecularDynamics/figure/latexpic/C_N=5_LLEevolution_F0=1000_E=100000_1.eps}
+\caption{N=5, F0=1000, E=100000, Gaussian interaction}
+\label{fig:LLEexample3}
+\end{figure}
+
+Fig.\ref{fig:LLEexample1}, fig.\ref{fig:LLEexample2} and fig.\ref{fig:LLEexample3} serve as examples showing the way I measure LLE: I integrate and average the LLE along the trajectory, usually over 100-1000 time unit, the LLE converge to certain stable value, and then I start another LLE measurement. \textbf{From the examples above, one may judge how good the convergence is and how big the error of LLE measurement can be.}
+
+\begin{figure}[hbtp]
+\centering
+\includegraphics[scale=0.8]{D:/matlab2016/MolecularDynamics/figure/latexpic/LLEdistribution_scanE_9_22.eps}
+\caption{LLE distribution for N=5, F0=1000, scan E. (It seems that MATLAB has difficulty changing .fig into .eps files. To get rid of the annoying white lines you may open this figure in MATLAB with .fig format.)}
+\label{fig:LLEdistribution1}
+\end{figure}
+
+fig.\ref{fig:LLEdistribution1} shows the distribution of LLE by color. The LLE decrease with the growth of Energy. The crucial part is near E=5000. The most probable value of LLE goes down from 1 to 0.1,which indicate that \textbf{the shortest time scale becomes longer than an oscillation period when E is larger than 5000}. And E=5000 is exactly our prediction value of thermalization threshold. So there is a correspondence between energy thermalization and LLE. 
+The size of bin(resolution of LLE) in fig.\ref{fig:LLEdistribution1} is 0.01, so when E goes far beyond the thermalization threshold, the LLE distribution is not that clear. We only know that LLE is concentrated close to zero in high E regime.
+
+ 
+
+
+
+
+\section{others(those I haven't organized it into the text in logical order but may be useful)}
+
+\subsection{Evolution of $R(t)$ and $\sqrt{\delta^2R(t)}/R(t)$} 
+Results are shown in fig.\ref{fig:others1}
+
+\begin{figure}[hbtp]
+
+\centering
+\includegraphics[scale=0.3]{D:/matlab2016/MolecularDynamics/figure/fluc_of_R_with_time2.eps}
+\caption{fluctuation of R with time }
+sigma=0.01(short range), $F_0=0.1(black), 1(blue), 10(green) ,100(red)$
+\label{fig:others1}
+\end{figure}
+
+
+\subsection{Detailed discussion of two-particle motion}
+{\color{red}{This chapter previously follow the subsection ``two-particle case" in subsection ``Dynamics study" in section ``Thermalization". But then I found we haven't used these result. So I put it at the end for the time being}}.
+  
+
 From now on, let's stand in the the frame of center of mass to observe the motion of two-particle system. In this frame, without interaction, we will find two particles sitting symmetrically in an equivalent harmonic trap (black curve), whose shape is identical to the trap we see in the static frame. As a result, there frequency of relative motion is exactly $2\omega$(since two particle are identical). We label the position of center of mass as 0. And we may only analyse the motion on positive axis since positive and negative are symmetric. 
 
 
@@ -141,320 +537,9 @@ For the green curve, in low energy limit, it takes finite time to finish half pe
 \centering
 \caption{Frequency of relative motion with internal energy in three regime} Numbers in the legend is the value of $\frac{F_0}{m\omega_0^2\sigma}$
 \label{fig:thermalization3}
-\end{figure}}
-\end{comment}
-%-------------%
-
-
-\paragraph{More particles}
-Now let's consider the three-particle case. For two particle, the motion is non-chaotic. On the other hand, intuitively, we will say that three-body motion is chaotic so that the system could be ``thermalized" soon. However, in some cases, the time scale of thermalizing could still be very long. Suppose two of them, say, A and B, has small internal energy, which means their distance and relative velocity are both small. Meanwhile, suppose particle C has some energy quite different from A \& B. In this case, A \& B will often be in the interaction, while C will pass both of them at a high speed in each period. How will energy transfer between C and the two-particle system A and B? Since the relative velocity of C and the two-particle system is usually large, C will pass A-B pair in a short time $\tau$ ($\tau\ll\frac{2\pi}{\omega}$). When C pass A, it gives A a push, and then push A back.  As has been discussed in the two-particle case, this process is equivalent to giving A a very small speed($\sim O(\tau)$) in the background of a trap. Since the position and velocity of A and B are both close, the effect of C on A \& B are almost the same (difference$\sim O(\tau\sigma)\sim O(\tau^2)$). In this manner, the passing of particle C only kicks the center of mass of the A-B pair slightly, leaving the internal motion of the pair unaffected. In another word, the existence of C will not have significant effect on the energy transfer between A and B, but only ``dance" with their center of mass. The physics of the ``dance" is similar to the dance between two particle. %We only need to substitute $m$, $F_0$ \& $\sigma$ with their effective counterparts, e.g. change $m$ to $\mu$ , which is the reduced mass of m \& 2m.
-
-\begin{figure}[hbtp]
-\centering
-\includegraphics[scale=0.35]{D:/matlab2016/MolecularDynamics/figure/latexpic/pair1.eps}
-\caption{evolution of single-particle energy}
-\label{fig:thermalization4}
-\end{figure}
-
-The argument above still holds in many-particle case. Once we start from some configuration where n particles have a set of close energy levels $\left\lbrace E_n\right\rbrace $ and another m particles have another set of energy levels close to each other $\left\lbrace E_m\right\rbrace $, and $\left\lbrace E_n\right\rbrace $ is quite different from $\left\lbrace E_n\right\rbrace $, we will find these two systems dancing together on the energy level diagram. 
-The discussion above gives us some pictures about the non-ergodic state. For these state, life time is rather long so that once the system reach such configuration (or certain energy distribution), it will take a long time(more than $10^4$ periods for N=5 case) to decay. 
-
-\subsection{Thermalization condition}
-The main obstruct to get an thermalized state (which can be examined by observing distribution) is the low frequency oscillation mentioned before. Because once these modes are excited, the relaxing time could be very long($\textgreater 10^4$). As a result, to achieve ergodic state, we have to avoid such low frequency oscillation. According to our discussion before, the solution is to make internal energy of each two-particle pair not ``too large". Though it is impossible to express the internal energy of every pair in terms of the total energy $E$, we can estimate it by the energy interval, which is $\frac{E}{N}$. At least they are of the same order. The thermalization condition could be given by:
-$F_0\sigma\sim\frac{E}{N}$
-
-
-\begin{figure}[hbtp]
-\centering
-\includegraphics[scale=0.3]{D:/matlab2016/MolecularDynamics/figure/latexpic/distribution1_scanF0_E=100_3.eps}
-\caption{Distribution $scan F_0, E=100, N=5, \sigma=1$}
-\label{fig:thermalization5}
-\includegraphics[scale=0.3]{D:/matlab2016/MolecularDynamics/figure/latexpic/distribution1_scanF0_E=100_3_freq.eps}
-\caption{Frequency scan $F_0$, $E=100$, $N=5$, $\sigma=1$}
-
 \end{figure}
 
 
 
-
-\begin{figure}
-\centering
-\includegraphics[scale=0.3]{D:/matlab2016/MolecularDynamics/figure/latexpic/energyleveljump_fiveparticle_F0=2_1.eps}
-\caption{energy of each particle, $F_0=2$}
-\label{fig:thermalization6}
-
-\centering
-\includegraphics[scale=0.3]{D:/matlab2016/MolecularDynamics/figure/latexpic/energyleveljump_fiveparticle_F0=10_1.eps}
-\caption{energy of each particle, $F_0=10$}
-\label{fig:thermalization7}
-\end{figure}
-
-As is shown in fig.\ref{fig:thermalization5} above, the critical point for reaching Boltzmann distribution is $F_0=5$ while the energy interval of particles $\sim 10$, as we expected, they are of the same order. As a supplementary proof of our argument, fig.\ref{fig:thermalization6} and fig.\ref{fig:thermalization7} show the great difference of single-particle energy between $F_0=2$ $\&$ $F_0=10$ at $E=100$, i.e. in the former one there is always some particle maintained at high excitation, while in the latter the system probably goes to ergodic. Till now, we have verified that the criteria of non-ergodic and ergodic state, which is $\frac{NF_0\sigma}{E}\sim1 $ , and corresponding feature of their energy distribution.
- 
-
-
-
-\newpage
-\subsection{Verifying Boltzmann distribution}
-Thermalization could have different definition. In our system, the "thermalization" we want to find means "losing all the memory of initial state". One of the most important information of initial state is energy distribution. We can check whether a system has gone to equilibrium by measuring its energy distribution.
-
- 
-\paragraph{energy distribution}
-For an isothermal system, the energy distribution of the whole system follows the Boltzmann distribution in equilibrium state. However, for an isolated system where the total energy is conserved, it not obvious to draw some strict conclusion about the distribution.
- 
-Intuitively, one will expect that if we measure the energy of a subsystem , e.g. one particle, then we will get a Boltzmann distribution because the rest part of the system serves as a bath for this particle. The temperature of this isolated system is defined according to $Nk_BT=E$. It is evident that this argument only hold when the energy of the single particle is not too big--if one particle has 50\% of the total energy, the rest could no longer be think of as a good bath.
-
-In the first picture below, we verify this argument by measuring the energy distribution of every particle at N=10 for different F0 at E=1000 (parameters here satisfy thermalizing condition). In the other two, we tested different N.
-
-\begin{figure}[hbtp]
-\centering
-\includegraphics[scale=0.5]{D:/matlab2016/MolecularDynamics/figure/latexpic/distribution_at_N=5_F0=10000.eps}
-\caption{Energy distribution, N=5, F0=10000}
-\label{fig:thermalization8}
-\includegraphics[scale=0.47]{D:/matlab2016/MolecularDynamics/figure/latexpic/distribution_at_N=10_E=1000_edit.eps}
-\caption{Energy distribution, N=10, E=1000}
-\label{fig:thermalization9}
-\includegraphics[scale=0.52]{D:/matlab2016/MolecularDynamics/figure/latexpic/distribution2_at_N=20_F0=10000.eps} 
-\caption{Energy distribution, N=20, F0=10000}
-\label{fig:thermalization10}
-\end{figure}
-
-\begin{flushleft}
-To take the first one as an example, Y axis is logarithmically scaled. X axis is the ratio between single particle energy (where half of interaction is taken into account) and total energy of the system. The blue dotted line is the predicted Boltzmann distribution (normalized according to counts). Notice that normalizing of the Boltzmann line only change the intercept, leaving slope untouched, which means the slope is the only thing to compare. In  Energy ratio smaller than 30\%, the experiment (colourful curves) fits well with the prediction. When energy of a single particle is higher, one can think of the "bath" formed by the remaining part has lower temperature, thus counts decrease faster to zero than Boltzmann law.
-
-It is evident form $Nk_BT=E$ that the slope of Boltzmann distribution in this figure only depend on N. That is the reason why we want to measure at different N below. 
-
-In fig.\ref{fig:thermalization9} and fig.\ref{fig:thermalization10}, the curve is slightly deviated from the standard Boltzmann distribution, which is probably due to the contribution of density of states. Possibility is proportional to Boltzmann exponential factor multiplied by density of states. The reason why we did not take DOS into account previously lies in that the DOS is a constant for simple harmonic oscillator. However, for simple harmonic oscillators with short range interaction, the energy shell is deformed in the region of $|x_i-x_j|<\sigma$ so that the DOS is no longer a constant. But since $\sigma<<R$, one can think of this as a small modification. Therefore, the tendency of the curve in fig.\ref{fig:thermalization9} and fig.\ref{fig:thermalization10} is deviated slightly from Boltzmann distribution.
- 
-\end{flushleft}
-
-
-
-\newpage
-\section{Relaxation in Phase-space (unfinished)}
-Till now we have verified the energy distribution will go to Boltzmann distribution. However, even if a system have reached Boltzmann distribution, it doesn't mean that the system has completely ``forgotten" its initial state. There is other information that could still exist, for instance, the shape of distribution cloud in phase-space. One of the reasons why we care about this quantity is that it has a strong effect on breathing behaviour. For instance, if the distribution cloud is a thin ellipse (all particles oscillate in phase), the amplitude of oscillation of the cloud radius will be very large. On the contrary, if the cloud is a circle (particles phase of oscillation are completely random), we will not see oscillation at all. Going to equilibrium not only require the thermalization mentioned in last section, but also require reaching a stable configuration in phase-space distribution (relaxation).
-
-
-\paragraph{Shape of Distribution in Phase-space}
-If the oscillating phases of particles are highly correlated, for example, initial state with zero velocity, the shape of cloud will be a thin ellipse. If the phase of oscillation is completely random, the cloud should be isotropic in phase space. In view of this, we defined a shape factor S:
-\\$S=\frac{a-b}{a+b}$, where a and b are long axis and short axis of inertia ellipse in phase space respectively. a,b can be calculated by diagonalizing the inertia matrices I: $I_{xx}=\sum{x^2}, I_{xp}=I_{px}=\sum{xp},I_{pp}=\sum{p^2}$
-S=1 for line-shape distribution, S=0 for circular distribution.
-The time evolution of S will probably show how fast the distribution ``forget" its initial shape.  
-
-
-\begin{figure}[hbtp]
-
-\centering
-\includegraphics[scale=0.3]{D:/matlab2016/MolecularDynamics/figure/latexpic/shapefactor_t=4E4_N=5.eps}
-\caption{N=5,F0=10000,E=1000, initial S=1}
-\end{figure}
-\begin{figure}[hbtp]
-\centering
-\includegraphics[scale=0.3]{D:/matlab2016/MolecularDynamics/figure/latexpic/shapefactor_4E4_N=5_zoomin1.eps} 
-\caption{Zoom in at the beginning part}
-\end{figure}
-\begin{figure}[hbtp]
-\centering
-\includegraphics[scale=0.3]{D:/matlab2016/MolecularDynamics/figure/latexpic/shapefactor_t=4E4_N=5_average.eps}
-\caption{average over every 30s to see the main tendency}
-\label{fig:relaxationPS1}
-\end{figure}
-
-
-From fig.\ref{fig:relaxationPS1}, no evidence shows the shape of cloud will converge. Maybe the fluctuation of S is so large that make it hard to identify the convergence of S. The only way to solve this problem is using more particle simulation to suppress the fluctuation, while the cost is that the simulation time will be limited.
-
-
-\begin{figure}
-\centering
-\includegraphics[scale=0.4]{D:/matlab2016/MolecularDynamics/figure/latexpic/shapefactor_t=5E3_N=20_F1000_E3000.eps} 
-\includegraphics[scale=0.4]{D:/matlab2016/MolecularDynamics/figure/latexpic/shapefactor_t=5E3_N=20_F1000_E3000_average.eps}
-\includegraphics[scale=0.4]{D:/matlab2016/MolecularDynamics/figure/latexpic/shapefactor_t=5E3_N=20_F1000_E3000_sup.eps}
-\caption{N=20, F0=1000, E=3000, initial S=1}
-Different from N=5 case, this time the fluctuation of S is not that large. In return, with an average over every 30s, the S only fluctuate between 0.5 and 0.2
-\label{fig:relaxationPS2}
-\end{figure}
-\begin{figure}
-\centering
-\includegraphics[scale=0.4]{D:/matlab2016/MolecularDynamics/figure/latexpic/shapefactor_t=5E3_N=20_F1000_E10000.eps} 
-\includegraphics[scale=0.4]{D:/matlab2016/MolecularDynamics/figure/latexpic/shapefactor_t=5E3_N=20_F1000_E10000_average.eps}
-\includegraphics[scale=0.4]{D:/matlab2016/MolecularDynamics/figure/latexpic/shapefactor_t=5E3_N=20_F1000_E10000_sup.eps}
-\caption{N=20, F0=1000, E=10000, initial S=1}
-\label{fig:relaxationPS3}
-\end{figure}
-
-For N=20(fig.\ref{fig:relaxationPS3}), the S start evolving from 1 will soon decay and start fluctuating around some lower value(0.1-0.5, perhaps dependent on temperature). To tell whether this value correspond to a stable state of the system, we can set the initial state S to be other value (e.g. zero) to see whether it will come back to the same stable value(see fig.\ref{fig:relaxationPS4}).
-
-\begin{figure}
-\centering
-\includegraphics[scale=0.4]{D:/matlab2016/MolecularDynamics/figure/latexpic/shapefactor_t=5E3_N=20_F1000_E10000_S=0.eps} 
-\includegraphics[scale=0.4]{D:/matlab2016/MolecularDynamics/figure/latexpic/shapefactor_t=5E3_N=20_F1000_E10000_S=0_average.eps}
-\includegraphics[scale=0.4]{D:/matlab2016/MolecularDynamics/figure/latexpic/shapefactor_t=5E3_N=20_F1000_E10000_S=0_sup.eps}
-\caption{N=20, F0=1000, E=10000, Initial S=0.05}
-\label{fig:thermailzationPS4}
-\end{figure}
-
-We may zoom in to understand how the distribution cloud is deforming. 
-in fig.\ref{fig:relaxationPS5}, we can see some peaks and dips. The peaks are generated by particle ``bumping" (collision process discribed in Breathing frequency, see fig.\ref{Breathingfrequency2}) along the short axis of the cloud, while the dips are generated by ``bumping" along the long axis. Since these bumping only means momentum exchange, after a whole bumping process, the distribution should almost come back. So these peaks and dips will not affect the plateau value, as is shown in fig.\ref{fig:relaxationPS5}
-\begin{figure}[hbtp]
-\centering
-\includegraphics[scale=0.4]{D:/matlab2016/MolecularDynamics/figure/latexpic/shapefactor_t=5E3_N=20_F1000_E10000_S=0_zoom1.eps}
-\includegraphics[scale=0.4]{D:/matlab2016/MolecularDynamics/figure/latexpic/shapefactor_t=5E3_N=20_F1000_E10000_S=0_zoom2.eps} 
-\includegraphics[scale=0.4]{D:/matlab2016/MolecularDynamics/figure/latexpic/shapefactor_t=5E3_N=20_F1000_E10000_S=0_zoom3.eps} 
-\includegraphics[scale=0.4]{D:/matlab2016/MolecularDynamics/figure/latexpic/shapefactor_t=5E3_N=20_F1000_E10000_S=0_zoom4.eps} 
-\caption{t=5E3, N=20, F=1000, E=10000, initial S=0, zoom in}
-\label{fig:relaxationPS5}
-\end{figure}
-
-In view of this, we take average of a short time to clear this peaks and dips in order to see the time evolution of the overall value of S (the second picture in fig.\ref{fig:relaxationPS2},\ref{fig:relaxationPS3},\ref{fig:relaxationPS4}).
-
-However, there is still no sufficient evidence of convergence for the overall value of S for N=20. 
-\begin{figure}[hbtp]
-
-\centering
-\includegraphics[scale=0.8]{D:/matlab2016/MolecularDynamics/figure/latexpic/shapefactor_t=1500_N=50_F10000_E20000_S=1.eps}
-\includegraphics[scale=0.8]{D:/matlab2016/MolecularDynamics/figure/latexpic/shapefactor_t=1500_N=50_F10000_E20000_S=1_average.eps} 
-\caption{N=50, E=20000, F0=10000 ,t=1500}
-\label{fig:relaxationPS6}
-\end{figure}
-
-\subsection{Correspondence between energy distribution, behaviour of shape-factor and oscillation of R(t)}
-\begin{figure}[hbtp]
-\begin{center}
-\subfigure[$E=3E5$]{
-\begin{minipage}[n]{0.4\textwidth}
-\includegraphics[scale=0.4]{D:/matlab2016/MolecularDynamics/figure/latexpic/example_Energy_relaxed_N=20_F0=1E4_E=3E5.eps}
-\includegraphics[scale=0.4]{D:/matlab2016/MolecularDynamics/figure/latexpic/example_single-particle-Energy_relaxed_N=20_F0=1E4_E=3E5.eps}
-\includegraphics[scale=0.4]{D:/matlab2016/MolecularDynamics/figure/latexpic/example_Shapeav_relaxed_N=20_F0=1E4_E=3E5.eps}   
-\end{minipage}
-}
-\subfigure[$E=2E5$]{
-\begin{minipage}[n]{0.4\textwidth}
-\includegraphics[scale=0.4]{D:/matlab2016/MolecularDynamics/figure/latexpic/example_Energy_relaxed_N=20_F0=1E4_E=2E5.eps}
-\includegraphics[scale=0.4]{D:/matlab2016/MolecularDynamics/figure/latexpic/example_single-particle-Energy_relaxed_N=20_F0=1E4_E=2E5.eps}
-\includegraphics[scale=0.4]{D:/matlab2016/MolecularDynamics/figure/latexpic/example_Shapeav_relaxed_N=20_F0=1E4_E=2E5.eps}   
-\end{minipage}
-}
-\subfigure[$E=1E5$]{
-\begin{minipage}[n]{0.4\textwidth}
-\includegraphics[scale=0.4]{D:/matlab2016/MolecularDynamics/figure/latexpic/example_Energy_relaxed_N=20_F0=1E4_E=1E5.eps}
-
-\includegraphics[scale=0.4]{D:/matlab2016/MolecularDynamics/figure/latexpic/example_Shapeav_relaxed_N=20_F0=1E4_E=1E5.eps}   
-\end{minipage}
-}
-\subfigure[$E=5E4$]{
-\begin{minipage}[n]{0.4\textwidth}
-
-\includegraphics[scale=0.4]{D:/matlab2016/MolecularDynamics/figure/latexpic/example_Shapeav_relaxed_N=20_F0=1E4_E=5E4.eps}   
-\end{minipage}
-}
-\end{center}
-\end{figure}
-
-
-\subsection{Lyapunov Exponents(unfinished)}
-Lyapunov exponents describes how fast one orbit diverge from its nearby orbits in phase-space. The largest LE reflects  the time scale that system lose its memory in phase-space. We will measure the largest LE along our trajectory and plot its distribution.
-
-
-
-
-
-\newpage
-\section{Breathing Frequency}
-Usually, to see the response of a quantum gas to a quench, one start from the ground state and suddenly vary some parameter by a little, for instance, $\omega_0'\rightarrow\omega_0=\omega_0'+\Delta\omega$. In that case, one will observe the radius R oscillating at a certain frequency, which is usually called ``breathing mode".
-In classical version, the ground state may be meaningless--since classical limit is $\bar{h}\rightarrow 0$, no matter how low the kT is, $kT/\bar{h}$ is always zero so that classical ground state is quite different from the quantum one. Instead, one will expect that the thermalized high temperature classical gas may have something in common with the high excited state of quantum gas. In view of this, if we want to do a quench similar to quantum case, we should begin with a thermalized distribution at $\omega_0'$ and evolve to a new thermalized state at varied $\omega_0$. Furthermore, notice that X and P (normalized) are symmetric for harmonic oscillator. If there is no spontaneous symmetry breaking in phase-space, the distribution cloud should be circular when the gas is completely thermalized. The difference between thermalized cloud before and after quench is  circular under different normalization of phase-space. If we look at both of them in the phase-space normalized according to $\omega_0$, we will find the former one is an ellipse while the latter one is a circle.
-If the ellipse is only slightly deviated from circle, the oscillating amplitude will be too small to be distinguished from noise. Therefore, we start from an extreme case -- line distribution (random x, zero p) and observe the oscillation of R(t).
-\begin{figure}[hbtp]
-\center
-\includegraphics[scale=0.8]{D:/matlab2016/MolecularDynamics/figure/latexpic/freq_scanF_differentE_log.eps}
-\caption{breathing mode frequency measured at different E and $F_0$}
-\label{Breathingfrequency1}
-\end{figure}
-
-Without interaction, the breathing mode frequency is exactly 2. When there is interaction, the frequency will drift to some other value near 2. We measure the radius of the cloud $R(t)$ and get the frequency spectrum of its oscillation behaviour by Fourier transform. Then we take the peak frequency near 2 as the breathing mode frequency. The frequency measured in different E and $F_0$ is shown in the Fig.\ref{Breathingfrequency1}.
-
-Before discussion about the mechanism of $\delta$, let us first introduce a approach to simplify this problem:
-
-\subsection{Rotating frame in Phase-space}
-Traditionally, we think of there is a distribution cloud in phase space, and due to harmonic trap, the cloud will rotate at frequency $\omega_0$. When there is interaction, we may think there is a small modification of the frequency $\omega=\omega_0+\delta$. Now we want to understand how $\delta$ is dependent on parameters, so it is better to stand in the rotating frame in the phase space. In this frame, the picture we will see is as follow:\\
-\begin{enumerate}[\textbf{*}]
-\item All particles are stationary when there is no interaction.
-\item The real X and P axis are rotating counter-clockwise, using real X axis to measure distance between particles to determine the interaction at each moment.
-\item When there is interaction, particles will gain a ``velocity" in phase space: $\dot{P}=F/m$ . Other effects are all cancelled by frame rotation.
-\end{enumerate}
-
-
-This picture is actually a classical version of the interaction picture. With this picture, we will soon find the dynamic analysis greatly simplified.
-
-In our system, we choose initial velocity to be zero, which means, the particles are aligned on $X|_{t=0}$ axis in phase-space at the beginning. If the breathing frequency of the system is $\omega=\omega_0+\delta$, we will expect to see a line (which may gradually deform into an oval cloud or even an isotropic cloud) rotating at $\delta$ in rotating frame. If we plot x-p with t, we expect to see a spiral motion. Since the motion we see is an additional rotation in rotating frame, we will call it precession. This precession directly leads to the $\delta$.
-
-
-\begin{figure}[hbtp]
-\centering
-\includegraphics[scale=0.4]{D:/matlab2016/MolecularDynamics/figure/latexpic/rotatingframe_example2.eps} 
-\includegraphics[scale=0.4]{D:/matlab2016/MolecularDynamics/figure/latexpic/rotatingframe_example1.eps} 
-\caption{precession motion in phase-space observed in rotating frame (only show one or two particles' trajectory for clarity)}
-\label{Breathingfrequency2}
-\end{figure}
-
-
-
-
-\subsection{Estimating Breathing Frequency}
-What mechanism leads to the precession motion? To answer this question we may turn to two-particle case first. When interaction is very strong, the effect of interaction is equivalent to exchanging momentum when two particles approach each other at distance $\sigma$. In the rotating frame in phase-space, this process can be interpret as follows:
-
-\begin{figure}[hbtp]
-\centering
-\includegraphics[scale=0.4]{D:/matlab2016/MolecularDynamics/figure/latexpic/collision.png}
-\caption{a schematic diagram of the collision process}
-\label{Breathingfrequency3}
-\end{figure}
-
-
-Two particles flip to another line(thick gray line) which deviate a small angle $\alpha$ away from original configuration. Similar process happen when there are more particles. In every period of harmonic oscillation, each particle meet N particles and collide 2N times, while half of the collisions (N times) are between particles with huge difference in momentum, which is just the process shown in figure\ref{Breathingfrequency3}. (As for the remaining half of collisions, colliding particles have small difference in their momentum. Let us say, both particles have positive momentum. In fig.\ref{Breathingfrequency3}, it can be shown that two particles on the same half of the P-axis cannot have strong effect on the rotation of distribution.)
-
-Let us estimate the precession angle $\alpha$ with $\frac{\sigma}{R}$, which follows from the two-particle analysis. Radius of the cloud R can be estimated according to $E=Nm\omega_0^2R^2$
-We will get the precession angular velocity 
-\begin{equation}
-\delta=2\omega_0\frac{N^\frac{3}{2}m^{\frac{1}{2}}E^{-\frac{1}{2}}\sigma\omega_0}{2\pi}
-\label{eq:breathingfrequency1}
-\end{equation}
-\begin{figure}[hbtp]
-\begin{center}
-\includegraphics[scale=0.7]{D:/matlab2016/MolecularDynamics/figure/latexpic/N=5_freq_at_F0=10000_fitting.eps}
-\caption{Frequency measured at N=5} 
-Since the prediction is only an estimation by order, which means there could be some extra effective coefficient before the R. In view of this, the result is satisfying.
-
-\includegraphics[scale=0.4]{D:/matlab2016/MolecularDynamics/figure/latexpic/N=5_freq_at_F0=10000_sup1.eps}
-\includegraphics[scale=0.4]{D:/matlab2016/MolecularDynamics/figure/latexpic/N=5_freq_at_F0=10000_sup2.eps}
-\caption{Spectrum at the beginning and the end of measurement}
-\end{center}
- Two spectrum above show the error of our frequency measurement. The line width of the peak is significant compared with the $\delta$. The peak width comes from FT in finite time.
-\end{figure}
-
-
-\begin{figure}[hbtp]
-
-\centering
-\includegraphics[scale=0.7]{D:/matlab2016/MolecularDynamics/figure/latexpic/N=20_freq_at_F0=10000_2.eps}
-\caption{N=20}
-\includegraphics[scale=0.4]{D:/matlab2016/MolecularDynamics/figure/latexpic/N=20_freq_at_F0=10000_2_sup1.eps}
-\includegraphics[scale=0.4]{D:/matlab2016/MolecularDynamics/figure/latexpic/N=20_freq_at_F0=10000_2_sup2.eps}
-\end{figure}
-
-When F0 is not that large, the frequency behaviour seems complicated (see fig.\ref{Breathingfrequency1}). Usually, when F0 increase, frequency goes down below 2 first and then rise up and converge to some value higher than 2. The reason could also be well understood with the mechanism described before. In the former discussion, we goes to high F0 limit, which means particles exchange momentum in infinitesimal time. For F0 is not very big, the finite interaction time should be taken into consideration. During this time, the behaviour of each particle in phase space is exactly moving along the direction of the real P axis at 'velocity' $F0/m$. Since the real P axis is rotating counter-clockwise, the particle will follow the circular trajectory(orange and green dashed line in fig.\ref{Breathingfrequency3}) the $\alpha$ that we once use to estimate the precession motion should decrease with the increase of interaction time. There should be some ``critical point" where $\alpha$ goes from plus to minus (dashed green line). At this point, we will see the precession stop so that the frequency is 2. Thus the relation between frequency and F0 shown in fig.\ref{Breathingfrequency1} is well explained.
- 
-\begin{figure}[hbtp]
-\centering
-\includegraphics[scale=0.4]{D:/matlab2016/MolecularDynamics/figure/latexpic/N=20_freq_at_differentF0_scanF0_1.eps}
-\caption{frequency for N=20}
-\end{figure}
-
- 
-
-Before completing the discussion, it is necessary to point out that none of the argument here require ``energy thermalization". In addition, if the system is completely thermalized in terms of their phase of orbit in phase space, the argument will no longer work -- there is a stable isotropic distribution in phase space, no matter how the cloud rotate, no oscillation can be observed.
- 
- 
-\section{Supplement}
-The picture of breathing frequency is simple in real space. When two particle bounce, they exchange momentum immediately. It can be interpret as particle A carries its momentum $P_A$ and jump $\sigma$ to the right, while particle B carries its momentum $P_B$ and jump $\sigma$ to the left. In this manner, every collision will save a particle some time $\frac{\sigma}{v}$ . Since $v$ is proportional to R while the number of collision each particle experiences in one period of harmonic oscillation can be estimated by N, we will retrieve $\delta\sim N^{\frac{3}{2}}E^{-\frac{1}{2}}$. 
  
  \end{document}
