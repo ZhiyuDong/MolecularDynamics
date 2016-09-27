@@ -467,12 +467,14 @@ Lyapunov exponents(LE) describes how fast one orbit diverge from its nearby orbi
 
 Fig.\ref{fig:LLEexample1}, fig.\ref{fig:LLEexample2} and fig.\ref{fig:LLEexample3} serve as examples showing the way I measure LLE: I integrate and average the LLE along the trajectory, usually over 100-1000 time unit, the LLE converge to certain stable value, and then I start another LLE measurement. \textbf{From the examples above, one may judge how good the convergence is and how big the error of LLE measurement can be.}
 
+
 \begin{figure}[hbtp]
 \centering
-\includegraphics[scale=0.8]{D:/matlab2016/MolecularDynamics/figure/latexpic/LLEdistribution_scanE_9_22.eps}
+\includegraphics[scale=0.8]{D:/matlab2016/MolecularDynamics/figure/latexpic/LLEdistribution_scanE_9_27.eps}
 \caption{LLE distribution for N=5, F0=1000, scan E. (It seems that MATLAB has difficulty changing .fig into .eps files. To get rid of the annoying white lines you may open this figure in MATLAB with .fig format.)}
 \label{fig:LLEdistribution1}
 \end{figure}
+
 
 fig.\ref{fig:LLEdistribution1} shows the distribution of LLE by color. The LLE decrease with the growth of Energy. The crucial part is near E=5000. The most probable value of LLE goes down from 1 to 0.1,which indicate that \textbf{the shortest time scale becomes longer than an oscillation period when E is larger than 5000}. And E=5000 is exactly our prediction value of thermalization threshold. So there is a correspondence between energy thermalization and LLE. 
 The size of bin(resolution of LLE) in fig.\ref{fig:LLEdistribution1} is 0.01, so when E goes far beyond the thermalization threshold, the LLE distribution is not that clear. We only know that LLE is concentrated close to zero in high E regime.
