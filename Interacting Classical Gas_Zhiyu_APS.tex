@@ -207,13 +207,13 @@ It is natural to think that a many-body system with interaction will be thermali
 
 To see the way interaction change the orbit (energy level) of the particles, we had better start from two-particle case.
 
-We can always think of them in the reference frame of their center of mass ``C". In frame C, one can easily show that when there is no interaction what we will see is that two particles are bound together by a harmonic trap center at C(black line in fig.\ref{fig:thermalization2}). So their relative motion is also a harmonic oscillation. 
+We can always think of them in the reference frame of their center of mass ``C". In frame C, one can easily show that when there is no interaction what we will see is that two particles are bound together by a harmonic trap center at C (black line in fig.\ref{fig:thermalization2}). So their relative motion is also a harmonic oscillation. 
 
-In this case, the system has two frequency components. The first one is the frequency of C, which is just $\omega_0$ . The other one is the frequency of their relative motion $\omega_r$, which is slightly deviated from $\omega_0$. The deviation grows with the increase of $F_0$ and the decrease of internal energy of the pair. As a result, when the $F_0$ is small and when the E is large, a beat with frequency $\omega_r-\omega_0=\delta$ will exist. 
+In this case, the system has two frequency components. The first one is the frequency of C, which is just $\omega_0$ . The other one is the frequency of their relative motion $\omega_r$, which is slightly deviated from $\omega_0$. The deviation grows with the increase of $F_0$ and the decrease of internal energy of the pair. As a result, when the $F_0$ is small and when the E is large, a beat with low frequency $\omega_r-\omega_0=\delta$ will exist. This phenomenon means energy transfer between particles are inefficient, thus it will slow down the thermalization process. 
 
 
 
-\begin{figure}[hbtp]
+\begin{figure*}
 \begin{center}
 
 \subfigure[$E_i=2$]{
@@ -241,9 +241,9 @@ In this case, the system has two frequency components. The first one is the freq
 \end{minipage}
 }
 \end{center}
-\caption{the dependence of beat frequency on internal energy} the upper diagram is the energy of every particle, the lower diagram is the orbit in phase-space, where we see quasi-periodic motion clearly. Here, $E_i$ is large(compare to $F_0\sigma$). In this case, the larger $E_i$ is, the lower the beat frequency is. Actually in very low energy, we can retrieve a beat, but that is for different reason -- it is a beat between $\omega_0$ and $\frac{\omega_0}{2}+\delta $
-\label{fig:thermalization1}
-\end{figure}
+\caption{the dependence of beat frequency on internal energy\label{fig:thermalization1}} the upper diagram is the energy of every particle, the lower diagram is the orbit in phase-space, where we see quasi-periodic motion clearly. Here, $E_i$ is large(compare to $F_0\sigma$). In this case, the larger $E_i$ is, the lower the beat frequency is. Actually in very low energy, we can retrieve a beat, but that is for different reason -- it is a beat between $\omega_0$ and $\frac{\omega_0}{2}+\delta $
+
+\end{figure*}
 
 
 
@@ -293,6 +293,16 @@ $F_0\sigma\sim\frac{E}{N}$
 
 As is shown in fig.\ref{fig:thermalization5} above, the critical point for reaching Boltzmann distribution is $F_0=5$ (we always set $\sigma=1$), while the average energy $\sim 10$, as we expected, they are of the same order. As a supplementary proof of our argument, fig.\ref{fig:thermalization6} and fig.\ref{fig:thermalization7} show the great difference of single-particle energy between $F_0=2$ $\&$ $F_0=10$ at $E=100$, i.e. in the former one there is always some particle maintained at high excitation, while in the latter the system probably goes to ergodic. To date, we have verified that the threshold of thermalization, which is $\frac{NF_0\sigma}{E}\sim1 $ , and corresponding feature of their energy distribution in two side of the threshold.
  
+\subsection{Bouncing and Passing} 
+Back to two-particle case, we notice that there are two dynamically distinct regime: \\1) when the maximum of interaction energy is smaller than internal energy, two particle pass each other every time they meet;\\2) when the maximum of interaction energy is higher than internal energy, two particle bounce back.
+
+We call them passing and bouncing regime respectively. If we estimate internal energy of a pair with E/N, the criterion between these two regime is $\frac{NF_0\sigma}{E}=1 $,which is just the thermalization threshold! Naturally one will ask whether thermalization is related to passing and bouncing. As is shown in last two subsections, in passing regime, the situation can be described by the long-term beat behaviour, which obstruct the thermalization. So in this subsection, we focus on the bouncing regime.
+
+To see how the bouncing process thermalize the system, let's consider the strong interaction limit in bouncing regime: $F_0\rightarrow \infty$. In that case, the bouncing happens in a moment. The picture is completely the same as what we have discussed in section ''Breathing Frequency": One can relabel two particles after the bounce and describe the collision as ''particle A comes from the left and jump by $\sigma$ to the right while particle B comes from the right and jump by $\sigma$ to the left". Now if we consider the energy transfer in this process, the only term changed is the potential term. The magnitude of energy transfer in a collision is $m\omega_0^2x_{coll}\sigma$ (suppose $\sigma<<x_{coll}$), where $x_{coll}$ is the position where the collision occur, and is, generally speaking, proportional to cloud radius R. 
+ 
+In bouncing regime, when F0 increase the collision time $\tau$ decrease to zero, but thanks to the finite interaction range, the energy transfer rate stay finite, which is essentially different from the case in passing regime, where when the F0 decrease to zero, since interaction vanishes the energy transfer rate definitely vanishes.
+
+There is one last concern: as is shown in fig.\ref{fig:thermalization3}, the frequency of two-body motion can go to 2 in bouncing regime. Will there be a long-term beat effect as described in passing regime? The long-term beat may occur when $\omega_r$ is close to 2, which means the collision time $\tau$ compensate the time saved by jumping for $\sigma$. In the language of energy transfer, particle pick up some energy since the trap force act on it for time $\tau$ and lose some energy because leaping $\sigma$ in the trap. The mechanism is similar to that in passing regime. Thus it seems that it is possible to form a long-term beat. However, one should bear in mind that in more-particle case, other particles will strongly interfere the motion of the two we are analysing. It is quite different from long-term beat in small F0 limit. In that limit, if pairs with smallest internal energy form a long-term beat, one can deduce that other particles act like transparent to them. But in bouncing regime, long-term beat is like a ``coincidence"-- it only occurs when one pair's internal energy and F0 is in certain relation, so one pair forming a beat does not ensures that other particles are ``transparent" to them.  
 
 
 
