@@ -10,6 +10,11 @@
  \usepackage{verbatim}% for \begin{comment} \end{comment}
  \usepackage{color}
  \usepackage{bm}
+   \usepackage[colorlinks,
+            linkcolor=red,
+            anchorcolor=blue,
+            citecolor=green
+            ]{hyperref}
  \begin{document}
  \title{Interacting Classical Gas}
  \author{Zhiyu}
@@ -357,15 +362,15 @@ In the first picture below, we verify this argument by measuring the energy dist
 \newpage
 \begin{figure}[hbtp]
 \centering
-\includegraphics[scale=0.5]{D:/matlab2016/MolecularDynamics/figure/latexpic/distribution_at_N=5_F0=10000_pre.eps}
-\caption{Energy distribution, N=5, F0=10000}
-\label{fig:thermalization8}
+%\includegraphics[scale=0.5]{D:/matlab2016/MolecularDynamics/figure/latexpic/distribution_at_N=5_F0=10000_pre.eps}
+%\caption{Energy distribution, N=5, F0=10000}
+%\label{fig:thermalization8}
 
-\includegraphics[scale=0.47]{D:/matlab2016/MolecularDynamics/figure/latexpic/distribution_at_N=10_E=1000_edit.eps}
-\caption{Energy distribution, N=10, E=1000 {\color{red}{Run with N=10 F0=10000 to substitute this one}} }
+\includegraphics[scale=0.5]{D:/matlab2016/MolecularDynamics/figure/latexpic/11_1_boltzmann_N=10_F=10000_pre.eps}
+\caption{Energy distribution, N=10, F0=10000}
 \label{fig:thermalization9}
 
-\includegraphics[scale=0.5]{D:/matlab2016/MolecularDynamics/figure/latexpic/distribution_at_N=20_F0=10000_pre.eps} 
+\includegraphics[scale=0.5]{D:/matlab2016/MolecularDynamics/figure/latexpic/11_1_boltzmann_N=20_F=10000_pre.eps} 
 \caption{Energy distribution, N=20, F0=10000}
 \label{fig:thermalization10}
 \end{figure}
@@ -380,7 +385,7 @@ In fig.\ref{fig:thermalization9} and fig.\ref{fig:thermalization10}, the curve i
  
 
 
-\section{Relaxation in Phase-space}
+\subsection{Relaxation in Phase-space}
 
 When describing simple harmonic motion, it is usually convenient to use the language of phase-space (of single particle). In the phase-space, the motion becomes circular, so each of these particles has two independent degree of freedom, i.e., modulus and phase angle. Here, independent means that the simple harmonic oscillation never ``mix" these two degrees of freedom. In view of this, when it comes to ``thermalization", one may notice that the thermalization of energy, which is just the modulus, does not ensure the thermalization of phase angle. To distinguish these two kind of meanings of ``thermalization", we will call the process of energy distribution going to equilibrium ``thermalization", while the process of phase angle going to equilibrium ``relaxation". The time scale of thermalization and relaxation could be different in principle. We start with the configuration where particles' velocities are set to be zero, which means in phase-space the cloud is line shape at the beginning. If the time scale of thermalization is much longer than that of relaxation, we will see cloud going to isotropic in a short time, and radius distribution slowly evolves to Boltzmann distribution. If the relaxation time is longer than the thermalization time, the cloud will maintain elliptical shape or elliptical shape for a long time while the radius distribution is already Boltzmann.
 
@@ -391,20 +396,64 @@ are everywhere so that the shift do not rotate the particles' phase angle by the
 
 In `` passing regime", (see Fig.\ref{fig:Breathingfrequency3}(b)),the maximal shift of position in phase-space starts to decrease with the decrease of $F_0$. The shift $\delta$ decrease as $\delta\sim F_0^2$. This means the particles are localized in their original position when $F_0$ is smaller-- it is natural to get this conclusion, since the weaker the interaction is, the longer time it takes to ``relax".
 
-All our discussion before is based on the approximation that every particle collide with each other once in one period. But this is hardly true in reality. If the number of collision in every period is taken into account, these two regime looks even more different: In ``bouncing regime", the average precession speed is significant, (see Fig.\ref{fig:Breathingfrequency4}), which means each collision cause a finite precession. The fluctuation of the number of collision one particle has in each period will contribute to the divergence of their phase angles. On the contrary, in ``passing regime", (see Fig.\ref{fig:Breathingfrequency4}), the breathing frequency is close to 2, which means the average effect of collision create zero precession speed. As a result, even though the number of collision is not a constant, it has no effect on average whether one particle collide more or less in one period. 
+All our discussion before is based on the approximation that every particle collide with each other once in one period. But this is hardly true in reality. If the number of collision in every period is taken into account, these two regime looks even more different: In ``bouncing regime", the average precession speed is significant, (see Fig.\ref{fig:Breathingfrequency4}), which means each collision cause a finite precession. The fluctuation of the number of collision one particle has in each period will contribute to the divergence of their phase angles. On the contrary, in ``passing regime", (see Fig.\ref{fig:Breathingfrequency4}), the breathing frequency is close to 2, which means the average effect of collision create zero precession speed. As a result, even though the number of collision is not a constant, it has on average no effect whether one particle collide more or less in one period. 
+
+To directly check this argument, we can inspect the frequency spectrum of $R(t)$. As is shown in FIG.\ref{fig:frequencyspectrum}, when $F_0$ is very small (red curve), the peak is very sharp and peak frequency is exactly 2. When $F_0$ goes far beyond the threshold value of $\frac{E}{N\sigma}$ (blue, purple, pink, etc.), the peak becomes a wide distribution with a peak value deviated far from 2, which lead to  fast thermalization according to our argument before.
+
+\begin{figure}[hbtp]
+\centering
+\includegraphics[scale=0.5]{D:/matlab2016/MolecularDynamics/figure/latexpic/freq_spectrum_N=10_E=1000_pre.eps}
+\caption{Frequency spectrum, measured over $10^4$ time units.\label{fig:frequencyspectrum}}
+\end{figure}
+
+\subsection{Lyapunov Exponents}
+To see the time scale of ``thermalization" and ``relaxation" more systemetically, we may measure the Lyapunov Exponents. Lyapunov exponents(LE) describes how fast one orbit diverge from its nearby orbits in phase-space. The largest Lyapunov exponents (LLE) reflects  the time scale that system lose its memory in phase-space. We will measure the LLEs along our trajectory and plot its distribution.
+
+\begin{comment}
+\begin{figure}[hbtp]
+\centering
+\includegraphics[scale=0.5]{D:/matlab2016/MolecularDynamics/figure/latexpic/C_N=5_LLEevolution_F0=1000_E=3000_2.eps}
+\includegraphics[scale=0.5]{D:/matlab2016/MolecularDynamics/figure/latexpic/C_N=5_Energy_F0=1000_E=3000_2.eps} 
+\caption{N=5, F0=1000, E=3000, Gaussian interaction}
+\label{fig:LLEexample1}
+\end{figure}
+\begin{figure}[hbtp]
+\centering
+\includegraphics[scale=0.5]{D:/matlab2016/MolecularDynamics/figure/latexpic/C_N=5_LLEevolution_F0=1000_E=10000_1.eps}
+\caption{N=5, F0=1000, E=10000, Gaussian interaction}
+\label{fig:LLEexample2}
+\end{figure}
+\begin{figure}[hbtp]
+\centering
+\includegraphics[scale=0.5]{D:/matlab2016/MolecularDynamics/figure/latexpic/C_N=5_LLEevolution_F0=1000_E=100000_1.eps}
+\caption{N=5, F0=1000, E=100000, Gaussian interaction}
+\label{fig:LLEexample3}
+\end{figure}
+
+Fig.\ref{fig:LLEexample1}, fig.\ref{fig:LLEexample2} and fig.\ref{fig:LLEexample3} serve as examples showing the way I measure LLE: I integrate and average the LLE along the trajectory, usually over 100-1000 time unit, the LLE converge to certain stable value, and then I start another LLE measurement. \textbf{From the examples above, one may judge how good the convergence is and how big the error of LLE measurement can be.}
+\end{comment}
+
+\begin{figure}[hbtp]
+\centering
+\includegraphics[scale=0.4]{D:/matlab2016/MolecularDynamics/figure/latexpic/LLEdistribution_scanE_9_27_pre_screenshot.png}
+\caption{LLE distribution for N=5, F0=1000, scan E.}
+\label{fig:LLEdistribution1}
+\end{figure}
 
 
+fig.\ref{fig:LLEdistribution1} shows the distribution of LLE by color. The LLE decrease with the growth of Energy. The crucial part is near E=5000. The most probable value of LLE goes down from 1 to 0.1,which indicate that \textbf{the shortest time scale becomes longer than an oscillation period when E is larger than 5000}. And E=5000 is exactly our prediction value of thermalization threshold. So there is a correspondence between energy thermalization and LLE. 
+The size of bin(resolution of LLE) in fig.\ref{fig:LLEdistribution1} is 0.01, so when E goes far beyond the thermalization threshold, the LLE distribution is not that clear. We only know that LLE is concentrated close to zero in high E regime.
 
 %To date, we have verified that the energy distribution will go to Boltzmann distribution. However, even if a system have reached Boltzmann distribution, it doesn't mean that the system has completely ``forgotten" its initial state. There is other information that could still exist, for instance, the shape of distribution cloud in phase-space. One of the reasons why we care about this quantity is that it has a strong effect on breathing behaviour. For instance, if the distribution cloud is a thin ellipse (all particles oscillate in phase), the amplitude of oscillation of the cloud radius will be very large. On the contrary, if the cloud is a circle (particles phase of oscillation are completely random), we will not see oscillation at all. Going to equilibrium not only require the thermalization mentioned in last section, but also require reaching a stable configuration in phase-space distribution (relaxation).
 
 
-\subsubsection{Shape of Distribution in Phase-space}
+\subsection{{\color{red}{Shape of Distribution in Phase-space}}}
 If the oscillating phases of particles are highly correlated, for example, initial state with zero velocity, the shape of cloud will be a thin ellipse. If the phase of oscillation is completely random, the cloud should be isotropic in phase space. In view of this, we defined a shape factor S:
 \\$S=\frac{a-b}{a+b}$, where a and b are long axis and short axis of inertia ellipse in phase space respectively. a,b can be calculated by diagonalizing the inertia matrices I: $I_{xx}=\sum{x^2}, I_{xp}=I_{px}=\sum{xp},I_{pp}=\sum{p^2}$
 S=1 for line-shape distribution, S=0 for circular distribution.
 The time evolution of S will probably show how fast the distribution ``forget" its initial shape.  
 
-
+\begin{comment}
 \begin{figure}[hbtp]
 
 \centering
@@ -480,9 +529,10 @@ However, there is still no sufficient evidence of convergence for the overall va
 \caption{N=50, E=20000, F0=10000 ,t=1500}
 \label{fig:relaxationPS6}
 \end{figure}
+\end{comment}
 
-\newpage
-\subsection{Correspondence between energy distribution, behaviour of shape-factor and oscillation of R(t)}
+\begin{comment}
+%\subsection{Correspondence between energy distribution, behaviour of shape-factor and oscillation of R(t)}
 \begin{figure}[hbtp]
 \begin{center}
 \subfigure[$E=3E5$]{
@@ -514,45 +564,12 @@ However, there is still no sufficient evidence of convergence for the overall va
 }
 \end{center}
 \end{figure}
+\end{comment}
 
 \newpage
-\subsection{Lyapunov Exponents(unfinished)}
-Lyapunov exponents(LE) describes how fast one orbit diverge from its nearby orbits in phase-space. The largest Lyapunov exponents (LLE) reflects  the time scale that system lose its memory in phase-space. We will measure the LLEs along our trajectory and plot its distribution.
-
-\begin{figure}[hbtp]
-\centering
-\includegraphics[scale=0.5]{D:/matlab2016/MolecularDynamics/figure/latexpic/C_N=5_LLEevolution_F0=1000_E=3000_2.eps}
-\includegraphics[scale=0.5]{D:/matlab2016/MolecularDynamics/figure/latexpic/C_N=5_Energy_F0=1000_E=3000_2.eps} 
-\caption{N=5, F0=1000, E=3000, Gaussian interaction}
-\label{fig:LLEexample1}
-\end{figure}
-\begin{figure}[hbtp]
-\centering
-\includegraphics[scale=0.5]{D:/matlab2016/MolecularDynamics/figure/latexpic/C_N=5_LLEevolution_F0=1000_E=10000_1.eps}
-\caption{N=5, F0=1000, E=10000, Gaussian interaction}
-\label{fig:LLEexample2}
-\end{figure}
-\begin{figure}[hbtp]
-\centering
-\includegraphics[scale=0.5]{D:/matlab2016/MolecularDynamics/figure/latexpic/C_N=5_LLEevolution_F0=1000_E=100000_1.eps}
-\caption{N=5, F0=1000, E=100000, Gaussian interaction}
-\label{fig:LLEexample3}
-\end{figure}
-
-Fig.\ref{fig:LLEexample1}, fig.\ref{fig:LLEexample2} and fig.\ref{fig:LLEexample3} serve as examples showing the way I measure LLE: I integrate and average the LLE along the trajectory, usually over 100-1000 time unit, the LLE converge to certain stable value, and then I start another LLE measurement. \textbf{From the examples above, one may judge how good the convergence is and how big the error of LLE measurement can be.}
 
 
-\begin{figure}[hbtp]
-\centering
-\includegraphics[scale=0.8]{D:/matlab2016/MolecularDynamics/figure/latexpic/LLEdistribution_scanE_9_27.eps}
-\caption{LLE distribution for N=5, F0=1000, scan E. (It seems that MATLAB has difficulty changing .fig into .eps files. To get rid of the annoying white lines you may open this figure in MATLAB with .fig format.)}
-\label{fig:LLEdistribution1}
-\end{figure}
-
-
-fig.\ref{fig:LLEdistribution1} shows the distribution of LLE by color. The LLE decrease with the growth of Energy. The crucial part is near E=5000. The most probable value of LLE goes down from 1 to 0.1,which indicate that \textbf{the shortest time scale becomes longer than an oscillation period when E is larger than 5000}. And E=5000 is exactly our prediction value of thermalization threshold. So there is a correspondence between energy thermalization and LLE. 
-The size of bin(resolution of LLE) in fig.\ref{fig:LLEdistribution1} is 0.01, so when E goes far beyond the thermalization threshold, the LLE distribution is not that clear. We only know that LLE is concentrated close to zero in high E regime.
-
+\section{Conclusion}
  
 
 
@@ -613,7 +630,9 @@ For the green curve, in low energy limit, it takes finite time to finish half pe
 \end{figure}
 \cite{Tsuchiya2000}
 
-\bibliographystyle{plain}
-\bibliography{Interacting Classical Gas_Zhiyu_bib.bib}
+\newpage
+\renewcommand\refname{Reference}
+%\bibliographystyle{plain}
+\bibliography{E:/Reference/mybib}
  
  \end{document}
