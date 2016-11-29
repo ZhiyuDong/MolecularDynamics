@@ -16,7 +16,7 @@
             citecolor=green
             ]{hyperref}
  \begin{document}
- \title{Interacting Classical Gas}
+ \title{One-dimensional Classical Gas in a Harmonic Trap with Repulsive Interaction}
  \author{Zhiyu}
  \affiliation{Fudan University, Shanghai, China}
  
@@ -27,6 +27,11 @@
 % \tableofcontents
 % \newpage
 \section{Introduction}
+In cold atom experiment, when BEC happens, atoms condense into their groud state. If one suddenly modify the trap potential or interaction parameter, which is just a ``quench", then the low lying collective modes will be excited. One of the most consipicuous collective phenomenon is the breathing mode. Breathing mode, also called as monopole mode, is periodic expanding and contracting behaviour of the cloud of atoms. The frequency of breathing mode is widely discussed in literature. When the atoms have interaction, it is observed that the frequncy is dependent on the interaction. xxx used mean-field technique to calculate the relation between breathing frequency and interaction[ ]. While xxx numerically calculated the frequency[ ]... BEC is a quantum gas, so the existing literature on breathing modes all focus on quantum gas. But the quantum property is not necessary to the breathing mode phenomenon, though the question of breathing mode generate from BEC. For classical gas, there is also such breathing behaviour. So a natural question would be asked is, how do the breathing frequency of classical gas dependent on interaction or other parameters. Surprisingly, to the best of our knowledge this question is not answered yet in the literature and thus need study.
+
+Moreover, in a nonquilibrium many-body system, a more intriguing question is about its thermalization or relaxation property. Thermalization is among the most fundamental process for a many-body interacting system. All systems do not thermalize. An example is the Fermi–Pasta–Ulam paradox [ ] where shows confinement in phase-space so that the system stay non-thermalized for a long time. A lot of research on thermalization property has been done in other classical system. H De Raedt, et al. studied the one dimensional gravitational system with Lyapunov exponents[ ]. xxx studied the ring of harmonic oscillators and magnetic moment by examine the canonical distribution of a subsystem[ ].
+
+In this paper, we answer these two questions. In the first part, we give an estimation of breathing, along with its explanation, and compare that with the numerical simulation result. We will also show a rotating frame method of treating this problem, which is a convenient tool to analyze simple harmonic systems. In the second part, we study the thermalization property. We first examine the canonical disribution of energy to find out the threshold of thermalization, i.e. under what parameter the thermalization time scale is very large. Then we point out that there are two kind of thermalization (or relaxation) behaviour that could be measured in this system. In the end we measure the Lyapunov Exponent to quantify the time scales and confirm the former discussion.
 
 
 \section{Preparation}
@@ -407,7 +412,7 @@ To directly check this argument, we can inspect the frequency spectrum of $R(t)$
 \end{figure}
 
 \subsection{Lyapunov Exponents}
-To see the time scale of ``thermalization" and ``relaxation" more systemetically, we may measure the Lyapunov Exponents. Lyapunov exponents(LE) describes how fast one orbit diverge from its nearby orbits in phase-space. The largest Lyapunov exponents (LLE) reflects  the time scale that system lose its memory in phase-space. We will measure the LLEs along our trajectory and plot its distribution.
+To see the time scale of ``thermalization" and ``relaxation" more systemetically, we may measure the Lyapunov Exponents. Lyapunov exponents(LE) describes how fast one orbit diverge from its nearby orbits in phase-space. But for high dimensional system, LE is a sorectrum that manifest the instability of the trajectory along each direction. The largest Lyapunov exponents (LLE) reflects  the time scale that system lose its memory in phase-space. We will measure the LLEs along our trajectory and plot its distribution.
 
 \begin{comment}
 \begin{figure}[hbtp]
@@ -566,15 +571,16 @@ However, there is still no sufficient evidence of convergence for the overall va
 \end{figure}
 \end{comment}
 
-\newpage
+
 
 
 \section{Conclusion}
- 
+We studied the nonequilibrium property of one-dimensional classical gas with finite range repulsive interaction. We first studied the relation between breathing mode frequency and interaction parameter as well as total energy. We found the breathing frequency could be estimated by \ref{eq:breathingfrequency1}. And the mechanism behind this relation is that the momentum transfer which happens instantly in collision saves the particles some time from traveling this distance. So the physics is completely the same as hardcore particle.
+We found that the thermalization behaviour is controled by th competition between the interaction strength and the average energy. We point out that there could be two independent time scales in simple harmonic system in principle. One of them corresponds to the relaxtation time of the energy distribution. The other one corresponds to the relaxation time of the angular distribution in phase space, which will determine the decay rate of the amplitude of the breathing mode. However, with the form of interaction we used, i.e. finite range constant repusive force, we found those two time scales diverge only when interaction vanish, which is a trivial singular point. In addition, the relaxation behaviour of the angular distribution and radial distrbution in phase space are similiar. We attribute it to the fact that there is no essential bias between angular and radial transfer in phase-space for this simple form of interaction. The longest time scale is verified numerically by largest lyapunov exponent. A further question could be asked is whether there is a subtle form of interaction that could give those two time scales essentially different behaviour. The observation of two different time scales in one system would be interesting.
 
 
 
-
+\begin{comment}
 \section{others(those I haven't organized it into the text in logical order but may be useful)}
 
 \subsection{Evolution of $R(t)$ and $\sqrt{\delta^2R(t)}/R(t)$} 
@@ -628,7 +634,7 @@ For the green curve, in low energy limit, it takes finite time to finish half pe
 \caption{Frequency of relative motion with internal energy in three regime} Numbers in the legend is the value of $\frac{F_0}{m\omega_0^2\sigma}$
 \label{fig:thermalization3}
 \end{figure}
-\cite{Tsuchiya2000}
+\end{comment}
 
 \newpage
 \renewcommand\refname{Reference}
