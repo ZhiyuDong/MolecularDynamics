@@ -13,7 +13,7 @@
  \usepackage{color}
  \usepackage{xcolor}
  \usepackage{bm}
- \usepackage{hyperref}
+ \usepackage[]{hyperref}
 \hypersetup{
     colorlinks = false,
     linkbordercolor = {red},
@@ -57,7 +57,7 @@ so the Hamiltonian is
 H=\frac{1}{2}m\omega_0^2\sum_{i}x_i^2+\frac{1}{2}m\sum_i v_i^2+\sum_{\left|x_i-x_j\right|\textless\sigma}F_0\left(\sigma-\left|x_i-x_j\right|\right)
 \label{eq:preparation2}
 \end{equation}
-It can be shown that eq.\ref{eq:preparation2} can be rewrite into the following form:
+It can be shown that Eq.\ref{eq:preparation2} can be rewrite into the following form:
 \begin{equation}
 \tilde{H}=\frac{1}{2}\sum_{i}\tilde{x_i}^2+\frac{1}{2}\sum_i\left(\frac{d\tilde{x}}{d\tilde{t}}\right)^2+\sum_{\left|\tilde{x_i}-\tilde{x_j}\right|\textless 1}F_0\left(1-\left|\tilde{x_i}-\tilde{x_j}\right|\right)
 \end{equation}
@@ -77,18 +77,22 @@ In this manner, we reduced number of the parameters in our model into three: $\t
 
 \subsection{Overview}
 \subsubsection{Relation between Radius and Energy}
-The radius of the cloud R is defined as the root-mean-square of particles' position $\left\lbrace x_i\right\rbrace$. When E is very large, the interaction energy can be omitted, so E is dominated by the kinetic energy and potential energy of harmonic oscillators. Thus, $E=\omega_0^2\sum_{i}x_i^2=N\omega_0^2R^2$ 
+The radius of the cloud R is defined as the root-mean-square of particles' position $\left\lbrace x_i\right\rbrace$
+\begin{equation}
+R\equiv\left(\overline{x_i^2}\right)^\frac{1}{2}
+\label{eq:def_of_R}
+\end{equation}. When E is very large, the interaction energy can be omitted, so E is dominated by the kinetic energy and potential energy of harmonic oscillators. Thus, $E=\omega_0^2\sum_{i}x_i^2=N\omega_0^2R^2$ 
 
 
 
 \subsubsection{Ground states}
-For the ground state of this system, one could predict that \\(1) When the $\sigma$ is larger than the size of the cloud (in view of the scaling behaviour, large $\sigma$ is equivalent to \textbf{small $\mathbf{F_0}$ limit} when we fix $\sigma=1$), it can be easily shown that the ground state is crystal-like, since all every particle keeps an equal distance with its nearest neighbours, which is $\frac{2F_0}{\omega_0^2}$. The low-lying excitation is particles' independent harmonic oscillation around their equilibrium position.\\(2) When \textbf{$\mathbf{F_0}$ is very large} the molecules act like a hardcore gas, while the size of particle is just $\sigma$.
+For the ground state of this system, one could predict that \\(1) When the $\sigma$ is larger than the size of the cloud (in view of the scaling behaviour, large $\sigma$ is equivalent to small $F_0$ limit when we fix $\sigma=1$), it can be easily shown that the ground state is crystal-like, since all every particle keeps an equal distance with its nearest neighbours, which is $\frac{2F_0}{\omega_0^2}$. The low-lying excitation is particles' independent harmonic oscillation around their equilibrium position.\\(2) When $F_0$ is very large the molecules act like a hardcore gas, while the size of particle is just $\sigma$.
 
 In the fig.\ref{fig:GS1}, we can see this crossover from the ``solid-like" limit (left) to the ``hardcore gas" limit (right).
 
 \begin{figure}[hbtp]
 \centering
-\includegraphics[scale=0.6]{D:/matlab2016/MolecularDynamics/figure/latexpic/N=5_GS_pre_2.eps}
+\includegraphics[scale=0.6]{D:/matlab2016/MolecularDynamics/figure/latexpic/N=5_GS_pre_2_rev.eps}
 \caption{particles' position at ground states }
 \label{fig:GS1}
 \end{figure}
@@ -110,8 +114,8 @@ Furthermore, notice that X and P (normalized) are symmetric for simple harmonic 
 Since the number of particles we use in the Molecular Dynamics simulation is limited (usually 5 to 20), the random noise is significant. If we start with a state whose configuration in phase-space is an ellipse slightly deviated from circle, the oscillating amplitude will be too small to be distinguished from noise. Therefore, we start from an extreme case -- line distribution (random x, zero p) and observe the oscillation of R(t). 
 \begin{figure}[hbtp]
 \center
-\includegraphics[scale=0.6]{D:/matlab2016/MolecularDynamics/figure/latexpic/freq_scanF_differentE_log_2.eps}
-\caption{breathing mode frequency measured at different E and $F_0$}
+\includegraphics[scale=0.32]{D:/matlab2016/MolecularDynamics/figure/latexpic/freq_scanF_differentE_log_2_with_oscillation_demo.png}
+\caption{breathing mode frequency measured at different E and $F_0$. Insert: a demonstration of oscillation, $E_{trap}$ is the total potential energy of particles in the trap, which is proportional to $\sum_{is}{x_i^2}$, thus manifest the oscillation of radius R defined in Eq.\ref{eq:def_of_R}}
 \label{fig:Breathingfrequency1}
 \end{figure}
 
@@ -134,64 +138,52 @@ This picture is actually a classical version of the interaction picture. With th
 
 In our system, we choose initial velocity to be zero, which means, the particles are aligned on $X|_{t=0}$ axis in phase-space at the beginning. If the breathing frequency of the system is $\omega=\omega_0+\delta$, we will expect to see a line (which may gradually deform into an oval cloud or even an isotropic cloud) rotating at $\delta$ in rotating frame. If we plot x-p with t, we expect to see a spiral motion. Since the motion we see is an additional rotation in rotating frame, we will call it precession. This precession directly leads to the $\delta$.
 
-Fig.\ref{fig:Breathingfrequency2} and Fig.\ref{fig:Breathingfrequency2_1} show this precession motion in the rotating frame in phase-space.
+Fig.\ref{fig:Breathingfrequency2_1} show this precession motion in the rotating frame in phase-space.
 
 
-\begin{figure}
-\centering
-\includegraphics[scale=0.6]{D:/matlab2016/MolecularDynamics/figure/latexpic/rotatingframe_example2.eps} 
-\includegraphics[scale=0.6]{D:/matlab2016/MolecularDynamics/figure/latexpic/rotatingframe_example1.eps} 
-\caption{precession motion in phase-space observed in rotating frame (only show one(two) particles' trajectory in upper(lower) picture for clarity)}
-\label{fig:Breathingfrequency2}
-\end{figure}
 
 \begin{figure*}
 \subfigure[$t=0$]{
 \begin{minipage}[b]{0.18\linewidth}
-\includegraphics[scale=0.2]{D:/matlab2016/MolecularDynamics/figure/latexpic/stationary_frame_t=1-5T.eps} 
-\includegraphics[scale=0.2]{D:/matlab2016/MolecularDynamics/figure/latexpic/rotating_frame_t=1-5T.eps}
+\includegraphics[scale=0.21]{D:/matlab2016/MolecularDynamics/figure/latexpic/stationary_frame_t=1-5T_rev.eps} 
+\includegraphics[scale=0.22]{D:/matlab2016/MolecularDynamics/figure/latexpic/rotating_frame_t=1-5T_rev.eps}
 \end{minipage}
 }
 \subfigure[$t=\frac{1}{5}T$]{
 \begin{minipage}[b]{0.18\linewidth}
-\includegraphics[scale=0.2]{D:/matlab2016/MolecularDynamics/figure/latexpic/stationary_frame_t=2-5T.eps} 
-\includegraphics[scale=0.2]{D:/matlab2016/MolecularDynamics/figure/latexpic/rotating_frame_t=2-5T.eps}
+\includegraphics[scale=0.21]{D:/matlab2016/MolecularDynamics/figure/latexpic/stationary_frame_t=2-5T_rev.eps} 
+\includegraphics[scale=0.22]{D:/matlab2016/MolecularDynamics/figure/latexpic/rotating_frame_t=2-5T_rev.eps}
 \end{minipage}
 }\subfigure[$t=\frac{2}{5}T$]{
 \begin{minipage}[b]{0.18\linewidth}
-\includegraphics[scale=0.2]{D:/matlab2016/MolecularDynamics/figure/latexpic/stationary_frame_t=3-5T.eps} 
-\includegraphics[scale=0.2]{D:/matlab2016/MolecularDynamics/figure/latexpic/rotating_frame_t=3-5T.eps}
+\includegraphics[scale=0.21]{D:/matlab2016/MolecularDynamics/figure/latexpic/stationary_frame_t=3-5T_rev.eps} 
+\includegraphics[scale=0.22]{D:/matlab2016/MolecularDynamics/figure/latexpic/rotating_frame_t=3-5T_rev.eps}
 \end{minipage}
 }\subfigure[$t=\frac{3}{5}T$]{
 \begin{minipage}[b]{0.18\linewidth}
-\includegraphics[scale=0.2]{D:/matlab2016/MolecularDynamics/figure/latexpic/stationary_frame_t=4-5T.eps} 
-\includegraphics[scale=0.2]{D:/matlab2016/MolecularDynamics/figure/latexpic/rotating_frame_t=4-5T.eps}
+\includegraphics[scale=0.21]{D:/matlab2016/MolecularDynamics/figure/latexpic/stationary_frame_t=4-5T_rev.eps} 
+\includegraphics[scale=0.22]{D:/matlab2016/MolecularDynamics/figure/latexpic/rotating_frame_t=4-5T_rev.eps}
 \end{minipage}
 }\subfigure[$t=\frac{4}{5}T$]{
 \begin{minipage}[b]{0.18\linewidth}
-\includegraphics[scale=0.2]{D:/matlab2016/MolecularDynamics/figure/latexpic/stationary_frame_t=5-5T.eps} 
-\includegraphics[scale=0.2]{D:/matlab2016/MolecularDynamics/figure/latexpic/rotating_frame_t=5-5T.eps}
+\includegraphics[scale=0.21]{D:/matlab2016/MolecularDynamics/figure/latexpic/stationary_frame_t=5-5T_rev.eps} 
+\includegraphics[scale=0.22]{D:/matlab2016/MolecularDynamics/figure/latexpic/rotating_frame_t=5-5T_rev.eps}
 \end{minipage}
 }
-\caption{N=50,F0=100,E=50000}
+\caption{N=50,F0=100,E=50000. Upper(lower) five pictures are snapshot of the configuration of the cloud in the stationary(rotating) frame at t=$\frac{1}{5}T$, $\frac{2}{5}T$, $\frac{3}{5}T$, $\frac{4}{5}T$, $T$ respectively.}
 \end{figure*}
 
 
 \begin{figure*}
-\includegraphics[scale=0.2]{D:/matlab2016/MolecularDynamics/figure/latexpic/10_18rotating_frame_t=10T.eps} 
-\includegraphics[scale=0.2]{D:/matlab2016/MolecularDynamics/figure/latexpic/10_18rotating_frame_t=30T.eps}
-\includegraphics[scale=0.2]{D:/matlab2016/MolecularDynamics/figure/latexpic/10_18rotating_frame_t=50T.eps} 
-\includegraphics[scale=0.2]{D:/matlab2016/MolecularDynamics/figure/latexpic/10_18rotating_frame_t=70T.eps}
-\includegraphics[scale=0.2]{D:/matlab2016/MolecularDynamics/figure/latexpic/10_18rotating_frame_t=90T.eps} 
+\includegraphics[scale=0.23]{D:/matlab2016/MolecularDynamics/figure/latexpic/10_18rotating_frame_t=0T_rev.eps} 
+\includegraphics[scale=0.23]{D:/matlab2016/MolecularDynamics/figure/latexpic/10_18rotating_frame_t=20T_rev.eps}
+\includegraphics[scale=0.23]{D:/matlab2016/MolecularDynamics/figure/latexpic/10_18rotating_frame_t=40T_rev.eps} 
+\includegraphics[scale=0.23]{D:/matlab2016/MolecularDynamics/figure/latexpic/10_18rotating_frame_t=60T_rev.eps}
+\includegraphics[scale=0.23]{D:/matlab2016/MolecularDynamics/figure/latexpic/10_18rotating_frame_t=80T_rev.eps} 
 \caption{the precession behaviour of cloud viewed in the rotating frame in phase-space. $\frac{t}{T}=0,20,40,60,80$}
 \label{fig:Breathingfrequency2_1}
 \end{figure*}
 
-\begin{figure}
-\includegraphics[scale=0.6]{D:/matlab2016/MolecularDynamics/figure/latexpic/10_19trajectory_in_rotating_frame_t=130T_pre.eps}
-\caption{the precession behaviour of cloud viewed in the rotating frame in phase-space, one snapshot in each 10 periods.}
-\label{fig:Breathingfrequency2_2}
-\end{figure}
 
 
 \subsection{Estimating Breathing Frequency}
@@ -225,11 +217,11 @@ When $F_0$ is not that large, the frequency behaviour seems complicated (see fig
 \begin{figure}
 \centering
 \includegraphics[scale=0.6]{D:/matlab2016/MolecularDynamics/figure/latexpic/freq_scanF_scanE_pre.eps}
-\caption{dependence of breathing frequency on Energy, N=20. Different color stands for different $F_0$: {\color{red}{Red}} for $F_0$=2000; {\color{yellow}{Yellow}} for $F_0$=3000; {\color{green}{Green}} for $F_0$=10000;  {\color{blue}{Blue}} for $F_0$=100000. Run with 3 different initial states in each case, and in each run, measure the frequency in 0-100 time unit(label as crosses) and in 900-1000 time unit (label as circles). The black dashed line is the prediction of eq.\ref{eq:breathingfrequency1}.}
+\caption{dependence of breathing frequency on Energy, N=20. Different color stands for different $F_0$: {\color{red}{Red}} for $F_0$=2000; {\color{yellow}{Yellow}} for $F_0$=3000; {\color{green}{Green}} for $F_0$=10000;  {\color{blue}{Blue}} for $F_0$=100000. Run with 3 different initial states in each case, and in each run, measure the frequency in 0-100 time unit(label as crosses) and in 900-1000 time unit (label as circles). The black dashed line is the prediction of Eq.\ref{eq:breathingfrequency1}.}
 \label{fig:Breathingfrequency4}
 \end{figure}
 
-The dependence of frequency on energy and $F_0$ is shown in fig.\ref{fig:Breathingfrequency4}. For the first thing, as expected when $F_0$ is high the frequency behaviour is well-described by linear prediction eq.\ref{eq:breathingfrequency1}. Secondly, the figure shows the frequency's dependence on $F_0$. As we explained, when $F_0$ is not so large, the precession angle decrease. In language of real space, the finite $F_0$ create a finite approaching time, thus consumes the time saved by finite-range collision. As a result, the frequency should be lower when $F_0$ decrease, and reach 2 earlier.
+The dependence of frequency on energy and $F_0$ is shown in fig.\ref{fig:Breathingfrequency4}. For the first thing, as expected when $F_0$ is high the frequency behaviour is well-described by linear prediction Eq.\ref{eq:breathingfrequency1}. Secondly, the figure shows the frequency's dependence on $F_0$. As we explained, when $F_0$ is not so large, the precession angle decrease. In language of real space, the finite $F_0$ create a finite approaching time, thus consumes the time saved by finite-range collision. As a result, the frequency should be lower when $F_0$ decrease, and reach 2 earlier.
 
 the critical point that frequency falls to 2 can be estimate by:
 \begin{equation}
@@ -327,10 +319,10 @@ F_0\sigma\sim\frac{E}{N}
 \centering
 %\includegraphics[scale=0.2]{D:/matlab2016/MolecularDynamics/figure/latexpic/distribution1_scanF0_E=100_3.eps}
 %\caption{Distribution scan $F_0$, $E=100$, $N=5$, $\sigma=1$ {\color{red}{Run again!}} }
-\includegraphics[scale=0.5]{D:/matlab2016/MolecularDynamics/figure/latexpic/N=5_energydistribution_pre.eps} 
-\includegraphics[scale=0.5]{D:/matlab2016/MolecularDynamics/figure/latexpic/N=10_energydistribution_pre.eps} 
-\includegraphics[scale=0.5]{D:/matlab2016/MolecularDynamics/figure/latexpic/N=20_energydistribution_pre.eps}
-\caption{the energy distribution measured in $\sim 10000$ time units, as will be verified later, {\color{green}{green}} curves corresponds to Boltzmann distribution; {\color{red}{red}} curves are obviously non-Boltzmann, while the {\color{yellow}{yellow}} ones are intermediate case, represent ``thermalization threshold". In three figures for different N, we choose E/N identical (=1000), and thermalization is reached at $F_0=500$-$F_0=1000$, which is consistent with our prediction in eq.\ref{eq:thermalizatiton condition}}
+\includegraphics[scale=0.5]{D:/matlab2016/MolecularDynamics/figure/latexpic/N=5_energydistribution_pre_rev.eps} 
+\includegraphics[scale=0.5]{D:/matlab2016/MolecularDynamics/figure/latexpic/N=10_energydistribution_pre_rev.eps} 
+\includegraphics[scale=0.5]{D:/matlab2016/MolecularDynamics/figure/latexpic/N=20_energydistribution_pre_rev.eps}
+\caption{the energy distribution measured in $\sim 10000$ time units, as will be verified later, {\color{green}{green}} curves corresponds to Boltzmann distribution; {\color{red}{red}} curves are obviously non-Boltzmann, while the {\color{yellow}{yellow}} ones are intermediate case, represent ``thermalization threshold". In three figures for different N, we choose E/N identical (=1000), and thermalization is reached at $F_0=500$-$F_0=1000$, which is consistent with our prediction in Eq.\ref{eq:thermalizatiton condition}}
 \label{fig:thermalization5}
 
 \end{figure}
@@ -371,11 +363,11 @@ In the first picture below, we verify this argument by measuring the energy dist
 %\caption{Energy distribution, N=5, F0=10000}
 %\label{fig:thermalization8}
 
-\includegraphics[scale=0.5]{D:/matlab2016/MolecularDynamics/figure/latexpic/11_1_boltzmann_N=10_F=10000_pre.eps}
+\includegraphics[scale=0.5]{D:/matlab2016/MolecularDynamics/figure/latexpic/boltzmann_N=10_F=10000_pre_rev.eps}
 \caption{Energy distribution, N=10, F0=10000}
 \label{fig:thermalization9}
 
-\includegraphics[scale=0.5]{D:/matlab2016/MolecularDynamics/figure/latexpic/11_1_boltzmann_N=20_F=10000_pre.eps} 
+\includegraphics[scale=0.5]{D:/matlab2016/MolecularDynamics/figure/latexpic/boltzmann_N=20_F=10000_pre_rev.eps} 
 \caption{Energy distribution, N=20, F0=10000}
 \label{fig:thermalization10}
 \end{figure}
@@ -407,7 +399,7 @@ To directly check this argument, we can inspect the frequency spectrum of $R(t)$
 
 \begin{figure}[hbtp]
 \centering
-\includegraphics[scale=0.5]{D:/matlab2016/MolecularDynamics/figure/latexpic/freq_spectrum_N=10_E=1000_pre.eps}
+\includegraphics[scale=0.5]{D:/matlab2016/MolecularDynamics/figure/latexpic/freq_spectrum_N=10_E=1000_pre_rev.eps}
 \caption{Frequency spectrum, measured over $10^4$ time units.\label{fig:frequencyspectrum}}
 \end{figure}
 
@@ -440,9 +432,29 @@ Fig.\ref{fig:LLEexample1}, fig.\ref{fig:LLEexample2} and fig.\ref{fig:LLEexample
 
 \begin{figure}[hbtp]
 \centering
-\includegraphics[scale=0.4]{D:/matlab2016/MolecularDynamics/figure/latexpic/LLEdistribution_scanE_9_27_pre_screenshot.png}
+\includegraphics[scale=0.4]{D:/matlab2016/MolecularDynamics/figure/latexpic/LLEdistribution_1_11_pre_screenshot.png}
+\includegraphics[scale=0.4]{D:/matlab2016/MolecularDynamics/figure/latexpic/LLEdistribution_1_11_pre_1_screenshot.png}
+\includegraphics[scale=0.4]{D:/matlab2016/MolecularDynamics/figure/latexpic/LLEdistribution_1_11_pre_2_screenshot.png}
 \caption{LLE distribution for N=5, F0=1000, scan E.}
 \label{fig:LLEdistribution1}
+\end{figure}
+\begin{figure}[hbtp]
+\centering
+\includegraphics[scale=0.4]{D:/matlab2016/MolecularDynamics/figure/latexpic/LLEdistribution_1_11_pre_hot_screenshot.png}
+\includegraphics[scale=0.4]{D:/matlab2016/MolecularDynamics/figure/latexpic/LLEdistribution_1_11_pre_hot1_screenshot.png}
+\caption{``hot". top(bottom): default(modified)}
+\end{figure}
+\begin{figure}[hbtp]
+\centering
+\includegraphics[scale=0.4]{D:/matlab2016/MolecularDynamics/figure/latexpic/LLEdistribution_1_11_pre_parula_screenshot.png}
+\includegraphics[scale=0.4]{D:/matlab2016/MolecularDynamics/figure/latexpic/LLEdistribution_1_11_pre_parula1_screenshot.png}
+\caption{``parula". top(bottom): default(modified)}
+\end{figure}
+\begin{figure}[hbtp]
+\centering
+\includegraphics[scale=0.4]{D:/matlab2016/MolecularDynamics/figure/latexpic/LLEdistribution_1_11_pre_bone_screenshot.png}
+\includegraphics[scale=0.4]{D:/matlab2016/MolecularDynamics/figure/latexpic/LLEdistribution_1_11_pre_bone1_screenshot.png}
+\caption{``bone". top(bottom): default(modified)}
 \end{figure}
 
 
@@ -571,9 +583,6 @@ However, there is still no sufficient evidence of convergence for the overall va
 \end{figure}
 \end{comment}
 
-
-
-
 \section{Conclusion}
 We studied the nonequilibrium property of one-dimensional classical gas with finite range repulsive interaction. We first studied the relation between breathing mode frequency and interaction parameter as well as total energy. We found the breathing frequency could be estimated by \ref{eq:breathingfrequency1}. And the mechanism behind this relation is that the momentum transfer which happens instantly in collision saves the particles some time from traveling this distance. So the physics is completely the same as hardcore particle.
 We found that the thermalization behaviour is controled by th competition between the interaction strength and the average energy. We point out that there could be two independent time scales in simple harmonic system in principle. One of them corresponds to the relaxtation time of the energy distribution. The other one corresponds to the relaxation time of the angular distribution in phase space, which will determine the decay rate of the amplitude of the breathing mode. However, with the form of interaction we used, i.e. finite range constant repusive force, we found those two time scales diverge only when interaction vanish, which is a trivial singular point. In addition, the relaxation behaviour of the angular distribution and radial distrbution in phase space are similiar. We attribute it to the fact that there is no essential bias between angular and radial transfer in phase-space for this simple form of interaction. The longest time scale is verified numerically by largest lyapunov exponent. A further question could be asked is whether there is a subtle form of interaction that could give those two time scales essentially different behaviour. The observation of two different time scales in one system would be interesting.
@@ -635,14 +644,7 @@ For the green curve, in low energy limit, it takes finite time to finish half pe
 \label{fig:thermalization3}
 \end{figure}
 \end{comment}
-\cite{Dalfovo1997}
-\cite{Tschischik2013}
-\cite{Tschischik2015}
-\cite{Guery-Odelin1999}
-\cite{Yawn1997}
-\cite{El-Zant1998}
-\cite{Jin1996}
-\cite{Tsuchiya2000}
+
 \bibliography{mybib}
  
  \end{document}
