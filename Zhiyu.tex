@@ -115,7 +115,7 @@ Since the number of particles we use in the Molecular Dynamics simulation is lim
 \begin{figure}[hbtp]
 \center
 \includegraphics[scale=0.32]{D:/matlab2016/MolecularDynamics/figure/latexpic/freq_scanF_differentE_log_2_with_oscillation_demo.png}
-\caption{breathing mode frequency measured at different E and $F_0$. Insert: a demonstration of oscillation, $E_{trap}$ is the total potential energy of particles in the trap, which is proportional to $\sum_{is}{x_i^2}$, thus manifest the oscillation of radius R defined in Eq.\ref{eq:def_of_R}}
+\caption{breathing mode frequency measured at different E and $F_0$. Insert: a demonstration of oscillation, $E_{trap}$ is the total potential energy of particles in the trap, which is proportional to $\sum_{is}{x_i^2}$, thus manifest the oscillation behaviour of radius R(t) defined in Eq.\ref{eq:def_of_R}. The breathing frequency is measured by taking Fourier transformation of R(t).}
 \label{fig:Breathingfrequency1}
 \end{figure}
 
@@ -430,31 +430,18 @@ To see the time scale of ``thermalization" and ``relaxation" more systemetically
 Fig.\ref{fig:LLEexample1}, fig.\ref{fig:LLEexample2} and fig.\ref{fig:LLEexample3} serve as examples showing the way I measure LLE: I integrate and average the LLE along the trajectory, usually over 100-1000 time unit, the LLE converge to certain stable value, and then I start another LLE measurement. \textbf{From the examples above, one may judge how good the convergence is and how big the error of LLE measurement can be.}
 \end{comment}
 
+
 \begin{figure}[hbtp]
 \centering
-\includegraphics[scale=0.4]{D:/matlab2016/MolecularDynamics/figure/latexpic/LLEdistribution_1_11_pre_screenshot.png}
-\includegraphics[scale=0.4]{D:/matlab2016/MolecularDynamics/figure/latexpic/LLEdistribution_1_11_pre_1_screenshot.png}
-\includegraphics[scale=0.4]{D:/matlab2016/MolecularDynamics/figure/latexpic/LLEdistribution_1_11_pre_2_screenshot.png}
-\caption{LLE distribution for N=5, F0=1000, scan E.}
-\label{fig:LLEdistribution1}
-\end{figure}
-\begin{figure}[hbtp]
-\centering
-\includegraphics[scale=0.4]{D:/matlab2016/MolecularDynamics/figure/latexpic/LLEdistribution_1_11_pre_hot_screenshot.png}
 \includegraphics[scale=0.4]{D:/matlab2016/MolecularDynamics/figure/latexpic/LLEdistribution_1_11_pre_hot1_screenshot.png}
-\caption{``hot". top(bottom): default(modified)}
+\includegraphics[scale=0.4]{D:/matlab2016/MolecularDynamics/figure/latexpic/LLEdistribution_1_11_pre_hot2_screenshot.png}
+\caption{LLE distribution for N=5, F0=1000, scan E.``hot". top(bottom):modified(reversed)}
 \end{figure}
 \begin{figure}[hbtp]
 \centering
-\includegraphics[scale=0.4]{D:/matlab2016/MolecularDynamics/figure/latexpic/LLEdistribution_1_11_pre_parula_screenshot.png}
-\includegraphics[scale=0.4]{D:/matlab2016/MolecularDynamics/figure/latexpic/LLEdistribution_1_11_pre_parula1_screenshot.png}
-\caption{``parula". top(bottom): default(modified)}
-\end{figure}
-\begin{figure}[hbtp]
-\centering
-\includegraphics[scale=0.4]{D:/matlab2016/MolecularDynamics/figure/latexpic/LLEdistribution_1_11_pre_bone_screenshot.png}
 \includegraphics[scale=0.4]{D:/matlab2016/MolecularDynamics/figure/latexpic/LLEdistribution_1_11_pre_bone1_screenshot.png}
-\caption{``bone". top(bottom): default(modified)}
+\includegraphics[scale=0.4]{D:/matlab2016/MolecularDynamics/figure/latexpic/LLEdistribution_1_11_pre_bone2_screenshot.png}
+\caption{``bone". top(bottom):modified(reversed)}
 \end{figure}
 
 
