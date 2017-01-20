@@ -427,10 +427,18 @@ The size of bin(resolution of LLE) in fig.\ref{fig:LLEdistribution1} is 0.01, so
 \subsection{{\color{red}{Shape of Distribution in Phase-space}}}
 %To date, we have verified that the energy distribution will go to Boltzmann distribution. However, even if a system have reached Boltzmann distribution, it doesn't mean that the system has completely ``forgotten" its initial state. There is other information that could still exist, for instance, the shape of distribution cloud in phase-space. One of the reasons why we care about this quantity is that it has a strong effect on breathing behavior. For instance, if the distribution cloud is a thin ellipse (all particles oscillate in phase), the amplitude of oscillation of the cloud radius will be very large. On the contrary, if the cloud is a circle (particles phase of oscillation are completely random), we will not see oscillation at all. Going to equilibrium not only require the thermalization mentioned in last section, but also require reaching a stable configuration in phase-space distribution (relaxation).
 
-If the oscillating phases of particles are highly correlated, for example, initial state with zero velocity, the shape of cloud will be a thin ellipse. If the phase of oscillation is completely random, the cloud should be isotropic in phase space. In view of this, we defined a shape factor S:
-\\$S=\frac{a-b}{a+b}$, where a and b are long axis and short axis of inertia ellipse in phase space respectively. a,b can be calculated by diagonalizing the inertia matrices I: $I_{xx}=\sum{x^2}, I_{xp}=I_{px}=\sum{xp},I_{pp}=\sum{p^2}$
-S=1 for line-shape distribution, S=0 for circular distribution.
-The time evolution of S will probably show how fast the distribution ``forget" its initial shape.  
+If the oscillating phases of particles are highly correlated, for example, initial state with zero velocity, the shape of cloud will be a thin ellipse. If the phase of oscillation is completely random, the cloud should be isotropic in phase space. In view of this, we defined a shape polarization S:
+\\$S=\frac{a-b}{a+b}$, where a and b are long axis and short axis of inertia ellipse in phase space respectively. a,b can be calculated by diagonalizing the inertia matrices I: $I_{xx}=\sum{x^2}, I_{xp}=I_{px}=\sum{xp},I_{pp}=\sum{p^2}$. S=1 for line-shape distribution, S=0 for circular distribution. The time evolution of S will probably show how fast the distribution ``forget" its initial shape.  
+
+\begin{figure}
+\centering
+\includegraphics[scale=0.4]{ZhiyuPictures/N=20_shape_F=1000_E=3000.eps}
+\includegraphics[scale=0.4]{ZhiyuPictures/N=20_shape_F=1000_E=20000.eps}
+\includegraphics[scale=0.4]{ZhiyuPictures/N=20_shape_F=1000_E=100000.eps}
+\caption{N=20, F=1000, E=3000(top), E=20000(middle), E=100000(bottom). All start with initial states S=1. \label{fig:shape}}
+\end{figure}
+
+The time evolution of shape polarization S is shown in Fig.\ref{fig:shape}, when E is much lower than the thermalizaion threshold, S decreases to 0.3 in almost no time. On the contrary, when E is much higher than the threshold value, it takes a long time for S to dacay.
 
 
 \section{Conclusion}
