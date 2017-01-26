@@ -378,7 +378,7 @@ It is evident form $Nk_BT=E$ that the slope of Boltzmann distribution in this fi
 In fig.\ref{fig:thermalization9} and fig.\ref{fig:thermalization10}, the curve is slightly deviated from the standard Boltzmann distribution, which is probably due to the contribution of density of states (DOS). Possibility is proportional to Boltzmann exponential factor multiplied by density of states. The reason why we did not take DOS into account previously lies in that the DOS is a constant for simple harmonic oscillator. However, for simple harmonic oscillators with short range interaction, the energy shell is deformed in the small region of $|x_i-x_j|<\sigma$ so that the DOS is no longer a constant. But since $\sigma<<R$, one can think of this as a small modification. Therefore, the tendency of the curve in fig.\ref{fig:thermalization9} and fig.\ref{fig:thermalization10} is deviated slightly from Boltzmann distribution.
  
 
-
+\begin{comment}
 \subsection{Relaxation in Phase-space}
 
 When describing simple harmonic motion, it is usually convenient to use the language of phase-space (of single particle). In the phase-space, the motion becomes circular, so each of these particles has two independent degree of freedom, i.e., modulus and phase angle. Here, independent means that the simple harmonic oscillation never ``mix" these two degrees of freedom. In view of this, when it comes to ``thermalization", one may notice that the thermalization of energy, which is just the modulus, does not ensure the thermalization of phase angle. To distinguish these two kind of meanings of ``thermalization", we will call the process of energy distribution going to equilibrium ``thermalization", while the process of phase angle going to equilibrium ``relaxation". The time scale of thermalization and relaxation could be different in principle. We start with the configuration where particles' velocities are set to be zero, which means in phase-space the cloud is line shape at the beginning. If the time scale of thermalization is much longer than that of relaxation, we will see cloud going to isotropic in a short time, and radius distribution slowly evolves to Boltzmann distribution. If the relaxation time is longer than the thermalization time, the cloud will maintain elliptical shape or elliptical shape for a long time while the radius distribution is already Boltzmann.
@@ -399,6 +399,8 @@ To directly check this argument, we can inspect the frequency spectrum of $R(t)$
 \includegraphics[scale=0.5]{ZhiyuPictures/freq_spectrum_N=10_E=1000_pre_rev.eps}
 \caption{Frequency spectrum, measured over $10^4$ time units.\label{fig:frequencyspectrum}}
 \end{figure}
+
+\end{comment}
 
 \subsection{Lyapunov Exponents}
 To see the time scale of ``thermalization" and ``relaxation" more systematically, we may measure the Lyapunov Exponents. Lyapunov Exponents(LE) describes how fast one orbit diverge from its nearby orbits in phase-space. But for high dimensional system, LE is a spectrum that manifest the instability of the trajectory along each direction. The largest Lyapunov exponents (LLE) reflects the time scale that system lose its memory in phase-space. We will measure the LLEs along our trajectory and plot its distribution.
@@ -426,38 +428,107 @@ The size of bin(resolution of LLE) in fig.\ref{fig:LLEdistribution1} is 0.01, so
 
 \subsection{{\color{red}{Shape of Distribution in Phase-space}}}
 %To date, we have verified that the energy distribution will go to Boltzmann distribution. However, even if a system have reached Boltzmann distribution, it doesn't mean that the system has completely ``forgotten" its initial state. There is other information that could still exist, for instance, the shape of distribution cloud in phase-space. One of the reasons why we care about this quantity is that it has a strong effect on breathing behavior. For instance, if the distribution cloud is a thin ellipse (all particles oscillate in phase), the amplitude of oscillation of the cloud radius will be very large. On the contrary, if the cloud is a circle (particles phase of oscillation are completely random), we will not see oscillation at all. Going to equilibrium not only require the thermalization mentioned in last section, but also require reaching a stable configuration in phase-space distribution (relaxation).
+When describing simple harmonic motion, it is usually convenient to use the language of phase-space (of single particle). In the phase-space, the motion becomes circular, so each of these particles has two independent degree of freedom, i.e., modulus and phase angle. Here, independent means that the simple harmonic oscillation never ``mix" these two degrees of freedom. In view of this, when it comes to ``thermalization", one may notice that the thermalization of energy, which is just the modulus, does not ensure the thermalization of phase angle. To distinguish these two kind of meanings of ``thermalization", we will call the process of energy distribution going to equilibrium ``thermalization", while the process of phase angle going to equilibrium ``relaxation". The time scale of thermalization and relaxation could be different in principle. We start with the configuration where particles' velocities are set to be zero, which means in phase-space the cloud is a rotating narrow ellipse at the beginning. If the time scale of thermalization is much longer than that of relaxation, we will see cloud going to some stable shape in a short time, e.g. a circle in high energy. Meanwhile, the distribution of particle number  along radius slowly evolves to Boltzmann distribution. If the relaxation time is longer than the thermalization time, the cloud will maintain elliptical shape or some oscillation between different shapes for a long time while the radius distribution is already Boltzmann.
 
-If the oscillating phases of particles are highly correlated, for example, initial state with zero velocity, the shape of cloud will be a thin ellipse. If the phase of oscillation is completely random, the cloud should be isotropic in phase space. In view of this, we defined a shape polarization S:
-\\$S=\frac{a-b}{a+b}$, where a and b are long axis and short axis of inertia ellipse in phase space respectively. a,b can be calculated by diagonalizing the inertia matrices I: $I_{xx}=\sum{x^2}, I_{xp}=I_{px}=\sum{xp},I_{pp}=\sum{p^2}$. S=1 for line-shape distribution, S=0 for circular distribution. The time evolution of S will probably show how fast the distribution ``forget" its initial shape.  
+To quantify the shape of distribution in phase-space, we defined a shape polarization S:
+\begin{equation}
+S=\frac{a-b}{a+b}
+\end{equation}
+where a and b are long axis and short axis of inertia ellipse in phase space respectively. a,b can be calculated by diagonalizing the inertia tensor I: $I_{xx}=\sum{p^2}, I_{xp}=I_{px}=-\sum{xp},I_{pp}=\sum{x^2}$. S=1 for line-shape distribution, S=0 for circular distribution. The advantage of defining the S lies in that S is independent of all rotating behavior of the cloud in phase-space and thus extract the information of shape alone. One could also use eigenvalues of quadrupole moment Q to define S, since the inertia tensor I is similar to quadrupole moment Q (only different up to a factor and an identity matrix).
 
-\begin{figure}
-\centering
+
+
+%First, let's see the overall value of S in Fig.\ref{fig:shape}. In Fig.\ref{fig:shape}, each data point is the average of S over several periods to show the overall value of S. If the shape relax to equilibrium, the overall value should decrease to zero. At first sight, it seems S does relax, and the conclusion looks similar to the one we got from Boltzmann distribution--When energy is lower than thermalizing threshold(top pannel), S relax in almost no time; when energy is higher than thermalizing threshold(bottom pannel), it takes a relativly long time for S to relax. The reason why S never decay to zero could be explained as the contribution of random fluctuation, since S is defined to be positive.
+
+%However, it is not the whole story. If we inspect the original data or smoothen it by taking a finer average, e.g. average over 0.2 time units (Fig.\ref), we will see the ''sinusoidal"  oscillation of S (S is defined to be positive) with a period of about $2\pi$ time units. So the whole picture is that the shape of the cloud is oscillating: \\elliptical with long axis lying along x axis $\rightarrow$ circular $\rightarrow$ elliptical with long axis lying along y axis $\rightarrow$ circular ...
+
+%If we think of the cloud as 2D cloud in x-p space, we have 2D monopole, dipole and quadrupole mode. In our system, since energy conserves, $x^2+p^2$ is a constant interaction energy is neglected), the monopole mode do not exist. And dipole mode describes the center of mass of the cloud oscillate along x or p, but since we set center of mass to be stationary and at x=0, neither does this mode exist. The lowest order mode is quadrupole mode.
+
+The time evolution of S is shown in Fig.\ref{fig:time_evolution_of_S}. The top three pannels are the overall value of S, where every data point is the average value of original data over several period (about $2\pi$ time unit). The lower six pannels are the original data measured in the beginning and after thousands of time units, which shows the finer structure in one period. 
+
+\begin{figure*}
+\subfigure[$N=20, F_0=1000, E=3000$]{
+\begin{minipage}[b]{0.3\linewidth}
 \includegraphics[scale=0.4]{ZhiyuPictures/N=20_shape_F=1000_E=3000_1.eps}
-\includegraphics[scale=0.4]{ZhiyuPictures/N=20_shape_F=1000_E=20000.eps}
-\includegraphics[scale=0.4]{ZhiyuPictures/N=20_shape_F=1000_E=100000.eps}
-\caption{N=20, F=1000, E=3000(top), E=20000(middle), E=100000(bottom). All start with initial states S=1. Five different curves in each picture represent simulating with 5 random initial states in each case. \label{fig:shape}}
-\end{figure}
+\includegraphics[scale=0.4]{ZhiyuPictures/N=20_shape_F=1000_E=3000_2_crude_begin.eps}
+\includegraphics[scale=0.4]{ZhiyuPictures/N=20_shape_F=1000_E=3000_2_crude_end.eps}
+\end{minipage}
+}
+\subfigure[$N=20, F_0=1000, E=20000$]{
+\begin{minipage}[b]{0.3\linewidth}
+\includegraphics[scale=0.4]{ZhiyuPictures/N=20_shape_F=1000_E=20000_1.eps}
+\includegraphics[scale=0.4]{ZhiyuPictures/N=20_shape_F=1000_E=20000_2_crude_begin.eps}
+\includegraphics[scale=0.4]{ZhiyuPictures/N=20_shape_F=1000_E=20000_2_crude_end.eps}
+\end{minipage}
+}
+\subfigure[$N=20, F_0=1000, E=100000$]{
+\begin{minipage}[b]{0.3\linewidth}
+\includegraphics[scale=0.4]{ZhiyuPictures/N=20_shape_F=1000_E=100000_1.eps}
+\includegraphics[scale=0.4]{ZhiyuPictures/N=20_shape_F=1000_E=100000_2_crude_begin.eps}
+\includegraphics[scale=0.4]{ZhiyuPictures/N=20_shape_F=1000_E=100000_2_crude_end.eps}
+\end{minipage}
+}
+\caption{Time evolution of S in low-enrgy regime(a), intermidiate(b), high-energy regime(c). The overall value (top three pannels), where every point represent the average of original data over several periods, show that S decays to a low value in a short time in low-energy case, but persist for a relative long time in high-energy case. The snapshots of original data at beginning and after thousands of periods evolution are shown in the lower six pannels. The finer structure of S(t) indicates that there is some long-lasting oscillating mode. Especially in low-energy case, the amplitude is more conspicuous.}\label{fig:time_evolution_of_S}
+\end{figure*}
+
+%\begin{figure}
+%\centering
+%\includegraphics[scale=0.4]{ZhiyuPictures/N=20_shape_F=1000_E=3000_1.eps}
+%\includegraphics[scale=0.4]{ZhiyuPictures/N=20_shape_F=1000_E=20000.eps}
+%\includegraphics[scale=0.4]{ZhiyuPictures/N=20_shape_F=1000_E=100000.eps}
+%\caption{N=20, F=1000, E=3000(top), E=20000(middle), E=100000(bottom). All start with initial states S=1. Five different curves in each picture represent simulating with 5 random initial states in each case. \label{fig:shape}}
+%\end{figure}
+
+
+%\begin{figure*}
+%\centering
+%\includegraphics[scale=0.4]{ZhiyuPictures/N=20_shape_F=1000_E=3000_original1.eps}
+%\includegraphics[scale=0.4]{ZhiyuPictures/N=20_shape_F=1000_E=3000_original2.eps}
+%\caption{N=20, F=1000, E=3000. Original data}
+%\end{figure*}
+
+%\begin{figure*}
+%\centering
+%\includegraphics[scale=0.4]{ZhiyuPictures/N=20_shape_F=1000_E=3000_1_fine1.eps}
+%\includegraphics[scale=0.4]{ZhiyuPictures/N=20_shape_F=1000_E=3000_1_fine2.eps}
+%\caption{N=20, F=1000, E=3000. Start with initial states S=1. Smoothened (every point represents taking the average of S in 0.2 time unit)}
+%\end{figure*}
+
+The original data can be decomposed into two components: the background value and the frequent fluctuation(sharp peaks and dips) on the background. The fluctuation is generated from the two-particle transportation process(See Fig.\ref{fig:Breathingfrequency3}), e.g. a pair transportation event along the long-axis of the cloud makes a dip. In the thermalized regime (Fig.\ref{fig:time_evolution_of_S}), the background value of S is oscillating with an amplitude of 0.2-0.4 and does not decay to zero over 4000 time unit. In the high-energy case, the amplitude of background oscillation is small compared with fluctuation. We assume that over a long enough time, all macroscopic quantity should be constant because the randomness has wash out all possible orders to make entropy as large as possible. Since we see a periodical behaviour of S, we know the whole system doesn't relax to its equilibrium state.  
+
+The oscillating background value of S indicate that the shape of the cloud in phase space is deformed periodically between a circle and an ellipse($S=0.4$ means $\frac{a}{b}\sim 2.5$). To further reveal the nature of this oscillating mode, we focus on the low-energy case and plot the distribution of the cloud in the phase space as Fig.\ref{fig:N=50_F=1000_E=30000_movie}. The time interval between each pannels is $0.1*2\pi$ time units. The direction of the yellow arrows and red arrows are the eigenvector of inertia tensor, while their lengths are the square root of correspondent eigenvalue (I take the squareroot to maintain the length unit). In most of the pannels in Fig.\ref{fig:N=50_F=1000_E=30000_movie}, the long and short axis are rotating and extending or contracting continuosly. The exception is the 3rd and 4th pannel in the first row, 2nd and 3rd pannel in the second row, 1st and 2nd pannel in the third row. At those moment, the long and short axis are almost equal, giving the system a chance to choose a new preferred axis to polarize. The whole picture of this collective mode can be described by Fig.\ref{fig:Schemetic_description_of_the_mode}, which is consistant with the pattern of time evolution of S shown in Fig.\ref{fig:N=50_F=1000_E=30000_Send}.
+
+
 
 \begin{figure*}
 \centering
-\includegraphics[scale=0.4]{ZhiyuPictures/N=20_shape_F=1000_E=3000_original1.eps}
-\includegraphics[scale=0.4]{ZhiyuPictures/N=20_shape_F=1000_E=3000_original2.eps}
-\caption{N=20, F=1000, E=3000. Original data}
+\includegraphics[scale=0.5]{ZhiyuPictures/N=50_F=1000_E=30000_shapemovie_interval0_628_2_500s.eps}
+\caption{Distribution in phase-space after evolving for about 500 time units ($N=50, F_0=1000, E=30000$). Please notice that the yellow(red) arrows shows the length of long(short) axis of inertia ellipse, which is prependicular to the long(short) axis of distribution cloud. For instance, if the yellow arrow lies in p-axis, it means the long axis of distribution cloud is lying along x-axis.}\label{fig:N=50_F=1000_E=30000_movie}
 \end{figure*}
 
 \begin{figure*}
 \centering
-\includegraphics[scale=0.4]{ZhiyuPictures/N=20_shape_F=1000_E=3000_1_fine1.eps}
-\includegraphics[scale=0.4]{ZhiyuPictures/N=20_shape_F=1000_E=3000_1_fine2.eps}
-\caption{N=20, F=1000, E=3000. Start with initial states S=1. Smoothened (every point represents taking the average of S in 0.2 time unit)}
+\includegraphics[scale=0.4]{ZhiyuPictures/quadrupole_mode_2.png}
+\caption{Schemetic description of the excited mode.  Red ellipse is the shape of cloud in low-energy regime when there is repulsive interaction. Gray cloud is the imaginary shape of cloud when there is no interaction, they are plotted here as a reference. One may think of the effect of interaction as a kind of potential that prefer to place particles along x axis, because in low energy regime the system is not allowed to be squeezed too much along x axis since doing this cost a large amount of interaction energy.}\label{fig:Schemetic_description_of_the_mode}
 \end{figure*}
 
-The time evolution of shape polarization S is shown in Fig.\ref{fig:shape}, when E is much lower than the thermalizaion threshold, S decreases to 0.3 in almost no time. On the contrary, when E is much higher than the threshold value, it takes a long time for S to dacay.
+\begin{figure*}
+\centering
+\includegraphics[scale=0.4]{ZhiyuPictures/N=50_F=1000_E=30000_shapemovie_interval0_628_2_500s_Send.eps}
+\caption{Time evolution of S after evolving for about 500 time units ($N=50, F_0=1000, E=30000$). The oscillating behaviour of S persists over 500 time units.}\label{fig:N=50_F=1000_E=30000_Send}
+\end{figure*}
+
+
+
+To sum up, the existence of the long-lasting oscillation of S indicate that the system does not relax to its equilibrium state in terms of shape although it is already thermalized in terms of energy distribution. With this long-lasting mode, the radius R of the cloud will keep oscillating, enabling the breathing mode to last for a long time.
+
+%The time evolution of shape polarization S is shown in Fig.\ref{fig:shape}, when E is much lower than the thermalizaion threshold, S decreases to 0.3 in almost no time. On the contrary, when E is much higher than the threshold value, it takes a long time for S to dacay.
 
 
 \section{Conclusion}
 We studied the nonequilibrium property of one-dimensional classical gas with finite range repulsive interaction. We first studied the relation between breathing mode frequency and interaction parameter as well as total energy. We found the breathing frequency could be estimated by \ref{eq:breathingfrequency1}. And the mechanism behind this relation is that the momentum transfer which happens instantly in collision saves the particles some time from traveling this distance. So the physics is completely the same as hardcore particle.
-We found that the thermalization behavior is controlled by the competition between the interaction strength and the average energy. We point out that there could be two independent time scales in simple harmonic system in principle. One of them corresponds to the relaxation time of the energy distribution. The other one corresponds to the relaxation time of the angular distribution in phase space, which will determine the decay rate of the amplitude of the breathing mode. However, with the form of interaction we used, i.e. finite range constant repulsive force, we found those two time scales diverge only when interaction vanish, which is a trivial singular point. In addition, the relaxation behavior of the angular distribution and radial distribution in phase space are similar. We attribute it to the fact that there is no essential bias between angular and radial transfer in phase-space for this simple form of interaction. The longest time scale is verified numerically by Largest Lyapunov Exponent. A further question could be asked is whether there is a subtle form of interaction that could give those two time scales essentially different behavior. The observation of two different time scales in one system would be interesting.
+We found that the thermalization behavior is controlled by the competition between the interaction strength and the average energy. We point out that there could be two independent time scales in simple harmonic system in principle. One of them corresponds to the relaxation time of the energy distribution. The other one corresponds to the relaxation time of the angular distribution in phase space, which will determine the decay rate of the amplitude of the breathing mode. We have shown that in the low-energy regime, although the energy distribution reach Boltzmann distribution within several periods of oscillation, the shape keep oscillating for thousands of periods.
+%However, with the form of interaction we used, i.e. finite range constant repulsive force, we found those two time scales diverge only when interaction vanish, which is a trivial singular point. In addition, the relaxation behavior of the angular distribution and radial distribution in phase space are similar. We attribute it to the fact that there is no essential bias between angular and radial transfer in phase-space for this simple form of interaction. The shortest time scale is verified numerically by Largest Lyapunov Exponent. A further question could be asked is whether there is a subtle form of interaction that could give those two time scales essentially different behavior. The observation of two different time scales in one system would be interesting.
 
 
 
