@@ -211,9 +211,9 @@ R\equiv\left(\overline{x_i^2}\right)^\frac{1}{2}
 \end{equation}
 and refer to as the `radius' or `cloud radius'. 
 
-In the parameter regime where the energy $E$ is very large ($E\gg F_0$), it is dominated by the trap
-energy, i.e., the interaction energy is negligible.  Thus,
-$E\approx\omega_0^2\sum_{i}x_i^2=N\omega_0^2R^2$ in this regime.
+In the dilute gas limit, there are few or no interactions occuring at most times.  Thus the energy
+$E$ is dominated by the trap energy, i.e., $E\approx m\omega_0^2\sum_{i}x_i^2= Nm\omega_0^2R^2$, or,
+in our units, $E\approx NR^2$.  
 
 
 
@@ -274,7 +274,8 @@ In Fig.\ref{fig:GS1}, we can see this crossover from the ``solid-like" limit (le
 \begin{figure*}
 \includegraphics[width=0.9\textwidth]{ZhiyuPictures/rotating_frame_t=0-80T.eps}  
 \caption{Phase space snapshots of the cloud dynamics viewed in the rotating frame, at longer
-  timescales.}
+  timescales.  The broadening and rotation observed here are interaction effects: in the
+  non-interacting gas the particles are stationary in this frame.}
 \label{fig:Breathingfrequency2_1}
 \end{figure*}
 %%%%% FIGURE %%%%% FIGURE %%%%% FIGURE %%%%% FIGURE %%%%%
@@ -338,11 +339,11 @@ zero p) and observe the oscillation of R(t).
 \begin{figure}[h]
 \center
 \includegraphics[scale=0.32]{ZhiyuPictures/freq_scanF_differentE_log_2_with_oscillation_demo.png}
-\caption{Breathing mode frequency measured at different $E$ and $F_0$. Inset: a demonstration of the
-  oscillation of $E_{trap}$, the total potential energy of particles in the trap, Since
-  $E_{trap}\propto \sum_{is}{x_i^2}$, it manifests the oscillation behavior of the radius $R(t)$ as
-  defined in Eq.~\ref{eq:def_of_R}.  The breathing frequency is obtained from the Fourier transform
-  of $R(t)$.}
+\caption{Breathing mode frequency measured at different $E$ and $F_0$, for $N=5$ particles. Inset: a
+  demonstration of the oscillation of $E_{trap}$, the total potential energy of particles in the
+  trap, Since $E_{trap}\propto \sum_{is}{x_i^2}$, it manifests the oscillation behavior of the
+  radius $R(t)$ as defined in Eq.~\ref{eq:def_of_R}.  The breathing frequency is obtained from the
+  Fourier transform of $R(t)$.}
 \label{fig:Breathingfrequency1}
 \end{figure}
 %%%%% FIGURE %%%%% FIGURE %%%%% FIGURE %%%%% FIGURE %%%%% 
@@ -357,8 +358,8 @@ Without interaction, the breathing mode frequency is exactly 2.  This is visuali
 top panel of \ref{fig:Breathingfrequency2_0}, where $R(t)$ is the extent of the distribution in the
 horizontal ($X$) direction.  As the line rotates clockwise with frequency $\omega=1$, within each
 period the line is twice horizontally aligned (maximum $R$) and twice vertically aligned (minimum
-$R$), so that the frequency of $R(t)$ is $\omega_0=2$.  When there is interaction, the frequency
-will get shifted: $\omega_0 = 2+\delta$.  We measure the radius of the cloud $R(t)$ and get the
+$R$), so that the frequency of $R(t)$ is $\omega_B=2$.  When there is interaction, the frequency
+will get shifted: $\omega_B = 2+\delta$.  We measure the radius of the cloud $R(t)$ and get the
 frequency spectrum of its oscillation behavior by Fourier transform. Then we take the peak frequency
 near 2 as the breathing mode frequency.
 
@@ -387,38 +388,14 @@ consume the time saved by the finite range of the interaction.  This explains wh
 small-$F_0$ regime for which the shift $\delta$ is negative.
 
 
+\subsection{Phase space estimate}
+
+Since we are interested in the deviation $\delta=\omega_B-2$ from the non-interacting breathing
+frequency, it is useful to work in the rotating frame, in which a non-interacting cloud would be
+stationary (non-rotating).  The rotation frequency of the cloud in this frame is then $\delta$.
 
 
----------
-
-
-To see this picture better, let us first introduce a approach to simplify this problem:
-
-\subsection{Rotating frame in Phase-space}
-If there is a non-circular distribution cloud in phase-space, e.g., a line-shape cloud in
-Fig.\ref{fig:Breathingfrequency2_0}, driven by the harmonic trap, the cloud will rotate at frequency
-$\omega_0$. When there is interaction, we may think there is a small modification of the frequency
-$\omega=\omega_0+\delta$. Now we want to understand how $\delta$ is dependent on parameters, so it
-is better to stand in the rotating frame in the phase-space. In this frame, the picture we will see
-is as follow:\\
-\begin{enumerate}[\textbf{*}]
-\item All particles are stationary when there is no interaction.
-\item The real X and P axis are rotating counter-clockwise, using real X axis to measure distance between particles to determine the interaction at each moment.
-\item When there is interaction, particles will gain a ``velocity" in phase space: $\dot{P}=F/m$ . Other effects are all cancelled by frame rotation.
-\end{enumerate}
-
-
-
-
-In our system, we choose initial velocity to be zero, which means, the particles are aligned on $X|_{t=0}$ axis in phase-space at the beginning. If the breathing frequency of the system is $\omega=\omega_0+\delta$, we will expect to see a line (which may gradually deform into an oval cloud or even an isotropic cloud) rotating at $\delta$ in rotating frame. Since the motion we see is an additional rotation in rotating frame, we will call it precession. This precession directly leads to the $\delta$ shift in breathing frequency. Fig.\ref{fig:Breathingfrequency2_1} show this precession motion in the rotating frame in phase-space.
-
-
-
-
-
-\subsection{Estimating Breathing Frequency}
-Let us begin with two-particle case. When interaction is very strong, the effect of interaction is equivalent to exchanging momentum when two particles approach each other at distance $\sigma$. In the rotating frame in phase-space, this process can be interpret as follows:
-
+%%%%% FIGURE %%%%% FIGURE %%%%% FIGURE %%%%% FIGURE %%%%% 
 \begin{figure}[h
 ]
 \subfigure[]{
@@ -434,16 +411,82 @@ Let us begin with two-particle case. When interaction is very strong, the effect
 \caption{a schematic diagram of the collision process: \textbf{(a)}When $F_0\sigma$ is large, particles can not pass each other. Subduing to a constant repulsive force in collision, their trajectory in rotating frame is a circular arc.  \textbf{(b)} When $F_0\sigma$ is small, particles easily pass each other, so that the force they feel is not continuous. Their trajectory has a turning point. The dashed bright blue trajectory is identical with the one in (a), which is the critical situation between passing and bouncing. In that case, particles have zero relative velocity when they collide. }
 \label{fig:Breathingfrequency3}
 \end{figure}
+%%%%% FIGURE %%%%% FIGURE %%%%% FIGURE %%%%% FIGURE %%%%% 
 
 
-(See Fig.\ref{fig:Breathingfrequency3}(a))Two particles flip to another line(thick gray line) which deviate a small angle $\alpha$ away from original configuration. Similar process happen when there are more particles. In every period of harmonic oscillation, each particle meet N particles and collide 2N times, while half of the collisions (N times) are between particles with huge difference in momentum, which is just the process shown in Fig.\ref{fig:Breathingfrequency3}. (As for the remaining half of collisions, colliding particles have small difference in their momentum. Let us say, both particles have positive momentum. In Fig.\ref{fig:Breathingfrequency3}, it can be shown that two particles on the same half of the P-axis seldom contribute to the rotation of distribution.)
 
-Let us estimate the precession angle $\alpha$ in one collision event by $\frac{\sigma}{R}$, which follows from the two-particle case study. Radius of the cloud R can be estimated according to $E=Nm\omega_0^2R^2$
-We will get the precession angular velocity 
+To analyze the rotation relative to the $X_{\rm rot}$-$P_{\rm rot}$ frame, we consider two-particle
+collisions.  In Figure \ref{fig:Breathingfrequency3}(a), we show schematics of such a collision near
+the trap center at strong interactions.  For very large $F_0$, the particles simply change momentum
+when they are at distance $\sigma$ from each other; this process is shown in red as two straight
+lines.  (The particles are initially at $X=\pm\frac{1}{2}\sigma$ and remain at these $X$ values,
+but exchange their momenta.)   For smaller $F_0$, there is change of both position and momentum, as shown in yellow, green
+and blue for successively weaker interactions. The blue line shows a case where $F_0$ is smaller
+enough such that the particles can actually cross each other.
+
+In Figure \ref{fig:Breathingfrequency3}(a) we show collisions for small $F_0$, so that the particles
+pass each other.  in the $X_{\rm rot}$-$P_{\rm rot}$ plane, this is seen as a turning point in the trajectory.  
+
+We now estimate $\delta$ at large $F_0$.  The relevant collision process is that shown by the red
+lines in Figure \ref{fig:Breathingfrequency3}(a).  The two particles, which are initially on the
+$X_{\rm rot}$ axis, are moved to two other points, on the thick gray line, which deviates a small
+angle $\alpha$ away from original configuration.  In every period of the harmonic oscillation, each
+particle meets each of the other particles twice.  Half of these collisions (about $N$ collision)
+are between particles with large difference in momentum, which is the process shown in
+Fig.\ref{fig:Breathingfrequency3}.  (As for the remaining half of the collisions, colliding
+particles have smaller difference in their momentume, e.g., both particles having positive
+momentum.  In this estimate we  ignore the effects of these collisions, as they clearly contribute
+far less to the rotation of the particle distribution.)
+
+The precession angle is $\alpha\sim \sigma/P$.  In our rescaled units, the momenta that the
+particles have near $x=0$ are of the order $R$, the size of the cloud.  (In phase space $R$ can be
+interpreted either as the extent in real space when the velocities are small, or as the extent in
+momentum space when the particles approach $x=0$, i.e. when the distribution is along the $P$
+direction.)  Thus, we can estimate  $\alpha\sim \sigma/R$, i.e.,   $\alpha\sim 1/R$, since our unit
+of length is $\sigma$.  This is the rotation per unit collision.  Since there are $\sim N$
+collistions per period $T=2\pi$, we have the estimate for the interaction-induced rotation per unit
+time as
 \begin{equation}
-\delta=2\omega_0\frac{N^\frac{3}{2}m^{\frac{1}{2}}E^{-\frac{1}{2}}\sigma\omega_0}{2\pi}
+\delta ~=~ 2 \frac{N}{2\pi} \frac{1}{R} ~=~  \frac{1}{\pi}  N^{3/2}E^{-1/2}
 \label{eq:breathingfrequency1}
 \end{equation}
+The factor $2$ accounts for the fact that each rotation of the elongated cloud in phase space
+corresponds to two breathing mode periods.  In the last step we have used the estimate $E\sim
+NR^2$. 
+
+
+
+---------
+
+
+
+
+
+
+%% \subsection{Estimating Breathing Frequency}
+
+%% Let us begin with two-particle case. When interaction is very strong, the effect of interaction is
+%% equivalent to exchanging momentum when two particles approach each other at distance $\sigma$. In
+%% the rotating frame in phase-space, this process can be interpret as follows:
+
+
+%% (See Fig.\ref{fig:Breathingfrequency3}(a))Two particles flip to another line(thick gray line) which
+%% deviate a small angle $\alpha$ away from original configuration. Similar process happen when there
+%% are more particles. In every period of harmonic oscillation, each particle meet N particles and
+%% collide 2N times, while half of the collisions (N times) are between particles with huge difference
+%% in momentum, which is just the process shown in Fig.\ref{fig:Breathingfrequency3}. (As for the
+%% remaining half of collisions, colliding particles have small difference in their momentum. Let us
+%% say, both particles have positive momentum. In Fig.\ref{fig:Breathingfrequency3}, it can be shown
+%% that two particles on the same half of the P-axis seldom contribute to the rotation of
+%% distribution.)
+
+%% Let us estimate the precession angle $\alpha$ in one collision event by $\frac{\sigma}{R}$, which
+%% follows from the two-particle case study. Radius of the cloud R can be estimated according to
+%% $E=Nm\omega_0^2R^2$ We will get the precession angular velocity
+%% \begin{equation}
+%% \delta=2\omega_0\frac{N^\frac{3}{2}m^{\frac{1}{2}}E^{-\frac{1}{2}}\sigma\omega_0}{2\pi}
+%% \label{eq:breathingfrequency1}
+%% \end{equation}
 
 When $F_0$ is not that large, the frequency behavior seems complicated (see Fig.\ref{fig:Breathingfrequency1}). Usually, when $F_0$ increase, frequency goes down below 2 first and then rise up and converge to some value higher than 2. The reason could also be well understood with the mechanism described before. In the discussion above, we go to high $F_0$ limit, which means particles exchange momentum in infinitesimal time. For $F_0$ is not very big, the finite interaction time should be taken into consideration. During this time, the motion of each particle in phase-space is exactly moving along the direction of the real P axis at 'velocity' $F0/m$. Since the real P axis is rotating counter-clockwise, the particle will follow a circular trajectory(orange and green dashed line in Fig.\ref{fig:Breathingfrequency3}) the $\alpha$ that we once use to estimate the precession motion should decrease with the increase of interaction time. There should be some ``critical point" where $\alpha$ goes from plus to minus (dashed green line). It is easy to see that the contribution of each collision event to the phase-space precession of the cloud is negative in Fig.\ref{fig:Breathingfrequency3})(b). So at this point, we will see the precession  slows down or even be reversed, which means the breathing frequency is 2 or a little bit lower than 2. 
 
