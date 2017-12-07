@@ -37,7 +37,7 @@ and Masudul Haque$^{2,3}$}
 
 
 \affiliation{
-  $^1$ Fudan University, Shanghai, China\\ 
+  $^1$ Department of Physics and State Key Laboratory of Surface Physics, Fudan University, Shanghai 200433, China\\ 
   $^2$ Max Planck Institute for the Physics of Complex Systems, N{\"o}thnitzer Str.~38, 01187 Dresden, Germany\\
   $^3$ Department of Theoretical Physics, Maynooth University, Co. Kildare, Ireland
 }
@@ -253,13 +253,6 @@ estimate for $R$ in terms of the energy.
 %%%%% FIGURE %%%%% FIGURE %%%%% FIGURE %%%%% FIGURE %%%%% 
 
 
-%\begin{figure}[h]
-%\centering
-%\includegraphics[scale=0.3]{D:/matlab2016/MolecularDynamics/figure/Eg1.eps}
-%\caption{ground state Energy with $F_0$}
-%\end{figure}
-%\end{comment}
-
 
 
 \subsection{Ground states}
@@ -273,14 +266,25 @@ Because of the `Heaviside theta' form of our interaction, at large enough intera
 the particles are spaced exactly at distance equal to the range $\sigma$, which is distance $1$ in
 our rescaled units.  The interaction is then effectively a `hard-core' interaction.
 
-At very small $F_0$, the energy is minimized by having the particles approximately equidistant, at
-distance $\approx 2F_0/\omega_0^2$ from each other.  In this `solid'-like state, the low-lying
+At very small $F_0$, the particles in the ground state are close enough to the trap center that each
+particle interacts with every other particle.  Equating the interaction force due to all the other
+particles with the trapping force, one finds that the position of the $i$-th particle is
+\begin{equation}
+x_i ~=~ \frac{2F_0}{m\omega_0^2} \left( i - \frac{N+1}{2} \right) ~=~ 2F_0 \left( i - \frac{N+1}{2} \right)
+\end{equation}
+where the particles are labeled $i=1$ to $i=N$ from left to right.  Thus the particles are
+equidistant in this regime.  In this `solid'-like state, the low-lying
 excitation involves independent oscillation of the particles around their equilibrium position.
 
-In Fig.\ref{fig:GS1}, we can see this crossover from the ``solid-like" limit (left) to the
-``hardcore gas" limit (right).  In between, there is a rich staircase-like structure, as the
+In this regime, the distance between the leftmost and rightmost particles is at most $\sigma=1$.
+Thus, this situation extends up to $F_0 = \frac{1}{2(N-1)}$.  For the $N=5$ case shown in Figure
+\ref{fig:GS1}, this behavior is seen up to $F_0 < 1/8$.
+
+
+In Figure \ref{fig:GS1}, we can see this crossover from the ``solid-like'' limit (left) to the
+``hardcore gas'' limit (right).  In between, there is a rich staircase-like structure, as the
 particles attempt to minimize the interaction by being at distance $>1$ from as many other particles
-as allowed by the trap energy.
+as is compatible with the trap energy.
 
 
 \subsection{Phase space snapshots}
@@ -533,13 +537,19 @@ The condition \eqref{eq_freq_turning_condition} is consistent with Figure
 \ref{fig:Breathingfrequency1}, where we noted that the critical $F_0$ grows with increasing energy.
 
 
+\subsection{Comparisons with numerical data}
 
 
 %%%%% FIGURE %%%%% FIGURE %%%%% FIGURE %%%%% FIGURE %%%%% 
 \begin{figure}[h]
 \centering
 \includegraphics[scale=0.6]{ZhiyuPictures/freq_scanF_scanE_pre_Font18.eps}
-\caption{dependence of breathing frequency on Energy, N=20. Different color stands for different $F_0$: Red for $F_0=2\times10^3$; Yellow for $F_0=3\times10^3$; Green for $F_0=1\times10^4$;  Blue for $F_0=1\times10^5$. Run with three different initial states in each case, and in each run, measure the frequency in 0-100 time unit(label as crosses) and in 900-1000 time unit (label as circles). The black dashed line is the prediction of Eq.\ref{eq:breathingfrequency1}.}
+\caption{Dependence of breathing frequency, calculated for $N=20$ particles, on energy.  Different
+  colors represent different $F_0$ --- red for $F_0=2\times10^3$, yellow for $F_0=3\times10^3$,
+  green for $F_0=1\times10^4$, and blue for $F_0=1\times10^5$.  Runs with three different initial
+  states are shown in each case.  In each run, the frequency is measured both in the time window
+  0-100 (labeled as crosses) and in the time window 900-1000 (labeled as circles). The black dashed
+  line is the prediction of Eq.~\eqref{eq:breathingfrequency1}.}
 \label{fig:Breathingfrequency4}
 \end{figure}
 %%%%% FIGURE %%%%% FIGURE %%%%% FIGURE %%%%% FIGURE %%%%% 
@@ -550,6 +560,13 @@ prediction, Eq.~\eqref{eq:breathingfrequency1}.  For large $F_0$, the frequency 
 $E^{-1/2}$ and for $F_0=10^5$ is quite close to the actual numerical values prediction
 \eqref{eq:breathingfrequency1}.  Even for smaller $F_0$, at small enough energies (larger $E^{-1/2}$
 values) the breathing mode becomes proportional to  $E^{-1/2}$. 
+
+One might ask whether the breathing frequency predictions are also valid at late times, after the
+system has `relaxed' from the initial line distribution in phase space to a more spread-out cloud,
+as we have seen in Figure \ref{fig:Breathingfrequency2_1}.  In \ref{fig:Breathingfrequency4} we show
+the breathing frequency calculated from $R(t)$ oscillations in the first 100 time units, and also
+the frequency from data in a later time window. The frequencies appear to be overall stable and dependent
+primarily on $F_0$ and $E$.  
 
 
 
@@ -566,7 +583,7 @@ It is natural to think that a many-body system with interaction will be thermali
 %%%%% FIGURE %%%%% FIGURE %%%%% FIGURE %%%%% FIGURE %%%%% 
 \begin{figure}[h]
 \centering
-\includegraphics[scale=0.2]{ZhiyuPictures/effective_potential.png}
+\includegraphics[width=0.5\textwidth]{ZhiyuPictures/effective_potential.png}
 \caption{effective potential for two-particle system}
 \label{fig:thermalization2}
 \end{figure}
