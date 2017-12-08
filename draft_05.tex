@@ -570,69 +570,117 @@ primarily on $F_0$ and $E$.
 
 
 
----------
-
-
-
 
 \section{Thermalization}\label{section:Thermalization}
-\subsection{Dynamics Study}
-It is natural to think that a many-body system with interaction will be thermalized in ``usual" case. To study the condition of thermalization is equivalent to find out the mechanism that prohibits the system from ergodic. We begin the study with two-particle motion. 
-\subsubsection{two particles}
+
+
+For any nonzero interaction, the system is expected to be ergodic for $N>2$.  Once there are many
+particles, one expects thermalization in the long-time limit.  From the few-particle perspective,
+several interesting questions pose themselves.  First, although we expect ergodicity, the question
+of how long it takes to thermalize is an open question for small $N$. We treat below a
+coarse-grained version of this question: namely, we ask whether particles show ergodic behavior
+within reasonable timescales chosen to be (somewhat arbitrarily) in the timestep range of
+$10^3$--$10^4$.  Another question is the connection between thermalization, as defined by the
+appearance of a Boltzmann distribution and other intuitive characteristics of ergodic behavior such
+as whether the single-particle phase space is isotropically occupied.  We find cases where one
+aspect is seen while the other is not.  
+
+In the subsections below, we first ***  then **** 
+
+
+
+
+
+
+\subsection{Few-particle considerations}
+
+Since we are interested in thermalization within finite timescales, it is useful to consider
+mechanisms which hinder relaxation or thermalization.  We begin with considerations of few-particle
+motion.  Since ergodicity and relaxation are generally expected to be more robust and efficient with
+larger particle numbers, consideration of small particle numbers will highlight effects which slow
+down relaxation.
+
+
 
 %%%%% FIGURE %%%%% FIGURE %%%%% FIGURE %%%%% FIGURE %%%%% 
-\begin{figure}[h]
+\begin{figure}[tbph]
 \centering
-\includegraphics[width=0.5\textwidth]{ZhiyuPictures/effective_potential.png}
-\caption{effective potential for two-particle system}
+\includegraphics[width=0.9\textwidth]{ZhiyuPictures/two_particles_a_01.pdf}
+\caption{Left: Effective potential for two-particle system.  Center and right: beats at internal
+  energy $E_i=2$ and $E_i=5$.  The curves show the individual energies of the two particles.  Here
+  $F_0=1$. In this case, the larger the $E_i$, the lower the beat frequency. }
 \label{fig:thermalization2}
 \end{figure}
 %%%%% FIGURE %%%%% FIGURE %%%%% FIGURE %%%%% FIGURE %%%%% 
 
-To see the way interaction change the orbit (energy level) of the particles, we had better start from two-particle case.
 
-We can consider their motion in their center of mass frame ``C". In frame C, one can easily show that when there is no interaction what we will see is that two particles bound together by a harmonic trap centered at C (black line in Fig.\ref{fig:thermalization2}). So their relative motion is also a harmonic oscillation. 
+\subsubsection{Two particles}
 
-In this case, the system has two frequency components. The first one is the frequency of C, which is just $\omega_0$ . The other one is the frequency of their relative motion $\omega_r$, which is slightly deviated from $\omega_0$. The deviation grows with the increase of $F_0$ and the decrease of internal energy of the pair. As a result, when $F_0$ is small or when E is large, a beat with low frequency $\omega_r-\omega_0=\delta$ will exist. This phenomenon means energy transfer between particles are inefficient, thus the thermalization should be slow. 
+We consider the two-particle motion in their center of mass frame.  The center of mass itself
+executes simple harmonic oscillation.  In the absence of interactions ($F_0=0$), the effective
+potential within the center of mass frame is itself parabolic, with the same frequency.  So their
+relative motion is also a harmonic oscillation, with the same frequency $\omega_0$.
+
+With interactions, a term $F_0(1-|r|)\theta(1-|r|)$ is added, where $r$ is the relative
+displacement; as shown in Figure \ref{fig:thermalization2}.  Now, the relative motion is no longer
+harmonic; one could regard the resulting motion has having a slightly different frequency, or a
+collection of frequencies whose center is shifted slightly from $\omega_0$.  Since the
+center-of-mass motion is still of frequency $\omega_0$, we have a superposition of slightly
+different frequencies, resulting in beating dynamics.  This is clearly seen in the time evolution of
+individual energies shown in Figure \ref{fig:thermalization2}.  The two panels correspond to
+different internal energy $E_i$ (defined as the total energy minus the center-of-mass energy).  For
+larger $E_i$, the distortion of the effective potential (at constant $F_0$) plays a smaller role in
+shifting the effective frequency of relative motion; hence the beat frequency is smaller.  
+
+This illustrates a simple mechanism hindering the redistribution of energy between particles, which
+is necessary for thermalization or relaxation.  As seen in the example dynamics shown, the
+difference in energy between the two particles is sustained over time.  Of course thermalization is
+not expected anyway in a two-particle system, but we will see below how this basic effect continues
+to play a role for larger $N$.
+
+-------
 
 
 
-\begin{figure}[h]
+%% \begin{figure}[h]
+%% \subfigure[$E_i=2$]{
+%% \begin{minipage}[b]{0.22\textwidth}
+%% \includegraphics[width=1\textwidth]{ZhiyuPictures/10_23_N=2_F0=1_Er=2_single_particle_energy_600_500_Font24.eps} 
+%% %\includegraphics[scale=0.2]{ZhiyuPictures/twoparticle_Er=2_phasespace.eps}
+%% \end{minipage}
+%% }
+%% \subfigure[$E_i=3$]{
+%% \begin{minipage}[b]{0.22\textwidth}
+%% \includegraphics[width=1\textwidth]{ZhiyuPictures/10_23_N=2_F0=1_Er=3_single_particle_energy_600_500_Font24.eps} 
+%% %\includegraphics[scale=0.2]{ZhiyuPictures/twoparticle_Er=3_phasespace.eps}
+%% \end{minipage}
+%% }
+%% \subfigure[$E_i=5$]{
+%% \begin{minipage}[b]{0.22\textwidth}
+%% \includegraphics[width=1\textwidth]{ZhiyuPictures/10_23_N=2_F0=1_Er=5_single_particle_energy_600_500_Font24.eps} 
+%% %\includegraphics[scale=0.2]{ZhiyuPictures/twoparticle_Er=5_phasespace.eps}
+%% \end{minipage}
+%% }
+%% \subfigure[$E_i=10$]{
+%% \begin{minipage}[b]{0.22\textwidth}
+%% \includegraphics[width=1\textwidth]{ZhiyuPictures/10_23_N=2_F0=1_Er=10_single_particle_energy_600_500_Font24.eps} 
+%% %\includegraphics[scale=0.2]{ZhiyuPictures/twoparticle_Er=10_phasespace.eps}
+%% \end{minipage}
+%% }
 
-\subfigure[$E_i=2$]{
-\begin{minipage}[b]{0.22\textwidth}
-\includegraphics[width=1\textwidth]{ZhiyuPictures/10_23_N=2_F0=1_Er=2_single_particle_energy_600_500_Font24.eps} 
-%\includegraphics[scale=0.2]{ZhiyuPictures/twoparticle_Er=2_phasespace.eps}
-\end{minipage}
-}
-\subfigure[$E_i=3$]{
-\begin{minipage}[b]{0.22\textwidth}
-\includegraphics[width=1\textwidth]{ZhiyuPictures/10_23_N=2_F0=1_Er=3_single_particle_energy_600_500_Font24.eps} 
-%\includegraphics[scale=0.2]{ZhiyuPictures/twoparticle_Er=3_phasespace.eps}
-\end{minipage}
-}
-\subfigure[$E_i=5$]{
-\begin{minipage}[b]{0.22\textwidth}
-\includegraphics[width=1\textwidth]{ZhiyuPictures/10_23_N=2_F0=1_Er=5_single_particle_energy_600_500_Font24.eps} 
-%\includegraphics[scale=0.2]{ZhiyuPictures/twoparticle_Er=5_phasespace.eps}
-\end{minipage}
-}
-\subfigure[$E_i=10$]{
-\begin{minipage}[b]{0.22\textwidth}
-\includegraphics[width=1\textwidth]{ZhiyuPictures/10_23_N=2_F0=1_Er=10_single_particle_energy_600_500_Font24.eps} 
-%\includegraphics[scale=0.2]{ZhiyuPictures/twoparticle_Er=10_phasespace.eps}
-\end{minipage}
-}
+%% \caption{the dependence of beat frequency on internal energy. The diagram is the energy of two
+%%   particles. Here, $F_0$ is set to be 1. In this case, the larger the $E_i$, the lower the beat
+%%   frequency. \label{fig:thermalization1}}
+%% %Actually in very low energy, we can retrieve a beat, but that is for different reason -- it is a
+%% %beat between $\omega_0$ and $\frac{\omega_0}{2}+\delta $
+%% %
+%% \end{figure}
 
-\caption{the dependence of beat frequency on internal energy. The diagram is the energy of two
-  particles. Here, $F_0$ is set to be 1. In this case, the larger the $E_i$, the lower the beat
-  frequency. \label{fig:thermalization1}}
-%Actually in very low energy, we can retrieve a beat, but that is for different reason -- it is a
-%beat between $\omega_0$ and $\frac{\omega_0}{2}+\delta $
 
-\end{figure}
+
 
 \subsubsection{More particles}
+
 Now let's consider the three-particle case. For two particle, the motion is non-chaotic. On the other hand, intuitively, we will say that three-body motion is chaotic so that the system could be ``thermalized" soon. However, in some cases, the time scale of thermalizing could still be very long. Suppose two of them, say, A and B, has small internal energy, which means their distance and relative velocity are both small. Meanwhile, suppose particle C has some energy quite different from A \& B. In this case, A \& B will often be in the interaction, while C will pass both of them at a high speed in each period. How will energy transfer between C and the two-particle system A and B? Since the relative velocity of C and the two-particle system is usually large, C will pass A-B pair in a short time $\tau\sim\frac{\sigma}{R}$ ($\tau\ll\frac{2\pi}{\omega}$). C gives A a push when approaching it, and then push A back when leaving.  As has been discussed in the two-particle case, this process is equivalent to giving A a very small velocity ($\sim O(\frac{\sigma}{R})$) in the background of a trap. Since both the position and velocity of A and B are close($|x_A-x_B|\sim\sigma$), the velocity increase of A \& B are almost the same (difference$\sim O(\frac{\sigma^2}{R^2})$). In this manner, the passing of particle C only kicks the center of mass of the A-B pair slightly, leaving the internal motion of the pair unaffected. In another word, the existence of C will not have significant effect on the energy transfer between A and B, but only ``dance" with their center of mass. The physics of the ``dance" is similar to the dance between two particle. As is shown in Fig.\ref{fig:thermalization4}, the particles with energy close to each other tends to form a pair with small internal energy and the pair's internal energy transfer is relatively stable.
 
 
