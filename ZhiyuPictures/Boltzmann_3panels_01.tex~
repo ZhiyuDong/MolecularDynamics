@@ -1,0 +1,19 @@
+\documentclass{standalone}
+
+\usepackage{graphicx}
+
+
+
+%%%%% FIGURE %%%%% FIGURE %%%%% FIGURE %%%%% FIGURE %%%%% 
+\begin{figure}[tbhp]
+\centering
+%\includegraphics[scale=0.2]{ZhiyuPictures/distribution1_scanF0_E=100_3.eps}
+%\caption{Distribution scan $F_0$, $E=100$, $N=5$, $\sigma=1$ {\color{red}{Run again!}} }
+\includegraphics[width=0.32\textwidth]{ZhiyuPictures/N=5_energydistribution_500_400_Font16.eps} 
+\includegraphics[width=0.32\textwidth]{ZhiyuPictures/N=10_energydistribution_500_400_Font16.eps}
+\includegraphics[width=0.32\textwidth]{ZhiyuPictures/N=20_energydistribution_500_400_Font16.eps}
+\caption{the energy distribution measured in $\sim 10000$ time units, as will be verified later, Green curves corresponds to Boltzmann distribution; Red curves are obviously non-Boltzmann, while the yellow ones are intermediate case, represent ``thermalization threshold". In three figures for different N, we choose E/N identical (=1000), and thermalization is reached at $F_0=500\sim1000$, which is consistent with our prediction in Eq.\ref{eq:thermalizatiton condition}}
+\label{fig:thermalization5}
+\end{figure}
+%%%%% FIGURE %%%%% FIGURE %%%%% FIGURE %%%%% FIGURE %%%%% 
+
