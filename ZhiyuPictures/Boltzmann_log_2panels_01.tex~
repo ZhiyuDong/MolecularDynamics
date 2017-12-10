@@ -1,0 +1,27 @@
+\documentclass{minimal}
+
+\usepackage{graphicx}
+\usepackage{subfigure}
+
+
+\begin{document}
+
+
+\subfigure[N=10, $F_0=1\times10^4$]{
+\begin{minipage}[b]{0.4\linewidth}
+\includegraphics[width=1\textwidth]{ZhiyuPictures/boltzmann_N=10_F=10000_500_400_Font16_lg.pdf}
+\label{fig:thermalization9}
+%\caption{Energy distribution, N=10, $F_0=1\times10^4$}
+\end{minipage}
+}
+\subfigure[N=20, $F_0=1\times10^4$]{
+\begin{minipage}[b]{0.4\linewidth}
+\includegraphics[width=1\textwidth]{ZhiyuPictures/boltzmann_N=20_F=10000_500_400_Font16_lg.pdf} 
+\label{fig:thermalization10}
+%\caption{Energy distribution, N=20, $F_0=1\times10^4$}
+\end{minipage}
+}
+
+
+
+\end{document}
