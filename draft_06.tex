@@ -58,7 +58,111 @@ Abstract --  to be written last
 
 \section{Introduction}
 
-Will write Introduction after everything else is written.  
+
+The non-equilibrium dynamics of isolated systems has been the subject of a large volume of work in
+recent years.  In particular, in the quantum context, the study of unitary quantum evolution of
+many-body and few-body systems has undergone an explosive growth.  This interest was partly fueled
+by the availability of experimental systems, e.g., trapped ultracold atomic and ionic systems, where
+non-dissipative dynamics can be studied explicitly due to excellent isolation (CITE).  There are
+also fundamental reasons for studying dynamics in isolation: recent activity has led to advances in
+the understanding of basic principles connecting quantum dynamics, quantum chaos and the emergence
+of statistical mechanics and thermalization (CITE).  For classical many-body systems, explorations
+of the connections between microscopic dynamical rules, chaos, ergodicity and statistical mechanics
+have a much longer history, dating back to the time of Boltzmann and Poincare.
+\cite{Dorfman_book_1999, Dumas_book_KAMstory, Boltzmann_legacy_book, EckmannRuelle_RMP85}.
+
+Motivated by questions and issues arising in the field of quantum many-body and few-body dynamics,
+in this work we will study the classical dynamics of a collection of interacting particles confined
+in a one-dimensional harmonic trap.  The analogs of two questions, studied intensively in the
+quantum literature, will be investigated: (1) the influence of interactions on the breathing mode
+frequency of the trapped gas, and (2) the relaxation and possible thermalization of the finite
+system under its own evolution, in the absence of any external baths or dissipation mechanisms.
+
+Experiments with cold atoms, which have had an essential motivational role for the current interest
+in many-body quantum dynamics, are generally performed in a trapping potential, either optical or
+magnetic.  As a result, in the last two decades many questions of many-body quantum physics have
+been reformulated in the presence of a harmonic trap.  The presence of a harmonic trap often results
+in new dynamical phenomena; for example the motion of vortices in a trapped condensate (CITE) has
+new features (such as precession) compared to vortex motion in uniform condensates (CITE).  Trapping
+also results in new collective phenomena which have no analog in uniform situations: for example,
+collective modes like dipole, breathing and quadrupole modes are specific to trapped many-body
+systems.  Dipole modes (center of mass oscillations) and breathing modes (size oscillations) appear
+even for one-dimensional trapped systems; higher-dimensional systems display additional, more
+complicated modes like quadrupole and scissors modes.  Because of the omnipresence of trapping
+potentials in cold-atom experiments, dipole and breathing mode dynamics are pervasive across the
+field: These modes have been intensively studied and used for diagnostic purposes since the early
+days of research with trapped quantum-degenerate gases, and continue to generate interest today
+\cite{Naegerl_Science2009, Esslinger_exp_PRL2003, collective_modes_early_papers,
+  Tschischik_BHbreathing_PRA_2013, KroenkeSchmelcher_BM, Bonitz_Review, Bouchoule_PRL2014,
+  our_superTG_PRA_2015, STG_Astrakharchik_PRL2005, STG_Chen-etal_PRA2010,
+  br_mode_long_range_interactions, 1D_breathing_mode_recent, KohnMode, Cominotti_2015,
+  ZarembaTowers_PRA2014, Wetterich_JPB2011, fermion2Dbreathing, Stringari_lowDcollective_PRA15,
+  Mazets_1Dbreathing_EPJD11}.  (CITE).
+%
+In one of the best-known experiments on quantum many-body dynamics,
+Ref.~\cite{NewtonsCradle_Nature06}, the dynamics of an integrable system (Lieb-Liniger bosons) was
+seen to have ultraslow relaxation in a trap, supposedly due to integrability.  This experiment has
+led to continuing efforts to understand how a trap breaks integrability (CITE).
+
+The presence of harmonic trapping is thus a paradigmatic aspect in the field of quantum many-body
+dynamics.  This motivates our study of classical dynamics of trapped interacting systems.  Similarly
+motivated by quantum dynamics, classical trapped dynamics of hard rods has recently been studied in
+Refs.\ \cite{DoyonSpohn_JSTAT17, Moore_arXiv17.10}, focusing on integrability-breaking effects of
+the trap.  In this work, we consider trapped classical particles which interact via a simple
+finite-range potential between any pair of particles: a constant repulsive force acts whenever the
+particles are less than a certain distance apart.  The interaction strength can be tuned, leading to
+different regimes of behavior.
+
+Our first theme will be a study of the breathing mode of the classical interacting gas, and the
+effect of interactions on the frequency of the breathing mode.  In the quantum case, this has long
+been a topic of interest for both fermions and bosons.  For bosons with short-range interactions,
+the situation has been studied in one, two and three dimensions.  At zero interactions, the
+breathing mode is twice the trapping frequency $\omega_0$ (assuming isotropic trapping) in each
+case.  A mean field (Gross-Pitaevskii) calculation gives the frequency to be $\sqrt{D+2}$ times the
+trapping frequency, where $D$ is the spatial dimension.  For three-dimensional (3D) traps, the
+mean-field description can be expected to be qualitatively correct, thus the breathing mode
+frequency is expected to change monotonically from $2\omega_0$ at zero interactions to
+$\sqrt{5}\omega_0$ at large interactions.  For 2D traps, the breathing frequency is exactly
+$2\omega_0$ for any interaction strength \cite{PitaevskiiRosch_PRA97}.  This remarkable result
+follows from a symmetry in 2D.  Classical trapped particles with scale-invariant interaction
+potentials also have breathing frequency $2\omega_0$ independent of interaction strength
+\cite{PitaevskiiRosch_PRA97}.  The interaction dependence in 1D (trapped Lieb-Liniger gas) is also
+remarkable: as the interaction is increased, the breathing frequency first decreases from
+$2\omega_0$ to the mean-field prediction $\sqrt{3}\omega_0$, and then at larger interactions
+increases again, returning to $2\omega_0$ in the infinite interaction (Tonks-Girardeau) limit
+\cite{Naegerl_Science2009, Tschischik_BHbreathing_PRA_2013, 1D_breathing_mode_recent,
+  Bouchoule_PRL2014, KroenkeSchmelcher_BM}.
+%
+The breathing mode has also been investigated extensively for fermionic systems with contact
+interactions \cite{GrimmSmith_unitaryfermions_PRA08, fermion2Dbreathing,
+  Stringari_lowDcollective_PRA15}, and also for fermionic and bosonic systems with long-range
+interactions \cite{br_mode_long_range_interactions, Bonitz_Review}.  The breathing mode has also
+been studied for a high-temperature trapped gas where a Boltzmann-equation description is valid,
+both theoretically \cite{Guery-Odelin1999} and experimentally
+\cite{Cornell_classsical_3Dexpt_NatPhys15}.
+
+In this work, we use an explicit microscopic model, rather than a Boltzmann equation approach.
+Unlike the quantum case, the harmonic potential does not impose a length scale or an energy scale.
+The interaction range can thus be scaled away by a redefinition of length, i.e., by measuring
+lengths in units of the interaction range.  There are only two important parameters determining the
+system behavior, namely the interaction strength and the energy per particle.  We find that the
+breathing mode frequency has a non-monotonic dependence on the interaction parameter.  At small
+interactions, when the particles pass through each other, the effect of collisions is to slow down
+the dynamics, so that the breathing frequency drops below the non-interacting value $2\omega_0$.  At
+very large interactions, the particles bounce off each other, a process which speeds up the size
+oscillations, resulting in the breathing frequency being larger than $2\omega_0$.
+
+Our second theme is the process of relaxation at long timescales, and possible thermalization.  This
+topic is also motivated by intense recent research in the quantum context.  In quantum isolated
+systems, thermalization is now understood in terms of the so-called eigenstate thermalization
+hypothesis (ETH), which postulates that in ergodic systems the expectation values of observables in
+individual eigenstates depend ony on the eigenenergy, and hence represents the thermal value (CITE).
+The connection to statistical mechanics is particularly difficult for explicitly finite systems, in
+which case ETH is to be understood in terms of finite size scaling (CITE).  In classical systems,
+the connection between microscopic dynamics and statistical mechanics has been continually studied
+since the 19th century.  It is generally understood that systems with positive Lyapunov exponents 
+
+
 
 ---------
 
@@ -67,6 +171,7 @@ Stat-mech from the `bottom up'.  Find papers that do the same.
 
 More detailed citations of breathing mode.  There are also papers on classical breathing mode, e.g.,
 by Bonitz.  
+
 
 Controlled and tunable experimental realizations of confined quantum systems with ultracold atoms
 enable nonequilibrium studies of quantum many-body states in novel geometries. A common feature of
@@ -185,7 +290,7 @@ other.  The force of repulsion is a constant, $F_0$, within this distance and ze
 is larger. 
 %
 \begin{equation}
-\Big| F(|x|) \Big| ~=~ \begin{cases}
+\Big| F(x) \Big| ~=~ \begin{cases}
 F_0  &\quad |x|<\sigma\\
 0  &\quad |x|>\sigma
 \end{cases}
@@ -240,11 +345,16 @@ in our units,
   E\approx NR^2 \, .
   \label{eq:E_and_R}
 \end{equation}
-This is a good approximation at large $F_0$ because, for very large interactions, the particles
-behave has hard rods which bounce off each other very rapidly, so that at most instants one can
+%
+This approximation is good when the average distance betwen particles is much larger than the
+interaction range $\sigma=1$, i.e., whenever $R\gg1$, which is the regime we consider dynamics in.
+Another way of describing this dilute-gas regime is that the gas is far from the ground state
+(described in the next subsection).  Neglecting the interaction energy to estimate $E$ is reasonable
+even at very large interactions ($F_0\gg E/N$), because for very large interactions, the particles
+behave as hard rods which bounce off each other very rapidly, so that at most instants one can
 expect no collisions to be taking place.  It is also expected to be a good approximation at very
-small $F_0$ since we can then simply neglect the interaction energy.  Thus, we will use this as a common
-estimate for $R$ in terms of the energy. 
+small $F_0$ since we can then simply neglect the interaction energy.  Thus, we will use this as a
+common estimate for $R$ in terms of the energy.  
 
 
 %%%%% FIGURE %%%%% FIGURE %%%%% FIGURE %%%%% FIGURE %%%%% 
@@ -895,7 +1005,13 @@ To quantify the shape of distribution in phase-space, we defined a shape polariz
 \begin{equation}
 S=\frac{a-b}{a+b}
 \end{equation}
-where a and b are long axis and short axis of inertia ellipse in phase space respectively. a,b can be calculated by diagonalizing the inertia tensor I: $I_{xx}=\sum{p^2}, I_{xp}=I_{px}=-\sum{xp},I_{pp}=\sum{x^2}$. S=1 for line-shape distribution, S=0 for circular distribution. The advantage of defining the S lies in that S is independent of all rotating behavior of the cloud in phase-space and thus extract the information of shape alone. One could also use eigenvalues of quadrupole moment Q to define S. Two choice of definition is equivalent, since I and Q are only different up to a factor and an identity matrix.
+where a and b are long axis and short axis of inertia ellipse in phase space respectively. a,b can
+be calculated by diagonalizing the inertia tensor I: $I_{xx}=\sum{p^2},
+I_{xp}=I_{px}=-\sum{xp},I_{pp}=\sum{x^2}$. S=1 for line-shape distribution, S=0 for circular
+distribution. The advantage of defining the S lies in that S is independent of all rotating behavior
+of the cloud in phase-space and thus extract the information of shape alone. One could also use
+eigenvalues of quadrupole moment Q to define S. Two choice of definition is equivalent, since I and
+Q are only different up to a factor and an identity matrix.
 
 
 
@@ -980,9 +1096,32 @@ The oscillating background value of S indicate that the shape of the cloud in ph
 To sum up, the existence of the long-lasting oscillation of S indicate that the system does not relax to its equilibrium state in terms of shape although it is already thermalized in terms of energy distribution. With this long-lasting mode, the radius R of the cloud will keep oscillating, enabling the breathing mode to last for a long time.
 
 \section{Conclusion}
-We studied the nonequilibrium property of one-dimensional classical gas with finite range repulsive interaction. We first studied the relation between breathing mode frequency and interaction parameter as well as total energy. We found the breathing frequency could be estimated by eq.\ref{eq:breathingfrequency1}. And the mechanism behind this relation is that the momentum transfer which happens instantly in collision saves the particles some time from traveling this distance. So the physics is completely the same as hardcore particle.
-We found that the thermalization behavior is controlled by the competition between the interaction strength and the average energy. We point out that there could be two independent time scales in simple harmonic system in principle. One of them corresponds to the relaxation time of the energy distribution. The other one corresponds to the relaxation time of the angular distribution in phase space, which will determine the decay rate of the amplitude of the breathing mode. We have shown that in the low-energy regime, although the energy distribution reach Boltzmann distribution within several periods of oscillation, the shape keep oscillating for thousands of periods.
-%However, with the form of interaction we used, i.e. finite range constant repulsive force, we found those two time scales diverge only when interaction vanish, which is a trivial singular point. In addition, the relaxation behavior of the angular distribution and radial distribution in phase space are similar. We attribute it to the fact that there is no essential bias between angular and radial transfer in phase-space for this simple form of interaction. The shortest time scale is verified numerically by Largest Lyapunov Exponent. A further question could be asked is whether there is a subtle form of interaction that could give those two time scales essentially different behavior. The observation of two different time scales in one system would be interesting.
+
+Other forms of interaction.
+
+We studied the nonequilibrium property of one-dimensional classical gas with finite range repulsive
+interaction. We first studied the relation between breathing mode frequency and interaction
+parameter as well as total energy. We found the breathing frequency could be estimated by
+eq.\ref{eq:breathingfrequency1}. And the mechanism behind this relation is that the momentum
+transfer which happens instantly in collision saves the particles some time from traveling this
+distance. So the physics is completely the same as hardcore particle.
+
+We found that the thermalization behavior is controlled by the competition between the interaction
+strength and the average energy. We point out that there could be two independent time scales in
+simple harmonic system in principle. One of them corresponds to the relaxation time of the energy
+distribution. The other one corresponds to the relaxation time of the angular distribution in phase
+space, which will determine the decay rate of the amplitude of the breathing mode. We have shown
+that in the low-energy regime, although the energy distribution reach Boltzmann distribution within
+several periods of oscillation, the shape keep oscillating for thousands of periods.
+
+%However, with the form of interaction we used, i.e. finite range constant repulsive force, we found
+%those two time scales diverge only when interaction vanish, which is a trivial singular point. In
+%addition, the relaxation behavior of the angular distribution and radial distribution in phase
+%space are similar. We attribute it to the fact that there is no essential bias between angular and
+%radial transfer in phase-space for this simple form of interaction. The shortest time scale is
+%verified numerically by Largest Lyapunov Exponent. A further question could be asked is whether
+%there is a subtle form of interaction that could give those two time scales essentially different
+%behavior. The observation of two different time scales in one system would be interesting.
 
 
 
@@ -1051,10 +1190,215 @@ We found that the thermalization behavior is controlled by the competition betwe
 
 \begin{thebibliography}{1}
 
+
+\bibitem{Dorfman_book_1999} J.~P.~Dorfman, ``An Introduction to Chaos in Non-equilibrium Statistical
+  Mechanics'', Cambridge University Press, 1999.
+
+\bibitem{Dumas_book_KAMstory} H.~S.~Dumas: ``The KAM Story: A Friendly Introduction to the Content,
+History, and Significance of Classical Kolmogorov-Arnold-Moser Theory'', World Scientific, 2014. 
+
+\bibitem{Boltzmann_legacy_book} ``Boltzmann's Legacy'', edited by G.~Gallavotti, W.~L.~Reiter, and
+  J.~Yngvason; European Mathematical Society (2007).
+
 \bibitem{EckmannRuelle_RMP85}  
   J.-P.~Eckmann and D.~Ruelle,
-  ``Ergodic theory of chaos and strange attractors''
-\emph{Rev. Mod. Phys.}, {\bf 57}, 617  (1985). 
+  ``Ergodic theory of chaos and strange attractors'', 
+  \emph{Rev. Mod. Phys.}, {\bf 57}, 617  (1985).
+
+
+\bibitem{NewtonsCradle_Nature06}  
+T.~Kinoshita, T.~Wenger, and D.~S.~Weiss, ``A quantum Newton's cradle'', {\em Nature}, {\bf 440,} 900 (2006). 
+
+
+\bibitem{Naegerl_Science2009} E.~Haller, M.~Gustavsson, M.~J.~Mark, 
+J.~G.~Danzl,  R.~Hart, G.~Pupillo, H.-C.~N\"agerl, Science \textbf{325}, 1224 
+(2009). 
+
+ 
+
+\bibitem{collective_modes_early_papers}
+S.~Stringari, Phys.\ Rev.\ Lett.\ \textbf{77}, 2360 (1996); 
+%
+M.-O.~Mewes, M.~R.~Andrews, N.~J.~van~Druten, D.~M.~Kurn, D.~S.~Durfee, 
+C.~G.~Townsend, and W.~Ketterle, Phys.\ Rev.\ Lett.\ \textbf{77}, 988 (1996);
+%
+M.~Amoruso, I.~Meccoli, A.~Minguzzi, and M.~P.~Tosi, Eur.\ Phys.\ J.~D \textbf{8}, 361 (2000);
+%
+R.~Combescot and X.~Leyronas, Phys.\ Rev.\ Lett.\ \textbf{89}, 190405 (2002);
+%
+F.~Chevy, V.~Bretin, P.~Rosenbusch, K.~W.~Madison, and J.~Dalibard, 
+Phys.\ Rev.\ Lett.\ \textbf{88}, 250402 (2002);
+%
+C.~Menotti and S.~Stringari, ``Collective oscillations of a one-dimensional trapped Bose-Einstein
+gas'', {\em Phys.\ Rev.\ A} \textbf{66}, 043610 (2002).
+%
+J.~Fuchs, X.~Leyronas, and R.~Combescot, Phys.\ Rev.\ A \textbf{68}, 043610 (2003).
+
+\bibitem{PitaevskiiRosch_PRA97}
+%
+L.~P.~Pitaevskii and A.~Rosch, {\em Phys.\ Rev.\ A} \textbf{55}, R853 (1997);
+
+
+\bibitem{Esslinger_exp_PRL2003} H.~Moritz, T.~St\"oferle, M.~K\"ohl, and 
+T.~Esslinger,
+Phys.\ Rev.\ Lett.\ \textbf{91}, 250402 (2003).
+
+
+\bibitem{Wetterich_JPB2011}
+I.~Boettcher, S.~Floerchinger, and C.~Wetterich, J.~Phys.\ B \textbf{44}, 235301 (2011).
+
+
+\bibitem{Tschischik_BHbreathing_PRA_2013} W.~Tschischik, R.~Moessner, M.~Haque, Phys.\ Rev.~A 
+  \textbf{88}, 063636 (2013).
+
+\bibitem{KroenkeSchmelcher_BM} R.~Schmitz, S.~Kr\"onke, L.~Cao, and 
+  P.~Schmelcher, Phys.\ Rev.\ A \textbf{88}, 043601 (2013).
+
+\bibitem{Mazets_1Dbreathing_EPJD11}
+I. E. Mazets, ``Integrability breakdown in longitudinaly trapped, one-dimensional bosonic gases'', 
+{\em Eur.~Phys.~J.~D} {\bf 65}, 43 (2011).
+  
+%%  \bibitem{GaoYu_fermionbreathing_PRA12} 
+%% Chao Gao and Zhenhua Yu, 
+%%   ``Breathing mode of two-dimensional atomic Fermi gases in harmonic traps'', 
+%% {\em Phys. Rev. A} {\bf 86}, 043609 (2012).
+
+\bibitem{fermion2Dbreathing}
+%
+
+E.~Vogt, M.~Feld, B.~Fr\"ohlich, D.~Pertot, M.~Koschorreck, and M.~K\"ohl, ``Scale Invariance and
+Viscosity of a Two-Dimensional Fermi Gas'', {\em Phys. Rev. Lett.} {\bf 108}, 070404 (2012).
+%
+\\ 
+%
+Chao Gao and Zhenhua Yu, ``Breathing mode of two-dimensional atomic Fermi gases in harmonic traps'',
+{\em Phys. Rev. A} {\bf 86}, 043609 (2012).
+%
+\\ 
+%
+J.~Hofmann, ``Quantum Anomaly, Universal Relations, and Breathing Mode of a Two-Dimensional Fermi
+Gas'', {\em Phys. Rev. Lett.} {\bf 108}, 185303 (2012).
+%
+\\ 
+%
+S.~K.~Baur, E.~Vogt, M.~K\"ohl, and G.~M.~Bruun, ``Collective modes of a two-dimensional spin-1/2
+Fermi gas in a harmonic trap'', {\em Phys. Rev. A} {\bf 87}, 043612 (2013).
+%
+\\ 
+%
+B.~P.~van~Zyl, E.~Zaremba, and J.~Towers,
+``Collective excitations of a harmonically trapped, two-dimensional, spin-polarized dipolar Fermi
+gas in the hydrodynamic regime'', 
+{\em Phys. Rev. A} {\bf 90}, 043621 (2014). 
+%
+\\ 
+%
+Yi-Cai Zhang and Shizhong Zhang, ``Strongly interacting p -wave Fermi gas in two dimensions:
+Universal relations and breathing mode'', {\em Phys. Rev. A} {\bf 95}, 023603 (2017).
+
+
+%% \bibitem{ZarembaTowers_PRA2014} B.~P.~van~Zyl, E.~Zaremba, and J.~Towers, Phys. Rev. A \textbf{90},
+%%   043621 (2014).
+
+\bibitem{Stringari_lowDcollective_PRA15}
+G.~De~Rosi and S.~Stringari, ``Collective oscillations of a trapped quantum gas in low dimensions'', 
+{\em Phys. Rev. A} {\bf 92}, 053617 (2015).
+
+\bibitem{GrimmSmith_unitaryfermions_PRA08}
+S.~Riedl, E.~R.~S\'anchez~Guajardo, C.~Kohstall, A.~Altmeyer, M.~J.~Wright, J.~Hecker~Denschlag,
+R.~Grimm, G.~M.~Bruun, and H.~Smith, ``Collective oscillations of a Fermi gas in the unitarity
+limit: Temperature effects and the role of pair correlations'', Phys. Rev. A {\bf 78}, 053609
+(2008).
+
+\bibitem{Bouchoule_PRL2014}
+B.~Fang, G.~Carleo, A.~Johnson, and I.~Bouchoule,  Phys.\ Rev.\ Lett.\ 
+\textbf{113}, 035301 (2014).   
+
+\bibitem{our_superTG_PRA_2015} W.~Tschischik and M.~Haque, Phys.\ Rev.~A 
+  \textbf{91}, 053607 (2015).
+
+\bibitem{Tschischik_ladder_PRA15} W.~Tschischik, R.~Moessner, and M.~Haque, ``Bose-Hubbard ladder
+  subject to effective magnetic field: Quench dynamics in a harmonic trap'',
+{\em Phys. Rev. A},  {\bf 92}, 023845 (2015). 
+
+  
+% Dipole mode of a strongly correlated one-dimensional Bose gas in a split trap: 
+% parity effect and barrier renormalization
+\bibitem{Cominotti_2015} M.~Cominotti, F.~Hekking, and A.~Minguzzi, 
+arXiv:1503.07776.
+
+\bibitem{STG_Chen-etal_PRA2010} S.~Chen, L.~Guan, X.~Yin, Y.~Hao, and X-W.~Guan,   Phys.\ Rev.\ A
+  \textbf{81}, 031609(R) (2010). 
+
+\bibitem{STG_Astrakharchik_PRL2005} G.~E.~Astrakharchik, J.~Boronat, J.~Casulleras, and
+  S.~Giorgini, Phys.\ Rev.\ Lett.\ \textbf{95}, 190407 (2005).
+
+  
+\bibitem{1D_breathing_mode_recent}  
+A.~Iu.~Gudyma, G. E.~Astrakharchik, and M.~B.~Zvonarev, ``Reentrant behavior of the
+breathing-mode-oscillation frequency in a one-dimensional Bose gas'', 
+Phys. Rev. A \textbf{92}, 021601(R) (2015). \\ 
+%
+S. Choi, V. Dunjko, Z.~D.~Zhang, and M.~Olshanii,
+``Monopole Excitations of a Harmonically Trapped One-Dimensional Bose Gas from the Ideal Gas to the
+Tonks-Girardeau Regime'', 
+{\em Phys. Rev. Lett.} \textbf{115}, 115302 (2015)
+%
+\\
+%
+X.-L.~Chen, Y.~Li, and H.~Hu,  Phys.\ Rev.\ A \textbf{91}, 063631 (2015).
+
+
+\bibitem{br_mode_long_range_interactions} 
+%
+S.~Bauch, K.~Balzer, C.~Henning, and M.~Bonitz, Phys. Rev. B \textbf{80}, 054515 
+(2009);
+%
+\\
+%
+J.~W.~Abraham, K.~Balzer, D.~Hochstuhl, and M.~Bonitz, Phys. Rev. B \textbf{86}, 
+125112 (2012);
+%
+\\
+%
+C.~R.~McDonald, G.~Orlando, J.~W.~Abraham, D.~Hochstuhl, M.~Bonitz, and T.~Brabec, Phys.\ Rev.\
+Lett.\ \textbf{111}, 256801 (2013);
+%
+\\
+%
+J.~W.~Abraham, M.~Bonitz, C.~McDonald, G.~Orlando, and T.~Brabec, New J.~Phys \textbf{16}, 013001
+(2014).
+
+
+
+\bibitem{Bonitz_Review} J.~W.~Abraham, and M.~Bonitz, ``Quantum Breathing Mode of Trapped Particles:
+  from nanoplasmas to ultracold gases'', {\em Contributions to Plasma Physics}, \textbf{54}, 27
+  (2014).
+
+
+\bibitem{KohnMode} L.~Brey, N.~F.~Johnson, and B.~I.~Halperin, Phys.\ Rev.\ B 
+  \textbf{40}, 10647 (1989).  M.~Bonitz, K.~Balzer, and R.~van~Leeuwen, 
+  {\em Phys. Rev. B} \textbf{76}, 045341 (2007).
+
+
+
+\bibitem{DoyonSpohn_JSTAT17} B.~Doyon and H.~Spohn, ``Dynamics of hard rods with initial domain wall
+  state'', {\em J.~Stat. Mech.}, {\bf 2017}, 073210 (2017).
+
+\bibitem{Moore_arXiv17.10} X.~Cao, V.~B.~Bulchandani, J.~E.~Moore, ``Incomplete thermalization from
+  trap-induced integrability breaking: lessons from classical hard rods'', arXiv:1710.09330.
+
+
+  
+\bibitem{Guery-Odelin1999}
+D.~Gu\'ery-Odelin, F.~Zambelli, J.~Dalibard, and S.~Stringari, ``Collective
+  oscillations of a classical gas confined in harmonic traps,'' {\em Phys. Rev.
+  A}, {\bf 60}, 4851 (1999).
+
+\bibitem{Cornell_classsical_3Dexpt_NatPhys15} D.~S.~Lobser, A.~E.~S.~Barentine, E.~A.~Cornell, and
+  H.~J.~Lewandowski, ``Observation of a persistent non-equilibrium state in cold atoms'', Nat Phys
+  {\bf 11}, 1009 (2015).
+
 
 \bibitem{Dalfovo1997}
 F.~Dalfovo, S.~Giorgini, M.~Guilleumas, L.~Pitaevskii, and S.~Stringari,
@@ -1079,16 +1423,10 @@ S.~Stringari, ``Collective excitations of a trapped bose-condensed gas,'' {\em
 E.~Haller, M.~Gustavsson, M.~J. Mark, J.~G. Danzl, R.~Hart, G.~Pupillo, and
   H.-C. Nägerl, ``Realization of an excited, strongly correlated quantum gas
   phase,'' {\em Science}, vol.~325, p.~1224, Sept. 2009.
-
-\bibitem{Guery-Odelin1999}
-D.~Gu\'ery-Odelin, F.~Zambelli, J.~Dalibard, and S.~Stringari, ``Collective
-  oscillations of a classical gas confined in harmonic traps,'' {\em Phys. Rev.
-  A}, vol.~60, pp.~4851--4856, Dec 1999.
-
+  
 \bibitem{Tsuchiya2000}
-T.~Tsuchiya and N.~Gouda, ``Relaxation and lyapunov time scales in a
-  one-dimensional gravitating sheet system,'' {\em Phys. Rev. E}, vol.~61,
-  pp.~948--951, Jan. 2000.
+T.~Tsuchiya and N.~Gouda, ``Relaxation and Lyapunov time scales in a
+  one-dimensional gravitating sheet system,'' {\em Phys. Rev. E}, {\bf 61}, 948 (2000).
 
 \bibitem{Yawn1997}
 K.~R. Yawn and B.~N. Miller, ``Ergodic properties and equilibrium of
@@ -1100,6 +1438,10 @@ F.~Jin, T.~Neuhaus, K.~Michielsen, S.~Miyashita, M.~A. Novotny, M.~I.
   Katsnelson, and H.~D. Raedt, ``Equilibration and thermalization of classical
   systems,'' {\em New Journal of Physics}, vol.~15, no.~3, p.~033009, 2013.
 
+\bibitem{GueryOdelin_thermalization_PRA06} M.~Anderlini and D.~Gu\'ery-Odelin, ``Thermalization in
+  mixtures of ultracold gases'', {\em Phys. Rev. A} {\bf 73}, 032706 (2006).
+
+  
 \end{thebibliography}
 
 

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016 on Slackware (SlackBuilds.org)) (preloaded format=pdflatex 2017.2.28)  10 DEC 2017 20:27
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016 on Slackware (SlackBuilds.org)) (preloaded format=pdflatex 2017.2.28)  14 DEC 2017 20:53
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -473,28 +473,33 @@ LaTeX Font Info:    Try loading font information for U+msb on input line 56.
 
 (/usr/share/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
-) [1{/usr/share/texmf-var/fonts/map/pdftex/updmap/pdftex.map}] [2]
+) [1{/usr/share/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
 
-LaTeX Warning: Command \textless invalid in math mode on input line 201.
+Package natbib Warning: Citation `ZarembaTowers_PRA2014' on page 2 undefined on
+ input line 100.
 
-LaTeX Font Info:    Try loading font information for OML+cmr on input line 201.
+[2] [3]
+
+LaTeX Warning: Command \textless invalid in math mode on input line 306.
+
+LaTeX Font Info:    Try loading font information for OML+cmr on input line 306.
 
 (/usr/share/texmf-dist/tex/latex/base/omlcmr.fd
 File: omlcmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OML/cmr/m/n' in size <10> not available
-(Font)              Font shape `OML/cmm/m/it' tried instead on input line 201.
+(Font)              Font shape `OML/cmm/m/it' tried instead on input line 306.
 
 
-LaTeX Warning: Command \textless invalid in math mode on input line 201.
+LaTeX Warning: Command \textless invalid in math mode on input line 306.
 
 
-LaTeX Warning: Command \textless invalid in math mode on input line 218.
+LaTeX Warning: Command \textless invalid in math mode on input line 323.
 
 
-LaTeX Warning: Command \textless invalid in math mode on input line 218.
+LaTeX Warning: Command \textless invalid in math mode on input line 323.
 
-[3]
+[4]
 Package epstopdf Info: Source file: <ZhiyuPictures/N=5_GS_pre_2_rev.eps>
 (epstopdf)                    date: 2017-03-22 21:14:30
 (epstopdf)                    size: 88799 bytes
@@ -504,62 +509,61 @@ ed-to.pdf>
 (epstopdf)                    size: 13066 bytes
 (epstopdf)             Command: <repstopdf --outfile=ZhiyuPictures/N=5_GS_pre_2
 _rev-eps-converted-to.pdf ZhiyuPictures/N=5_GS_pre_2_rev.eps>
-(epstopdf)             \includegraphics on input line 253.
+(epstopdf)             \includegraphics on input line 363.
 Package epstopdf Info: Output file is already uptodate.
 
-<ZhiyuPictures/N=5_GS_pre_2_rev-eps-converted-to.pdf, id=144, 452.69125pt x 312
+<ZhiyuPictures/N=5_GS_pre_2_rev-eps-converted-to.pdf, id=196, 452.69125pt x 312
 .16624pt>
 File: ZhiyuPictures/N=5_GS_pre_2_rev-eps-converted-to.pdf Graphic file (type pd
 f)
  <use ZhiyuPictures/N=5_GS_pre_2_rev-eps-converted-to.pdf>
 Package pdftex.def Info: ZhiyuPictures/N=5_GS_pre_2_rev-eps-converted-to.pdf us
-ed on input line 253.
+ed on input line 363.
 (pdftex.def)             Requested size: 271.61684pt x 187.3012pt.
-
-<ZhiyuPictures/stationary_and_rotating_frame_t=1-5_5T.pdf, id=147, 903.375pt x 
+ [5 <./ZhiyuPictures/N=5_GS_pre_2_rev-eps-converted-to.pdf>]
+<ZhiyuPictures/stationary_and_rotating_frame_t=1-5_5T.pdf, id=212, 903.375pt x 
 451.6875pt>
 File: ZhiyuPictures/stationary_and_rotating_frame_t=1-5_5T.pdf Graphic file (ty
 pe pdf)
  <use ZhiyuPictures/stationary_and_rotating_frame_t=1-5_5T.pdf>
 Package pdftex.def Info: ZhiyuPictures/stationary_and_rotating_frame_t=1-5_5T.p
-df used on input line 301.
+df used on input line 411.
 (pdftex.def)             Requested size: 458.99689pt x 229.50293pt.
 
-<ZhiyuPictures/rotating_frame_t=0-80T.pdf, id=148, 903.375pt x 225.84375pt>
+<ZhiyuPictures/rotating_frame_t=0-80T.pdf, id=213, 903.375pt x 225.84375pt>
 File: ZhiyuPictures/rotating_frame_t=0-80T.pdf Graphic file (type pdf)
 
 <use ZhiyuPictures/rotating_frame_t=0-80T.pdf>
 Package pdftex.def Info: ZhiyuPictures/rotating_frame_t=0-80T.pdf used on input
- line 313.
+ line 423.
 (pdftex.def)             Requested size: 458.99689pt x 114.75146pt.
- [4 <./ZhiyuPictures/N=5_GS_pre_2_rev-eps-converted-to.pdf>] [5 <./ZhiyuPicture
-s/stationary_and_rotating_frame_t=1-5_5T.pdf> <./ZhiyuPictures/rotating_frame_t
-=0-80T.pdf>]
-<ZhiyuPictures/freq_scanF_differentE_log_2_with_oscillation_demo.png, id=198, 7
+ [6 <./ZhiyuPictures/stationary_and_rotating_frame_t=1-5_5T.pdf> <./ZhiyuPictur
+es/rotating_frame_t=0-80T.pdf>]
+<ZhiyuPictures/freq_scanF_differentE_log_2_with_oscillation_demo.png, id=251, 7
 50.805pt x 520.94624pt>
 File: ZhiyuPictures/freq_scanF_differentE_log_2_with_oscillation_demo.png Graph
 ic file (type png)
 
 <use ZhiyuPictures/freq_scanF_differentE_log_2_with_oscillation_demo.png>
 Package pdftex.def Info: ZhiyuPictures/freq_scanF_differentE_log_2_with_oscilla
-tion_demo.png used on input line 378.
+tion_demo.png used on input line 488.
 (pdftex.def)             Requested size: 240.2625pt x 166.7062pt.
 
-[6 <./ZhiyuPictures/freq_scanF_differentE_log_2_with_oscillation_demo.png>]
-<ZhiyuPictures/bounce.png, id=214, 642.4pt x 508.90125pt>
+[7 <./ZhiyuPictures/freq_scanF_differentE_log_2_with_oscillation_demo.png>]
+<ZhiyuPictures/bounce.png, id=268, 642.4pt x 508.90125pt>
 File: ZhiyuPictures/bounce.png Graphic file (type png)
 
 <use ZhiyuPictures/bounce.png>
-Package pdftex.def Info: ZhiyuPictures/bounce.png used on input line 447.
+Package pdftex.def Info: ZhiyuPictures/bounce.png used on input line 557.
 (pdftex.def)             Requested size: 203.99689pt x 161.60153pt.
 
-<ZhiyuPictures/pass.png, id=215, 631.35875pt x 500.87125pt>
+<ZhiyuPictures/pass.png, id=269, 631.35875pt x 500.87125pt>
 File: ZhiyuPictures/pass.png Graphic file (type png)
 
 <use ZhiyuPictures/pass.png>
-Package pdftex.def Info: ZhiyuPictures/pass.png used on input line 452.
+Package pdftex.def Info: ZhiyuPictures/pass.png used on input line 562.
 (pdftex.def)             Requested size: 203.99689pt x 161.83353pt.
- [7 <./ZhiyuPictures/bounce.png> <./ZhiyuPictures/pass.png>]
+ [8 <./ZhiyuPictures/bounce.png> <./ZhiyuPictures/pass.png>]
 Package epstopdf Info: Source file: <ZhiyuPictures/freq_scanF_scanE_pre_Font18.
 eps>
 (epstopdf)                    date: 2017-10-19 10:24:58
@@ -571,31 +575,30 @@ eps-converted-to.pdf>
 (epstopdf)             Command: <repstopdf --outfile=ZhiyuPictures/freq_scanF_s
 canE_pre_Font18-eps-converted-to.pdf ZhiyuPictures/freq_scanF_scanE_pre_Font18.
 eps>
-(epstopdf)             \includegraphics on input line 552.
+(epstopdf)             \includegraphics on input line 662.
 Package epstopdf Info: Output file is already uptodate.
 
-<ZhiyuPictures/freq_scanF_scanE_pre_Font18-eps-converted-to.pdf, id=237, 421.57
+<ZhiyuPictures/freq_scanF_scanE_pre_Font18-eps-converted-to.pdf, id=290, 421.57
 5pt x 316.18124pt>
 File: ZhiyuPictures/freq_scanF_scanE_pre_Font18-eps-converted-to.pdf Graphic fi
 le (type pdf)
 
 <use ZhiyuPictures/freq_scanF_scanE_pre_Font18-eps-converted-to.pdf>
 Package pdftex.def Info: ZhiyuPictures/freq_scanF_scanE_pre_Font18-eps-converte
-d-to.pdf used on input line 552.
+d-to.pdf used on input line 662.
 (pdftex.def)             Requested size: 252.94695pt x 189.7102pt.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[8] <ZhiyuPictures/two_particles_a_01.pdf, id=254, 939.51pt x 259.97125pt>
+[9] <ZhiyuPictures/two_particles_a_01.pdf, id=307, 939.51pt x 259.97125pt>
 File: ZhiyuPictures/two_particles_a_01.pdf Graphic file (type pdf)
 
 <use ZhiyuPictures/two_particles_a_01.pdf>
 Package pdftex.def Info: ZhiyuPictures/two_particles_a_01.pdf used on input lin
-e 614.
+e 724.
 (pdftex.def)             Requested size: 458.99689pt x 127.00621pt.
- [9 <./ZhiyuPictures/freq_scanF_scanE_pre_Font18-eps-converted-to.pdf> <./Zhiyu
-Pictures/two_particles_a_01.pdf>]
+ [10 <./ZhiyuPictures/freq_scanF_scanE_pre_Font18-eps-converted-to.pdf>]
 Package epstopdf Info: Source file: <ZhiyuPictures/pair1_pre.eps>
 (epstopdf)                    date: 2017-03-22 21:14:30
 (epstopdf)                    size: 2413050 bytes
@@ -605,44 +608,44 @@ df>
 (epstopdf)                    size: 147892 bytes
 (epstopdf)             Command: <repstopdf --outfile=ZhiyuPictures/pair1_pre-ep
 s-converted-to.pdf ZhiyuPictures/pair1_pre.eps>
-(epstopdf)             \includegraphics on input line 677.
+(epstopdf)             \includegraphics on input line 787.
 Package epstopdf Info: Output file is already uptodate.
 
-<ZhiyuPictures/pair1_pre-eps-converted-to.pdf, id=294, 420.57124pt x 315.1775pt
+<ZhiyuPictures/pair1_pre-eps-converted-to.pdf, id=331, 420.57124pt x 315.1775pt
 >
 File: ZhiyuPictures/pair1_pre-eps-converted-to.pdf Graphic file (type pdf)
  <use ZhiyuPictures/pair1_pre-eps-converted-to.pdf>
 Package pdftex.def Info: ZhiyuPictures/pair1_pre-eps-converted-to.pdf used on i
-nput line 677.
+nput line 787.
 (pdftex.def)             Requested size: 255.0pt x 191.09897pt.
- [10 <./ZhiyuPictures/pair1_pre-eps-converted-to.pdf>]
-<ZhiyuPictures/Boltzmann_2panels_01-crop.pdf, id=304, 438.63875pt x 169.63374pt
+
+<ZhiyuPictures/Boltzmann_2panels_01-crop.pdf, id=332, 438.63875pt x 169.63374pt
 >
 File: ZhiyuPictures/Boltzmann_2panels_01-crop.pdf Graphic file (type pdf)
  <use ZhiyuPictures/Boltzmann_2panels_01-crop.pdf>
 Package pdftex.def Info: ZhiyuPictures/Boltzmann_2panels_01-crop.pdf used on in
-put line 723.
+put line 833.
 (pdftex.def)             Requested size: 433.50311pt x 167.65059pt.
-
-<ZhiyuPictures/Boltzmann_log_2panels_01-crop.pdf, id=309, 436.63126pt x 167.626
+ [11 <./ZhiyuPictures/two_particles_a_01.pdf>]
+<ZhiyuPictures/Boltzmann_log_2panels_01-crop.pdf, id=362, 436.63126pt x 167.626
 25pt>
 File: ZhiyuPictures/Boltzmann_log_2panels_01-crop.pdf Graphic file (type pdf)
  <use ZhiyuPictures/Boltzmann_log_2panels_01-crop.pdf>
 Package pdftex.def Info: ZhiyuPictures/Boltzmann_log_2panels_01-crop.pdf used o
-n input line 757.
+n input line 867.
 (pdftex.def)             Requested size: 408.00156pt x 156.63509pt.
- [11 <./ZhiyuPictures/Boltzmann_2panels_01-crop.pdf>]
-<ZhiyuPictures/LLEdistribution_1_11_pre_hot2_screenshot.png, id=370, 559.08875p
+ [12 <./ZhiyuPictures/pair1_pre-eps-converted-to.pdf> <./ZhiyuPictures/Boltzman
+n_2panels_01-crop.pdf>]
+<ZhiyuPictures/LLEdistribution_1_11_pre_hot2_screenshot.png, id=423, 559.08875p
 t x 402.50375pt>
 File: ZhiyuPictures/LLEdistribution_1_11_pre_hot2_screenshot.png Graphic file (
 type png)
 
 <use ZhiyuPictures/LLEdistribution_1_11_pre_hot2_screenshot.png>
 Package pdftex.def Info: ZhiyuPictures/LLEdistribution_1_11_pre_hot2_screenshot
-.png used on input line 819.
+.png used on input line 929.
 (pdftex.def)             Requested size: 223.63153pt x 160.99864pt.
- [12 <./ZhiyuPictures/Boltzmann_log_2panels_01-crop.pdf> <./ZhiyuPictures/LLEdi
-stribution_1_11_pre_hot2_screenshot.png>]
+ [13 <./ZhiyuPictures/Boltzmann_log_2panels_01-crop.pdf>]
 Package epstopdf Info: Source file: <ZhiyuPictures/N=20_shape_F=1000_E=3000_1.e
 ps>
 (epstopdf)                    date: 2017-03-22 21:14:30
@@ -654,17 +657,17 @@ ps-converted-to.pdf>
 (epstopdf)             Command: <repstopdf --outfile=ZhiyuPictures/N=20_shape_F
 =1000_E=3000_1-eps-converted-to.pdf ZhiyuPictures/N=20_shape_F=1000_E=3000_1.ep
 s>
-(epstopdf)             \includegraphics on input line 917.
+(epstopdf)             \includegraphics on input line 1033.
 Package epstopdf Info: Output file is already uptodate.
 
-<ZhiyuPictures/N=20_shape_F=1000_E=3000_1-eps-converted-to.pdf, id=435, 421.575
+<ZhiyuPictures/N=20_shape_F=1000_E=3000_1-eps-converted-to.pdf, id=488, 421.575
 pt x 316.18124pt>
 File: ZhiyuPictures/N=20_shape_F=1000_E=3000_1-eps-converted-to.pdf Graphic fil
 e (type pdf)
 
 <use ZhiyuPictures/N=20_shape_F=1000_E=3000_1-eps-converted-to.pdf>
 Package pdftex.def Info: ZhiyuPictures/N=20_shape_F=1000_E=3000_1-eps-converted
--to.pdf used on input line 917.
+-to.pdf used on input line 1033.
 (pdftex.def)             Requested size: 168.627pt x 126.47025pt.
 Package epstopdf Info: Source file: <ZhiyuPictures/N=20_shape_F=1000_E=3000_2_c
 rude_begin.eps>
@@ -677,17 +680,17 @@ rude_begin-eps-converted-to.pdf>
 (epstopdf)             Command: <repstopdf --outfile=ZhiyuPictures/N=20_shape_F
 =1000_E=3000_2_crude_begin-eps-converted-to.pdf ZhiyuPictures/N=20_shape_F=1000
 _E=3000_2_crude_begin.eps>
-(epstopdf)             \includegraphics on input line 917.
+(epstopdf)             \includegraphics on input line 1033.
 Package epstopdf Info: Output file is already uptodate.
 
 <ZhiyuPictures/N=20_shape_F=1000_E=3000_2_crude_begin-eps-converted-to.pdf, id=
-436, 421.575pt x 316.18124pt>
+489, 421.575pt x 316.18124pt>
 File: ZhiyuPictures/N=20_shape_F=1000_E=3000_2_crude_begin-eps-converted-to.pdf
  Graphic file (type pdf)
 
 <use ZhiyuPictures/N=20_shape_F=1000_E=3000_2_crude_begin-eps-converted-to.pdf>
 Package pdftex.def Info: ZhiyuPictures/N=20_shape_F=1000_E=3000_2_crude_begin-e
-ps-converted-to.pdf used on input line 917.
+ps-converted-to.pdf used on input line 1033.
 (pdftex.def)             Requested size: 168.627pt x 126.47025pt.
 Package epstopdf Info: Source file: <ZhiyuPictures/N=20_shape_F=1000_E=3000_2_c
 rude_end.eps>
@@ -700,30 +703,30 @@ rude_end-eps-converted-to.pdf>
 (epstopdf)             Command: <repstopdf --outfile=ZhiyuPictures/N=20_shape_F
 =1000_E=3000_2_crude_end-eps-converted-to.pdf ZhiyuPictures/N=20_shape_F=1000_E
 =3000_2_crude_end.eps>
-(epstopdf)             \includegraphics on input line 917.
+(epstopdf)             \includegraphics on input line 1033.
 Package epstopdf Info: Output file is already uptodate.
 
-<ZhiyuPictures/N=20_shape_F=1000_E=3000_2_crude_end-eps-converted-to.pdf, id=43
-7, 421.575pt x 316.18124pt>
+<ZhiyuPictures/N=20_shape_F=1000_E=3000_2_crude_end-eps-converted-to.pdf, id=49
+0, 421.575pt x 316.18124pt>
 File: ZhiyuPictures/N=20_shape_F=1000_E=3000_2_crude_end-eps-converted-to.pdf G
 raphic file (type pdf)
 
 <use ZhiyuPictures/N=20_shape_F=1000_E=3000_2_crude_end-eps-converted-to.pdf>
 Package pdftex.def Info: ZhiyuPictures/N=20_shape_F=1000_E=3000_2_crude_end-eps
--converted-to.pdf used on input line 917.
+-converted-to.pdf used on input line 1033.
 (pdftex.def)             Requested size: 168.627pt x 126.47025pt.
 
-Overfull \hbox (15.62544pt too wide) in paragraph at lines 917--917
+Overfull \hbox (15.62544pt too wide) in paragraph at lines 1033--1033
  [][] 
  []
 
 
-Overfull \hbox (15.62544pt too wide) in paragraph at lines 917--917
+Overfull \hbox (15.62544pt too wide) in paragraph at lines 1033--1033
  [] 
  []
 
 
-Overfull \hbox (15.62544pt too wide) in paragraph at lines 917--917
+Overfull \hbox (15.62544pt too wide) in paragraph at lines 1033--1033
  [] 
  []
 
@@ -738,17 +741,17 @@ eps-converted-to.pdf>
 (epstopdf)             Command: <repstopdf --outfile=ZhiyuPictures/N=20_shape_F
 =1000_E=20000_1-eps-converted-to.pdf ZhiyuPictures/N=20_shape_F=1000_E=20000_1.
 eps>
-(epstopdf)             \includegraphics on input line 924.
+(epstopdf)             \includegraphics on input line 1040.
 Package epstopdf Info: Output file is already uptodate.
 
-<ZhiyuPictures/N=20_shape_F=1000_E=20000_1-eps-converted-to.pdf, id=438, 421.57
+<ZhiyuPictures/N=20_shape_F=1000_E=20000_1-eps-converted-to.pdf, id=491, 421.57
 5pt x 316.18124pt>
 File: ZhiyuPictures/N=20_shape_F=1000_E=20000_1-eps-converted-to.pdf Graphic fi
 le (type pdf)
 
 <use ZhiyuPictures/N=20_shape_F=1000_E=20000_1-eps-converted-to.pdf>
 Package pdftex.def Info: ZhiyuPictures/N=20_shape_F=1000_E=20000_1-eps-converte
-d-to.pdf used on input line 924.
+d-to.pdf used on input line 1040.
 (pdftex.def)             Requested size: 168.627pt x 126.47025pt.
 Package epstopdf Info: Source file: <ZhiyuPictures/N=20_shape_F=1000_E=20000_2_
 crude_begin.eps>
@@ -761,18 +764,18 @@ crude_begin-eps-converted-to.pdf>
 (epstopdf)             Command: <repstopdf --outfile=ZhiyuPictures/N=20_shape_F
 =1000_E=20000_2_crude_begin-eps-converted-to.pdf ZhiyuPictures/N=20_shape_F=100
 0_E=20000_2_crude_begin.eps>
-(epstopdf)             \includegraphics on input line 924.
+(epstopdf)             \includegraphics on input line 1040.
 Package epstopdf Info: Output file is already uptodate.
 
 <ZhiyuPictures/N=20_shape_F=1000_E=20000_2_crude_begin-eps-converted-to.pdf, id
-=439, 421.575pt x 316.18124pt>
+=492, 421.575pt x 316.18124pt>
 File: ZhiyuPictures/N=20_shape_F=1000_E=20000_2_crude_begin-eps-converted-to.pd
 f Graphic file (type pdf)
 
 <use ZhiyuPictures/N=20_shape_F=1000_E=20000_2_crude_begin-eps-converted-to.pdf
 >
 Package pdftex.def Info: ZhiyuPictures/N=20_shape_F=1000_E=20000_2_crude_begin-
-eps-converted-to.pdf used on input line 924.
+eps-converted-to.pdf used on input line 1040.
 (pdftex.def)             Requested size: 168.627pt x 126.47025pt.
 Package epstopdf Info: Source file: <ZhiyuPictures/N=20_shape_F=1000_E=20000_2_
 crude_end.eps>
@@ -785,30 +788,30 @@ crude_end-eps-converted-to.pdf>
 (epstopdf)             Command: <repstopdf --outfile=ZhiyuPictures/N=20_shape_F
 =1000_E=20000_2_crude_end-eps-converted-to.pdf ZhiyuPictures/N=20_shape_F=1000_
 E=20000_2_crude_end.eps>
-(epstopdf)             \includegraphics on input line 924.
+(epstopdf)             \includegraphics on input line 1040.
 Package epstopdf Info: Output file is already uptodate.
 
 <ZhiyuPictures/N=20_shape_F=1000_E=20000_2_crude_end-eps-converted-to.pdf, id=4
-40, 421.575pt x 316.18124pt>
+93, 421.575pt x 316.18124pt>
 File: ZhiyuPictures/N=20_shape_F=1000_E=20000_2_crude_end-eps-converted-to.pdf 
 Graphic file (type pdf)
 
 <use ZhiyuPictures/N=20_shape_F=1000_E=20000_2_crude_end-eps-converted-to.pdf>
 Package pdftex.def Info: ZhiyuPictures/N=20_shape_F=1000_E=20000_2_crude_end-ep
-s-converted-to.pdf used on input line 924.
+s-converted-to.pdf used on input line 1040.
 (pdftex.def)             Requested size: 168.627pt x 126.47025pt.
 
-Overfull \hbox (15.62544pt too wide) in paragraph at lines 924--924
+Overfull \hbox (15.62544pt too wide) in paragraph at lines 1040--1040
  [][] 
  []
 
 
-Overfull \hbox (15.62544pt too wide) in paragraph at lines 924--924
+Overfull \hbox (15.62544pt too wide) in paragraph at lines 1040--1040
  [] 
  []
 
 
-Overfull \hbox (15.62544pt too wide) in paragraph at lines 924--924
+Overfull \hbox (15.62544pt too wide) in paragraph at lines 1040--1040
  [] 
  []
 
@@ -823,17 +826,17 @@ Package epstopdf Info: Source file: <ZhiyuPictures/N=20_shape_F=1000_E=100000_1
 (epstopdf)             Command: <repstopdf --outfile=ZhiyuPictures/N=20_shape_F
 =1000_E=100000_1-eps-converted-to.pdf ZhiyuPictures/N=20_shape_F=1000_E=100000_
 1.eps>
-(epstopdf)             \includegraphics on input line 931.
+(epstopdf)             \includegraphics on input line 1047.
 Package epstopdf Info: Output file is already uptodate.
 
-<ZhiyuPictures/N=20_shape_F=1000_E=100000_1-eps-converted-to.pdf, id=441, 421.5
+<ZhiyuPictures/N=20_shape_F=1000_E=100000_1-eps-converted-to.pdf, id=494, 421.5
 75pt x 316.18124pt>
 File: ZhiyuPictures/N=20_shape_F=1000_E=100000_1-eps-converted-to.pdf Graphic f
 ile (type pdf)
 
 <use ZhiyuPictures/N=20_shape_F=1000_E=100000_1-eps-converted-to.pdf>
 Package pdftex.def Info: ZhiyuPictures/N=20_shape_F=1000_E=100000_1-eps-convert
-ed-to.pdf used on input line 931.
+ed-to.pdf used on input line 1047.
 (pdftex.def)             Requested size: 168.627pt x 126.47025pt.
 Package epstopdf Info: Source file: <ZhiyuPictures/N=20_shape_F=1000_E=100000_2
 _crude_begin.eps>
@@ -846,18 +849,18 @@ _crude_begin-eps-converted-to.pdf>
 (epstopdf)             Command: <repstopdf --outfile=ZhiyuPictures/N=20_shape_F
 =1000_E=100000_2_crude_begin-eps-converted-to.pdf ZhiyuPictures/N=20_shape_F=10
 00_E=100000_2_crude_begin.eps>
-(epstopdf)             \includegraphics on input line 931.
+(epstopdf)             \includegraphics on input line 1047.
 Package epstopdf Info: Output file is already uptodate.
 
 <ZhiyuPictures/N=20_shape_F=1000_E=100000_2_crude_begin-eps-converted-to.pdf, i
-d=442, 421.575pt x 316.18124pt>
+d=495, 421.575pt x 316.18124pt>
 File: ZhiyuPictures/N=20_shape_F=1000_E=100000_2_crude_begin-eps-converted-to.p
 df Graphic file (type pdf)
 
 <use ZhiyuPictures/N=20_shape_F=1000_E=100000_2_crude_begin-eps-converted-to.pd
 f>
 Package pdftex.def Info: ZhiyuPictures/N=20_shape_F=1000_E=100000_2_crude_begin
--eps-converted-to.pdf used on input line 931.
+-eps-converted-to.pdf used on input line 1047.
 (pdftex.def)             Requested size: 168.627pt x 126.47025pt.
 Package epstopdf Info: Source file: <ZhiyuPictures/N=20_shape_F=1000_E=100000_2
 _crude_end.eps>
@@ -870,37 +873,46 @@ _crude_end-eps-converted-to.pdf>
 (epstopdf)             Command: <repstopdf --outfile=ZhiyuPictures/N=20_shape_F
 =1000_E=100000_2_crude_end-eps-converted-to.pdf ZhiyuPictures/N=20_shape_F=1000
 _E=100000_2_crude_end.eps>
-(epstopdf)             \includegraphics on input line 931.
+(epstopdf)             \includegraphics on input line 1047.
 Package epstopdf Info: Output file is already uptodate.
 
 <ZhiyuPictures/N=20_shape_F=1000_E=100000_2_crude_end-eps-converted-to.pdf, id=
-443, 421.575pt x 316.18124pt>
+496, 421.575pt x 316.18124pt>
 File: ZhiyuPictures/N=20_shape_F=1000_E=100000_2_crude_end-eps-converted-to.pdf
  Graphic file (type pdf)
 
 <use ZhiyuPictures/N=20_shape_F=1000_E=100000_2_crude_end-eps-converted-to.pdf>
 Package pdftex.def Info: ZhiyuPictures/N=20_shape_F=1000_E=100000_2_crude_end-e
-ps-converted-to.pdf used on input line 931.
+ps-converted-to.pdf used on input line 1047.
 (pdftex.def)             Requested size: 168.627pt x 126.47025pt.
 
-Overfull \hbox (15.62544pt too wide) in paragraph at lines 931--931
+Overfull \hbox (15.62544pt too wide) in paragraph at lines 1047--1047
  [][] 
  []
 
 
-Overfull \hbox (15.62544pt too wide) in paragraph at lines 931--931
+Overfull \hbox (15.62544pt too wide) in paragraph at lines 1047--1047
  [] 
  []
 
 
-Overfull \hbox (15.62544pt too wide) in paragraph at lines 931--931
+Overfull \hbox (15.62544pt too wide) in paragraph at lines 1047--1047
  [] 
  []
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[13]
+[14 <./ZhiyuPictures/LLEdistribution_1_11_pre_hot2_screenshot.png>] [15 <./Zhiy
+uPictures/N=20_shape_F=1000_E=3000_1-eps-converted-to.pdf> <./ZhiyuPictures/N=2
+0_shape_F=1000_E=3000_2_crude_begin-eps-converted-to.pdf> <./ZhiyuPictures/N=20
+_shape_F=1000_E=3000_2_crude_end-eps-converted-to.pdf> <./ZhiyuPictures/N=20_sh
+ape_F=1000_E=20000_1-eps-converted-to.pdf> <./ZhiyuPictures/N=20_shape_F=1000_E
+=20000_2_crude_begin-eps-converted-to.pdf> <./ZhiyuPictures/N=20_shape_F=1000_E
+=20000_2_crude_end-eps-converted-to.pdf> <./ZhiyuPictures/N=20_shape_F=1000_E=1
+00000_1-eps-converted-to.pdf> <./ZhiyuPictures/N=20_shape_F=1000_E=100000_2_cru
+de_begin-eps-converted-to.pdf> <./ZhiyuPictures/N=20_shape_F=1000_E=100000_2_cr
+ude_end-eps-converted-to.pdf>]
 Package epstopdf Info: Source file: <ZhiyuPictures/N=50_F=1000_E=30000_shapemov
 ie_interval0_628_2_500s_1100_600_Font18.eps>
 (epstopdf)                    date: 2017-11-22 13:42:33
@@ -913,37 +925,31 @@ ie_interval0_628_2_500s_1100_600_Font18-eps-converted-to.pdf>
 E=30000_shapemovie_interval0_628_2_500s_1100_600_Font18-eps-converted-to.pdf Zh
 iyuPictures/N=50_F=1000_E=30000_shapemovie_interval0_628_2_500s_1100_600_Font18
 .eps>
-(epstopdf)             \includegraphics on input line 964.
+(epstopdf)             \includegraphics on input line 1080.
 Package epstopdf Info: Output file is already uptodate.
 
 <ZhiyuPictures/N=50_F=1000_E=30000_shapemovie_interval0_628_2_500s_1100_600_Fon
-t18-eps-converted-to.pdf, id=459, 828.09375pt x 451.6875pt>
+t18-eps-converted-to.pdf, id=549, 828.09375pt x 451.6875pt>
 File: ZhiyuPictures/N=50_F=1000_E=30000_shapemovie_interval0_628_2_500s_1100_60
 0_Font18-eps-converted-to.pdf Graphic file (type pdf)
 
 <use ZhiyuPictures/N=50_F=1000_E=30000_shapemovie_interval0_628_2_500s_1100_600
 _Font18-eps-converted-to.pdf>
 Package pdftex.def Info: ZhiyuPictures/N=50_F=1000_E=30000_shapemovie_interval0
-_628_2_500s_1100_600_Font18-eps-converted-to.pdf used on input line 964.
+_628_2_500s_1100_600_Font18-eps-converted-to.pdf used on input line 1080.
 (pdftex.def)             Requested size: 414.04587pt x 225.84319pt.
 
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-<ZhiyuPictures/quadrupole_mode_2.png, id=460, 1293.83376pt x 185.69376pt>
+<ZhiyuPictures/quadrupole_mode_2.png, id=550, 1293.83376pt x 185.69376pt>
 File: ZhiyuPictures/quadrupole_mode_2.png Graphic file (type png)
 
 <use ZhiyuPictures/quadrupole_mode_2.png>
 Package pdftex.def Info: ZhiyuPictures/quadrupole_mode_2.png used on input line
- 970.
+ 1086.
 (pdftex.def)             Requested size: 517.52434pt x 74.27618pt.
 
-Overfull \hbox (7.52434pt too wide) in paragraph at lines 970--971
+Overfull \hbox (7.52434pt too wide) in paragraph at lines 1086--1087
  [][] 
  []
-
-
-LaTeX Warning: `h' float specifier changed to `ht'.
 
 Package epstopdf Info: Source file: <ZhiyuPictures/N=50_F=1000_E=30000_shapemov
 ie_interval0_628_2_500s_Send.eps>
@@ -956,44 +962,39 @@ ie_interval0_628_2_500s_Send-eps-converted-to.pdf>
 (epstopdf)             Command: <repstopdf --outfile=ZhiyuPictures/N=50_F=1000_
 E=30000_shapemovie_interval0_628_2_500s_Send-eps-converted-to.pdf ZhiyuPictures
 /N=50_F=1000_E=30000_shapemovie_interval0_628_2_500s_Send.eps>
-(epstopdf)             \includegraphics on input line 976.
+(epstopdf)             \includegraphics on input line 1092.
 Package epstopdf Info: Output file is already uptodate.
 
 <ZhiyuPictures/N=50_F=1000_E=30000_shapemovie_interval0_628_2_500s_Send-eps-con
-verted-to.pdf, id=461, 421.575pt x 316.18124pt>
+verted-to.pdf, id=551, 421.575pt x 316.18124pt>
 File: ZhiyuPictures/N=50_F=1000_E=30000_shapemovie_interval0_628_2_500s_Send-ep
 s-converted-to.pdf Graphic file (type pdf)
 
 <use ZhiyuPictures/N=50_F=1000_E=30000_shapemovie_interval0_628_2_500s_Send-eps
 -converted-to.pdf>
 Package pdftex.def Info: ZhiyuPictures/N=50_F=1000_E=30000_shapemovie_interval0
-_628_2_500s_Send-eps-converted-to.pdf used on input line 976.
+_628_2_500s_Send-eps-converted-to.pdf used on input line 1092.
 (pdftex.def)             Requested size: 168.627pt x 126.47025pt.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[14 <./ZhiyuPictures/N=20_shape_F=1000_E=3000_1-eps-converted-to.pdf> <./ZhiyuP
-ictures/N=20_shape_F=1000_E=3000_2_crude_begin-eps-converted-to.pdf> <./ZhiyuPi
-ctures/N=20_shape_F=1000_E=3000_2_crude_end-eps-converted-to.pdf> <./ZhiyuPictu
-res/N=20_shape_F=1000_E=20000_1-eps-converted-to.pdf> <./ZhiyuPictures/N=20_sha
-pe_F=1000_E=20000_2_crude_begin-eps-converted-to.pdf> <./ZhiyuPictures/N=20_sha
-pe_F=1000_E=20000_2_crude_end-eps-converted-to.pdf> <./ZhiyuPictures/N=20_shape
-_F=1000_E=100000_1-eps-converted-to.pdf> <./ZhiyuPictures/N=20_shape_F=1000_E=1
-00000_2_crude_begin-eps-converted-to.pdf> <./ZhiyuPictures/N=20_shape_F=1000_E=
-100000_2_crude_end-eps-converted-to.pdf>] [15 <./ZhiyuPictures/N=50_F=1000_E=30
-000_shapemovie_interval0_628_2_500s_1100_600_Font18-eps-converted-to.pdf> <./Zh
-iyuPictures/quadrupole_mode_2.png>]
+[16 <./ZhiyuPictures/N=50_F=1000_E=30000_shapemovie_interval0_628_2_500s_1100_6
+00_Font18-eps-converted-to.pdf> <./ZhiyuPictures/quadrupole_mode_2.png>]
+[17 <./ZhiyuPictures/N=50_F=1000_E=30000_shapemovie_interval0_628_2_500s_Send-e
+ps-converted-to.pdf>]
 Missing character: There is no Ã in font cmr9!
 Missing character: There is no ¤ in font cmr9!
 
 No file draft_06.bbl.
-[16 <./ZhiyuPictures/N=50_F=1000_E=30000_shapemovie_interval0_628_2_500s_Send-e
-ps-converted-to.pdf>]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 1108.
+
+Package natbib Warning: There were undefined citations.
+
+[18]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 1450.
  (./draft_06.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1108.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1108.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1450.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1450.
 
 Package rerunfilecheck Info: File `draft_06.out' has not changed.
 (rerunfilecheck)             Checksum: 7A49FA2ABFBCCEB228443CC1D23D1A46;1529.
@@ -1003,37 +1004,38 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 8859 strings out of 493013
- 127773 string characters out of 6139264
- 240846 words of memory out of 5000000
- 12175 multiletter control sequences out of 15000+600000
+ 9008 strings out of 493013
+ 132056 string characters out of 6139264
+ 241313 words of memory out of 5000000
+ 12293 multiletter control sequences out of 15000+600000
  16807 words of font info for 62 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 31i,10n,35p,1351b,474s stack positions out of 5000i,500n,10000p,200000b,80000s
-</usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/
-texmf-dist/fonts/type1/public/amsfonts/cm/cmbx9.pfb></usr/share/texmf-dist/font
-s/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texmf-dist/fonts/type1/public
-/amsfonts/cmextra/cmex9.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/
-cm/cmmi10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb><
-/usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/share/texm
-f-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/share/texmf-dist/fonts/ty
-pe1/public/amsfonts/cm/cmmi8.pfb></usr/share/texmf-dist/fonts/type1/public/amsf
-onts/cm/cmmi9.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.p
-fb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/share/t
-exmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/share/texmf-dist/fonts/
-type1/public/amsfonts/cm/cmr7.pfb></usr/share/texmf-dist/fonts/type1/public/ams
-fonts/cm/cmr8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pf
-b></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/
-texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/share/texmf-dist/font
-s/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/texmf-dist/fonts/type1/public/
-amsfonts/cm/cmsy9.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmt
-i10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmti9.pfb></usr/s
-hare/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/share/texm
-f-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on draft_06.pdf (16 pages, 1529077 bytes).
+ 31i,10n,35p,1351b,559s stack positions out of 5000i,500n,10000p,200000b,80000s
+</usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/
+texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texmf-dist/fon
+ts/type1/public/amsfonts/cm/cmbx9.pfb></usr/share/texmf-dist/fonts/type1/public
+/amsfonts/cm/cmex10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cmex
+tra/cmex9.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb>
+</usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></usr/share/tex
+mf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/share/texmf-dist/fonts/t
+ype1/public/amsfonts/cm/cmmi7.pfb></usr/share/texmf-dist/fonts/type1/public/ams
+fonts/cm/cmmi8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi9.
+pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share
+/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/share/texmf-dist/font
+s/type1/public/amsfonts/cm/cmr6.pfb></usr/share/texmf-dist/fonts/type1/public/a
+msfonts/cm/cmr7.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.
+pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/share/
+texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf-dist/fon
+ts/type1/public/amsfonts/cm/cmsy6.pfb></usr/share/texmf-dist/fonts/type1/public
+/amsfonts/cm/cmsy7.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cm
+sy9.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/
+share/texmf-dist/fonts/type1/public/amsfonts/cm/cmti9.pfb></usr/share/texmf-dis
+t/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/share/texmf-dist/fonts/t
+ype1/public/amsfonts/symbols/msbm10.pfb>
+Output written on draft_06.pdf (18 pages, 1562598 bytes).
 PDF statistics:
- 615 PDF objects out of 1000 (max. 8388607)
- 489 compressed objects within 5 object streams
- 81 named destinations out of 1000 (max. 500000)
+ 689 PDF objects out of 1000 (max. 8388607)
+ 559 compressed objects within 6 object streams
+ 112 named destinations out of 1000 (max. 500000)
  289 words of extra memory for PDF output out of 10000 (max. 10000000)
 
