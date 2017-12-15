@@ -1,0 +1,458 @@
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016 on Slackware (SlackBuilds.org)) (preloaded format=pdflatex 2017.2.28)  15 DEC 2017 15:50
+entering extended mode
+ restricted \write18 enabled.
+ %&-line parsing enabled.
+**\nonstopmode\input combine_shapedynamics_a_01.tex
+(./combine_shapedynamics_a_01.tex
+(/usr/share/texmf-dist/tex/latex/base/report.cls
+Document Class: report 2014/09/29 v1.4h Standard LaTeX document class
+(/usr/share/texmf-dist/tex/latex/base/size10.clo
+File: size10.clo 2014/09/29 v1.4h Standard LaTeX file (size option)
+)
+\c@part=\count79
+\c@chapter=\count80
+\c@section=\count81
+\c@subsection=\count82
+\c@subsubsection=\count83
+\c@paragraph=\count84
+\c@subparagraph=\count85
+\c@figure=\count86
+\c@table=\count87
+\abovecaptionskip=\skip41
+\belowcaptionskip=\skip42
+\bibindent=\dimen102
+)
+(/usr/share/texmf-dist/tex/latex/amsmath/amsmath.sty
+Package: amsmath 2016/06/28 v2.15d AMS math features
+\@mathmargin=\skip43
+
+For additional information on amsmath, use the `?' option.
+(/usr/share/texmf-dist/tex/latex/amsmath/amstext.sty
+Package: amstext 2000/06/29 v2.01 AMS text
+
+(/usr/share/texmf-dist/tex/latex/amsmath/amsgen.sty
+File: amsgen.sty 1999/11/30 v2.0 generic functions
+\@emptytoks=\toks14
+\ex@=\dimen103
+))
+(/usr/share/texmf-dist/tex/latex/amsmath/amsbsy.sty
+Package: amsbsy 1999/11/29 v1.2d Bold Symbols
+\pmbraise@=\dimen104
+)
+(/usr/share/texmf-dist/tex/latex/amsmath/amsopn.sty
+Package: amsopn 2016/03/08 v2.02 operator names
+)
+\inf@bad=\count88
+LaTeX Info: Redefining \frac on input line 199.
+\uproot@=\count89
+\leftroot@=\count90
+LaTeX Info: Redefining \overline on input line 297.
+\classnum@=\count91
+\DOTSCASE@=\count92
+LaTeX Info: Redefining \ldots on input line 394.
+LaTeX Info: Redefining \dots on input line 397.
+LaTeX Info: Redefining \cdots on input line 518.
+\Mathstrutbox@=\box26
+\strutbox@=\box27
+\big@size=\dimen105
+LaTeX Font Info:    Redeclaring font encoding OML on input line 634.
+LaTeX Font Info:    Redeclaring font encoding OMS on input line 635.
+\macc@depth=\count93
+\c@MaxMatrixCols=\count94
+\dotsspace@=\muskip10
+\c@parentequation=\count95
+\dspbrk@lvl=\count96
+\tag@help=\toks15
+\row@=\count97
+\column@=\count98
+\maxfields@=\count99
+\andhelp@=\toks16
+\eqnshift@=\dimen106
+\alignsep@=\dimen107
+\tagshift@=\dimen108
+\tagwidth@=\dimen109
+\totwidth@=\dimen110
+\lineht@=\dimen111
+\@envbody=\toks17
+\multlinegap=\skip44
+\multlinetaggap=\skip45
+\mathdisplay@stack=\toks18
+LaTeX Info: Redefining \[ on input line 2739.
+LaTeX Info: Redefining \] on input line 2740.
+)
+(/usr/share/texmf-dist/tex/latex/amsfonts/amsfonts.sty
+Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
+\symAMSa=\mathgroup4
+\symAMSb=\mathgroup5
+LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
+(Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
+)
+(/usr/share/texmf-dist/tex/latex/amsfonts/amssymb.sty
+Package: amssymb 2013/01/14 v3.01 AMS font symbols
+)
+(/usr/share/texmf-dist/tex/latex/graphics/graphicx.sty
+Package: graphicx 2014/10/28 v1.0g Enhanced LaTeX Graphics (DPC,SPQR)
+
+(/usr/share/texmf-dist/tex/latex/graphics/keyval.sty
+Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
+\KV@toks@=\toks19
+)
+(/usr/share/texmf-dist/tex/latex/graphics/graphics.sty
+Package: graphics 2016/07/10 v1.0t Standard LaTeX Graphics (DPC,SPQR)
+
+(/usr/share/texmf-dist/tex/latex/graphics/trig.sty
+Package: trig 2016/01/03 v1.10 sin cos tan (DPC)
+)
+(/usr/share/texmf-dist/tex/latex/graphics-cfg/graphics.cfg
+File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
+)
+Package graphics Info: Driver file: pdftex.def on input line 99.
+
+(/usr/share/texmf-dist/tex/latex/graphics-def/pdftex.def
+File: pdftex.def 2016/07/10 v0.06j Graphics/color for pdfTeX
+
+(/usr/share/texmf-dist/tex/generic/oberdiek/infwarerr.sty
+Package: infwarerr 2016/05/16 v1.4 Providing info/warning/error messages (HO)
+)
+(/usr/share/texmf-dist/tex/generic/oberdiek/ltxcmds.sty
+Package: ltxcmds 2016/05/16 v1.23 LaTeX kernel commands for general use (HO)
+)
+\Gread@gobject=\count100
+))
+\Gin@req@height=\dimen112
+\Gin@req@width=\dimen113
+)
+(/usr/share/texmf-dist/tex/latex/subfigure/subfigure.sty
+Package: subfigure 2002/03/15 v2.1.5 subfigure package
+\subfigtopskip=\skip46
+\subfigcapskip=\skip47
+\subfigcaptopadj=\dimen114
+\subfigbottomskip=\skip48
+\subfigcapmargin=\dimen115
+\subfiglabelskip=\skip49
+\c@subfigure=\count101
+\c@lofdepth=\count102
+\c@subtable=\count103
+\c@lotdepth=\count104
+
+****************************************
+* Local config file subfigure.cfg used *
+****************************************
+(/usr/share/texmf-dist/tex/latex/subfigure/subfigure.cfg)
+\subfig@top=\skip50
+\subfig@bottom=\skip51
+)
+(/usr/share/texmf-dist/tex/latex/tools/enumerate.sty
+Package: enumerate 2015/07/23 v3.00 enumerate extensions (DPC)
+\@enLab=\toks20
+)
+(/usr/share/texmf-dist/tex/latex/tools/verbatim.sty
+Package: verbatim 2014/10/28 v1.5q LaTeX2e package for verbatim enhancements
+\every@verbatim=\toks21
+\verbatim@line=\toks22
+\verbatim@in@stream=\read1
+)
+(/usr/share/texmf-dist/tex/latex/graphics/color.sty
+Package: color 2016/07/10 v1.1e Standard LaTeX Color (DPC)
+
+(/usr/share/texmf-dist/tex/latex/graphics-cfg/color.cfg
+File: color.cfg 2016/01/02 v1.6 sample color configuration
+)
+Package color Info: Driver file: pdftex.def on input line 147.
+)
+(/usr/share/texmf-dist/tex/latex/xcolor/xcolor.sty
+Package: xcolor 2016/05/11 v2.12 LaTeX color extensions (UK)
+
+(/usr/share/texmf-dist/tex/latex/graphics-cfg/color.cfg
+File: color.cfg 2016/01/02 v1.6 sample color configuration
+)
+Package xcolor Info: Driver file: pdftex.def on input line 225.
+LaTeX Info: Redefining \color on input line 709.
+Package xcolor Info: Model `cmy' substituted by `cmy0' on input line 1348.
+Package xcolor Info: Model `hsb' substituted by `rgb' on input line 1352.
+Package xcolor Info: Model `RGB' extended on input line 1364.
+Package xcolor Info: Model `HTML' substituted by `rgb' on input line 1366.
+Package xcolor Info: Model `Hsb' substituted by `hsb' on input line 1367.
+Package xcolor Info: Model `tHsb' substituted by `hsb' on input line 1368.
+Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1369.
+Package xcolor Info: Model `Gray' substituted by `gray' on input line 1370.
+Package xcolor Info: Model `wave' substituted by `hsb' on input line 1371.
+)
+(/usr/share/texmf-dist/tex/latex/tools/bm.sty
+Package: bm 2016/07/07 v1.2b Bold Symbol Support (DPC/FMi)
+\symboldoperators=\mathgroup6
+\symboldletters=\mathgroup7
+\symboldsymbols=\mathgroup8
+LaTeX Font Info:    Redeclaring math alphabet \mathbf on input line 142.
+LaTeX Info: Redefining \bm on input line 208.
+)
+\widthadd=\skip52
+\wfct=\skip53
+
+(/usr/share/texmf-dist/tex/latex/oberdiek/epstopdf.sty
+Package: epstopdf 2016/05/15 v2.6 Conversion with epstopdf on the fly (HO)
+
+(/usr/share/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
+Package: epstopdf-base 2016/05/15 v2.6 Base part for package epstopdf
+
+(/usr/share/texmf-dist/tex/latex/oberdiek/grfext.sty
+Package: grfext 2016/05/16 v1.2 Manage graphics extensions (HO)
+
+(/usr/share/texmf-dist/tex/generic/oberdiek/kvdefinekeys.sty
+Package: kvdefinekeys 2016/05/16 v1.4 Define keys (HO)
+))
+(/usr/share/texmf-dist/tex/latex/oberdiek/kvoptions.sty
+Package: kvoptions 2016/05/16 v3.12 Key value format for package options (HO)
+
+(/usr/share/texmf-dist/tex/generic/oberdiek/kvsetkeys.sty
+Package: kvsetkeys 2016/05/16 v1.17 Key value parser (HO)
+
+(/usr/share/texmf-dist/tex/generic/oberdiek/etexcmds.sty
+Package: etexcmds 2016/05/16 v1.6 Avoid name clashes with e-TeX commands (HO)
+
+(/usr/share/texmf-dist/tex/generic/oberdiek/ifluatex.sty
+Package: ifluatex 2016/05/16 v1.4 Provides the ifluatex switch (HO)
+Package ifluatex Info: LuaTeX not detected.
+)
+Package etexcmds Info: Could not find \expanded.
+(etexcmds)             That can mean that you are not using pdfTeX 1.50 or
+(etexcmds)             that some package has redefined \expanded.
+(etexcmds)             In the latter case, load this package earlier.
+)))
+(/usr/share/texmf-dist/tex/generic/oberdiek/pdftexcmds.sty
+Package: pdftexcmds 2016/05/21 v0.22 Utility functions of pdfTeX for LuaTeX (HO
+)
+
+(/usr/share/texmf-dist/tex/generic/oberdiek/ifpdf.sty
+Package: ifpdf 2016/05/14 v3.1 Provides the ifpdf switch
+)
+Package pdftexcmds Info: LuaTeX not detected.
+Package pdftexcmds Info: \pdf@primitive is available.
+Package pdftexcmds Info: \pdf@ifprimitive is available.
+Package pdftexcmds Info: \pdfdraftmode found.
+)
+Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
+38.
+Package grfext Info: Graphics extension search list:
+(grfext)             [.png,.pdf,.jpg,.mps,.jpeg,.jbig2,.jb2,.PNG,.PDF,.JPG,.JPE
+G,.JBIG2,.JB2,.eps]
+(grfext)             \AppendGraphicsExtensions on input line 456.
+
+(/usr/share/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
+File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
+e
+)))
+(./combine_shapedynamics_a_01.aux)
+\openout1 = `combine_shapedynamics_a_01.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 25.
+LaTeX Font Info:    ... okay on input line 25.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 25.
+LaTeX Font Info:    ... okay on input line 25.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 25.
+LaTeX Font Info:    ... okay on input line 25.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 25.
+LaTeX Font Info:    ... okay on input line 25.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 25.
+LaTeX Font Info:    ... okay on input line 25.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 25.
+LaTeX Font Info:    ... okay on input line 25.
+
+(/usr/share/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count105
+\scratchdimen=\dimen116
+\scratchbox=\box28
+\nofMPsegments=\count106
+\nofMParguments=\count107
+\everyMPshowfont=\toks23
+\MPscratchCnt=\count108
+\MPscratchDim=\dimen117
+\MPnumerator=\count109
+\makeMPintoPDFobject=\count110
+\everyMPtoPDFconversion=\toks24
+)
+Package epstopdf Info: Source file: <N=20_shape_F=1000_E=3000_1.eps>
+(epstopdf)                    date: 2017-03-22 21:14:30
+(epstopdf)                    size: 106878 bytes
+(epstopdf)             Output file: <N=20_shape_F=1000_E=3000_1-eps-converted-t
+o.pdf>
+(epstopdf)                    date: 2017-03-22 21:14:30
+(epstopdf)                    size: 22512 bytes
+(epstopdf)             Command: <repstopdf --outfile=N=20_shape_F=1000_E=3000_1
+-eps-converted-to.pdf N=20_shape_F=1000_E=3000_1.eps>
+(epstopdf)             \includegraphics on input line 37.
+Package epstopdf Info: Output file is already uptodate.
+
+<N=20_shape_F=1000_E=3000_1-eps-converted-to.pdf, id=1, 421.575pt x 316.18124pt
+>
+File: N=20_shape_F=1000_E=3000_1-eps-converted-to.pdf Graphic file (type pdf)
+ <use N=20_shape_F=1000_E=3000_1-eps-converted-to.pdf>
+Package pdftex.def Info: N=20_shape_F=1000_E=3000_1-eps-converted-to.pdf used o
+n input line 37.
+(pdftex.def)             Requested size: 134.5074pt x 100.88094pt.
+Package epstopdf Info: Source file: <N=20_shape_F=1000_E=3000_2_crude_end.eps>
+(epstopdf)                    date: 2017-03-22 21:14:30
+(epstopdf)                    size: 1245692 bytes
+(epstopdf)             Output file: <N=20_shape_F=1000_E=3000_2_crude_end-eps-c
+onverted-to.pdf>
+(epstopdf)                    date: 2017-03-22 21:14:30
+(epstopdf)                    size: 97843 bytes
+(epstopdf)             Command: <repstopdf --outfile=N=20_shape_F=1000_E=3000_2
+_crude_end-eps-converted-to.pdf N=20_shape_F=1000_E=3000_2_crude_end.eps>
+(epstopdf)             \includegraphics on input line 37.
+Package epstopdf Info: Output file is already uptodate.
+
+<N=20_shape_F=1000_E=3000_2_crude_end-eps-converted-to.pdf, id=2, 421.575pt x 3
+16.18124pt>
+File: N=20_shape_F=1000_E=3000_2_crude_end-eps-converted-to.pdf Graphic file (t
+ype pdf)
+ <use N=20_shape_F=1000_E=3000_2_crude_end-eps-converted-to.pdf>
+Package pdftex.def Info: N=20_shape_F=1000_E=3000_2_crude_end-eps-converted-to.
+pdf used on input line 37.
+(pdftex.def)             Requested size: 134.5074pt x 100.88094pt.
+
+Overfull \hbox (12.22737pt too wide) in paragraph at lines 37--37
+[][]
+ []
+
+
+Overfull \hbox (12.22737pt too wide) in paragraph at lines 37--37
+[] 
+ []
+
+LaTeX Font Info:    Try loading font information for U+msa on input line 37.
+(/usr/share/texmf-dist/tex/latex/amsfonts/umsa.fd
+File: umsa.fd 2013/01/14 v3.01 AMS symbols A
+)
+LaTeX Font Info:    Try loading font information for U+msb on input line 37.
+
+(/usr/share/texmf-dist/tex/latex/amsfonts/umsb.fd
+File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+)
+Package epstopdf Info: Source file: <N=20_shape_F=1000_E=20000_1.eps>
+(epstopdf)                    date: 2017-03-22 21:14:29
+(epstopdf)                    size: 52879 bytes
+(epstopdf)             Output file: <N=20_shape_F=1000_E=20000_1-eps-converted-
+to.pdf>
+(epstopdf)                    date: 2017-03-22 21:14:29
+(epstopdf)                    size: 11337 bytes
+(epstopdf)             Command: <repstopdf --outfile=N=20_shape_F=1000_E=20000_
+1-eps-converted-to.pdf N=20_shape_F=1000_E=20000_1.eps>
+(epstopdf)             \includegraphics on input line 44.
+Package epstopdf Info: Output file is already uptodate.
+
+<N=20_shape_F=1000_E=20000_1-eps-converted-to.pdf, id=3, 421.575pt x 316.18124p
+t>
+File: N=20_shape_F=1000_E=20000_1-eps-converted-to.pdf Graphic file (type pdf)
+ <use N=20_shape_F=1000_E=20000_1-eps-converted-to.pdf>
+Package pdftex.def Info: N=20_shape_F=1000_E=20000_1-eps-converted-to.pdf used 
+on input line 44.
+(pdftex.def)             Requested size: 134.5074pt x 100.88094pt.
+Package epstopdf Info: Source file: <N=20_shape_F=1000_E=20000_2_crude_end.eps>
+
+(epstopdf)                    date: 2017-03-22 21:14:30
+(epstopdf)                    size: 1495400 bytes
+(epstopdf)             Output file: <N=20_shape_F=1000_E=20000_2_crude_end-eps-
+converted-to.pdf>
+(epstopdf)                    date: 2017-04-26 16:26:29
+(epstopdf)                    size: 119894 bytes
+(epstopdf)             Command: <repstopdf --outfile=N=20_shape_F=1000_E=20000_
+2_crude_end-eps-converted-to.pdf N=20_shape_F=1000_E=20000_2_crude_end.eps>
+(epstopdf)             \includegraphics on input line 44.
+Package epstopdf Info: Output file is already uptodate.
+
+<N=20_shape_F=1000_E=20000_2_crude_end-eps-converted-to.pdf, id=4, 421.575pt x 
+316.18124pt>
+File: N=20_shape_F=1000_E=20000_2_crude_end-eps-converted-to.pdf Graphic file (
+type pdf)
+ <use N=20_shape_F=1000_E=20000_2_crude_end-eps-converted-to.pdf>
+Package pdftex.def Info: N=20_shape_F=1000_E=20000_2_crude_end-eps-converted-to
+.pdf used on input line 44.
+(pdftex.def)             Requested size: 134.5074pt x 100.88094pt.
+
+Overfull \hbox (12.22737pt too wide) in paragraph at lines 44--44
+[][]
+ []
+
+
+Overfull \hbox (12.22737pt too wide) in paragraph at lines 44--44
+[] 
+ []
+
+Package epstopdf Info: Source file: <N=20_shape_F=1000_E=100000_1.eps>
+(epstopdf)                    date: 2017-03-22 21:14:29
+(epstopdf)                    size: 127728 bytes
+(epstopdf)             Output file: <N=20_shape_F=1000_E=100000_1-eps-converted
+-to.pdf>
+(epstopdf)                    date: 2017-03-22 21:14:29
+(epstopdf)                    size: 26479 bytes
+(epstopdf)             Command: <repstopdf --outfile=N=20_shape_F=1000_E=100000
+_1-eps-converted-to.pdf N=20_shape_F=1000_E=100000_1.eps>
+(epstopdf)             \includegraphics on input line 51.
+Package epstopdf Info: Output file is already uptodate.
+
+<N=20_shape_F=1000_E=100000_1-eps-converted-to.pdf, id=5, 421.575pt x 316.18124
+pt>
+File: N=20_shape_F=1000_E=100000_1-eps-converted-to.pdf Graphic file (type pdf)
+
+ <use N=20_shape_F=1000_E=100000_1-eps-converted-to.pdf>
+Package pdftex.def Info: N=20_shape_F=1000_E=100000_1-eps-converted-to.pdf used
+ on input line 51.
+(pdftex.def)             Requested size: 134.5074pt x 100.88094pt.
+Package epstopdf Info: Source file: <N=20_shape_F=1000_E=100000_2_crude_end.eps
+>
+(epstopdf)                    date: 2017-03-22 21:14:29
+(epstopdf)                    size: 1108065 bytes
+(epstopdf)             Output file: <N=20_shape_F=1000_E=100000_2_crude_end-eps
+-converted-to.pdf>
+(epstopdf)                    date: 2017-03-22 21:14:29
+(epstopdf)                    size: 90320 bytes
+(epstopdf)             Command: <repstopdf --outfile=N=20_shape_F=1000_E=100000
+_2_crude_end-eps-converted-to.pdf N=20_shape_F=1000_E=100000_2_crude_end.eps>
+(epstopdf)             \includegraphics on input line 51.
+Package epstopdf Info: Output file is already uptodate.
+
+<N=20_shape_F=1000_E=100000_2_crude_end-eps-converted-to.pdf, id=6, 421.575pt x
+ 316.18124pt>
+File: N=20_shape_F=1000_E=100000_2_crude_end-eps-converted-to.pdf Graphic file 
+(type pdf)
+
+<use N=20_shape_F=1000_E=100000_2_crude_end-eps-converted-to.pdf>
+Package pdftex.def Info: N=20_shape_F=1000_E=100000_2_crude_end-eps-converted-t
+o.pdf used on input line 51.
+(pdftex.def)             Requested size: 134.5074pt x 100.88094pt.
+
+Overfull \hbox (12.22737pt too wide) in paragraph at lines 51--51
+[][]
+ []
+
+
+Overfull \hbox (12.22737pt too wide) in paragraph at lines 51--51
+[] 
+ []
+
+[1{/usr/share/texmf-var/fonts/map/pdftex/updmap/pdftex.map} <./N=20_shape_F=100
+0_E=3000_1-eps-converted-to.pdf> <./N=20_shape_F=1000_E=3000_2_crude_end-eps-co
+nverted-to.pdf> <./N=20_shape_F=1000_E=20000_1-eps-converted-to.pdf> <./N=20_sh
+ape_F=1000_E=20000_2_crude_end-eps-converted-to.pdf> <./N=20_shape_F=1000_E=100
+000_1-eps-converted-to.pdf> <./N=20_shape_F=1000_E=100000_2_crude_end-eps-conve
+rted-to.pdf>] (./combine_shapedynamics_a_01.aux) ) 
+Here is how much of TeX's memory you used:
+ 3193 strings out of 493013
+ 42087 string characters out of 6139264
+ 104248 words of memory out of 5000000
+ 6672 multiletter control sequences out of 15000+600000
+ 10150 words of font info for 38 fonts, out of 8000000 for 9000
+ 1141 hyphenation exceptions out of 8191
+ 42i,9n,35p,339b,310s stack positions out of 5000i,500n,10000p,200000b,80000s
+</usr/share/texmf-dist/fonts/
+type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texmf-dist/fonts/type1/public/am
+sfonts/cm/cmr8.pfb>
+Output written on combine_shapedynamics_a_01.pdf (1 page, 370735 bytes).
+PDF statistics:
+ 42 PDF objects out of 1000 (max. 8388607)
+ 29 compressed objects within 1 object stream
+ 0 named destinations out of 1000 (max. 500000)
+ 31 words of extra memory for PDF output out of 10000 (max. 10000000)
+

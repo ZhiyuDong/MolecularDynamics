@@ -1,0 +1,1413 @@
+\documentclass[onecolumn,pra]{revtex4-1} 
+
+%\documentclass[aps,preprintnumbers,onecolumn,amsmath,amssymb,floatfix,pra]{revtex4} 
+
+%\documentclass[aps,pre,twocolumn,groupedaddress]{revtex4-1}
+%\documentclass[a4paper,onecolumn,12pt]{article}
+%\documentclass[reprint, amsmath,amssymb,aps,]{revtex4-1}
+
+\bibliographystyle{apsrev4-1}
+
+\usepackage{amsmath}
+ \usepackage{amsfonts}
+ \usepackage{amssymb}
+ \usepackage{graphicx}
+ \usepackage{subfigure}
+ \usepackage{enumerate}
+ \usepackage{verbatim}% for \begin{comment} \end{comment}
+ \usepackage{color}
+ \usepackage{xcolor}
+ \usepackage{bm}
+ \usepackage[]{hyperref}
+ \hypersetup{
+    colorlinks = false,
+    linkbordercolor = {red},
+    citebordercolor = {green},
+}
+
+ \usepackage{epstopdf}
+
+\begin{document}
+\title{One-dimensional Classical Gas in a Harmonic Trap with Repulsive Interaction}
+
+\author{
+Zhiyu Dong,$^{1,2}$
+R. Moessner,$^2$
+and Masudul Haque$^{2,3}$}
+
+
+\affiliation{
+  $^1$ Department of Physics and State Key Laboratory of Surface Physics, Fudan University, Shanghai 200433, China\\ 
+  $^2$ Max Planck Institute for the Physics of Complex Systems, N{\"o}thnitzer Str.~38, 01187 Dresden, Germany\\
+  $^3$ Department of Theoretical Physics, Maynooth University, Co. Kildare, Ireland
+}
+
+
+
+\date{\today}
+ 
+ 
+\begin{abstract}
+
+Abstract --  to be written last
+   
+\end{abstract}
+
+\maketitle
+
+
+\section{Introduction}
+
+
+The non-equilibrium dynamics of isolated systems has been the subject of a large volume of work in
+recent years.  In particular, in the quantum context, the study of unitary quantum evolution of
+many-body and few-body systems has undergone an explosive growth.  This interest was partly fueled
+by the availability of experimental systems, e.g., trapped ultracold atomic and ionic systems, where
+non-dissipative dynamics can be studied explicitly due to excellent isolation.  There are also
+foundational reasons for studying quantum dynamics in isolation: recent activity has led to advances in the
+understanding of basic principles connecting quantum dynamics, quantum chaos and the emergence of
+statistical mechanics and thermalization (CITE).  For classical many-body systems, explorations of
+the connections between microscopic dynamical rules, chaos, ergodicity and statistical mechanics
+have a much longer history, dating back to the time of Boltzmann and Poincare.
+\cite{Dorfman_book_1999, Dumas_book_KAMstory, Boltzmann_legacy_book, EckmannRuelle_RMP85}.
+
+Motivated by questions and issues arising in the field of quantum many-body and few-body dynamics,
+in this work we will study the classical dynamics of a collection of interacting particles confined
+in a one-dimensional harmonic trap.  The analogs of two questions, studied intensively in the
+quantum literature, will be investigated for this classical system: (1) the influence of
+interactions on the breathing mode frequency of the trapped gas, and (2) the relaxation and possible
+thermalization of the finite system under its own evolution, in the absence of any external baths or
+dissipation mechanisms.
+
+Experiments with cold atoms, which have an essential motivational role for the current interest in
+many-body quantum dynamics, are generally performed in a trapping potential, either optical or
+magnetic.  As a result, in the last two decades many questions of many-body quantum physics have
+been reformulated in the presence of a harmonic trap.  The presence of a harmonic trap often results
+in new dynamical phenomena.  For example, the motion of vortices in a trapped condensate (CITE) has
+new features, such as precession, compared to vortex motion in uniform condensates (CITE).  Trapping
+also results in new collective phenomena which have no analog in uniform situations: for example,
+collective modes like dipole, breathing and quadrupole modes are specific to trapped many-body
+systems.  Dipole modes (center of mass oscillations) and breathing modes (size oscillations) appear
+even for one-dimensional trapped systems; higher-dimensional systems display additional, more
+complicated modes like quadrupole and scissors modes.  Because of the omnipresence of trapping
+potentials in cold-atom experiments, dipole and breathing mode dynamics are pervasive across the
+field: These modes have been intensively studied and used for diagnostic purposes since the early
+days of research with trapped quantum-degenerate gases, and continue to generate interest today
+\cite{Naegerl_Science2009, Esslinger_exp_PRL2003, collective_modes_early_papers,
+  Tschischik_BHbreathing_PRA_2013, KroenkeSchmelcher_BM, Bonitz_Review, Bouchoule_PRL2014,
+  our_superTG_PRA_2015, STG_Astrakharchik_PRL2005, STG_Chen-etal_PRA2010,
+  br_mode_long_range_interactions, 1D_breathing_mode_recent, KohnMode, Cominotti_2015,
+  ZarembaTowers_PRA2014, Wetterich_JPB2011, fermion2Dbreathing, Stringari_lowDcollective_PRA15,
+  Mazets_1Dbreathing_EPJD11}.  (CITE).
+%
+In one of the best-known experiments on quantum many-body dynamics,
+Ref.~\cite{NewtonsCradle_Nature06}, the dynamics of an integrable system (Lieb-Liniger bosons) was
+seen to have ultraslow relaxation in a trap, supposedly due to integrability.  This experiment has
+led to continuing efforts to understand how a trap breaks integrability (CITE).
+
+The presence of harmonic trapping is thus a paradigmatic aspect in the field of quantum many-body
+dynamics.  This motivates our study of classical dynamics of trapped interacting particles.
+Similarly motivated by quantum dynamics, classical trapped dynamics of hard rods has recently been
+studied in Refs.\ \cite{DoyonSpohn_JSTAT17, Moore_arXiv17.10}, focusing on integrability-breaking
+effects of the trap.  In this work, we consider trapped classical particles which interact via a
+simple finite-range potential between any pair of particles: a constant repulsive force acts
+whenever the particles are less than a certain distance apart.  The interaction strength can be
+tuned, leading to different regimes of behavior.
+
+Our first theme will be a study of the breathing mode of the classical interacting gas, and the
+effect of interactions on the frequency of the breathing mode.  In the quantum case, this has long
+been a topic of interest for both bosons and fermions.  For bosons with short-range interactions,
+the situation has been studied in one, two and three dimensions.  At zero interactions, the
+breathing mode is twice the trapping frequency $\omega_0$ (assuming isotropic trapping) in each
+case.  A mean field (Gross-Pitaevskii) calculation gives the frequency to be $\sqrt{D+2}$ times the
+trapping frequency, where $D$ is the spatial dimension.  For three-dimensional (3D) traps, the
+mean-field description can be expected to be qualitatively correct, thus the breathing mode
+frequency is expected to change monotonically from $2\omega_0$ at zero interactions to
+$\sqrt{5}\omega_0$ at large interactions.  For 2D traps, the breathing frequency is exactly
+$2\omega_0$ for any interaction strength \cite{PitaevskiiRosch_PRA97}.  This remarkable result
+follows from a symmetry in 2D.  Classical trapped particles with scale-invariant interaction
+potentials also have breathing frequency $2\omega_0$ independent of interaction strength
+\cite{PitaevskiiRosch_PRA97}.  The interaction dependence in 1D (trapped Lieb-Liniger gas) is also
+remarkable: as the interaction is increased, the breathing frequency first decreases from
+$2\omega_0$ to the mean-field prediction $\sqrt{3}\omega_0$, and then at larger interactions
+increases again, returning to $2\omega_0$ in the infinite interaction (Tonks-Girardeau) limit
+\cite{Naegerl_Science2009, Tschischik_BHbreathing_PRA_2013, 1D_breathing_mode_recent,
+  Bouchoule_PRL2014, KroenkeSchmelcher_BM}.
+%
+The breathing mode has also been investigated extensively for fermionic systems with contact
+interactions \cite{GrimmSmith_unitaryfermions_PRA08, fermion2Dbreathing,
+  Stringari_lowDcollective_PRA15}, and also for fermionic and bosonic systems with long-range
+interactions \cite{br_mode_long_range_interactions, Bonitz_Review}.  The breathing mode has also
+been studied for a high-temperature trapped gas where a Boltzmann-equation description is valid,
+both theoretically \cite{Guery-Odelin1999} and experimentally
+\cite{Cornell_classsical_3Dexpt_NatPhys15}.
+
+In this work, we use an explicit microscopic model, rather than a Boltzmann equation approach.  
+Unlike the quantum case, the harmonic potential does not impose a length scale or an energy scale.
+The interaction range can thus be scaled away by a redefinition of length, i.e., by measuring
+lengths in units of the interaction range.  There are thus only two important parameters determining
+the system behavior, namely the interaction strength and the energy per particle.  We find that the
+breathing mode frequency has a non-monotonic dependence on the interaction parameter.  At small
+interactions, when the particles pass through each other, the effect of collisions is to slow down
+the dynamics, so that the breathing frequency drops below the non-interacting value $2\omega_0$.  At
+very large interactions, the particles bounce off each other, a process which speeds up the size
+oscillations, resulting in the breathing frequency being larger than $2\omega_0$.
+
+Our second theme is the process of relaxation at longer timescales, and possible thermalization.
+This topic is also motivated by intense recent research in the quantum context.  In quantum isolated
+systems, thermalization is now understood in terms of the so-called eigenstate thermalization
+hypothesis (ETH), which postulates that in ergodic systems the expectation values of observables in
+individual eigenstates depend ony on the eigenenergy, and hence represents the thermal value (CITE).
+The connection to statistical mechanics is particularly difficult for explicitly finite systems, in
+which case ETH is to be understood in terms of finite size scaling (CITE).  In classical systems,
+the connection between microscopic dynamics and statistical mechanics has been continually studied
+since the 19th century \cite{Dorfman_book_1999, Dumas_book_KAMstory, Boltzmann_legacy_book,
+  EckmannRuelle_RMP85}.  It is generally understood that systems with nonzero Lyapunov exponents,
+i.e., chaotic or ergodic systems, thermalize in the long-time limit, provided there are enough
+degrees of freedom.  As in the quantum case, finite systems are particularly intricate.  In finite
+systems, defining thermalization is trickier as most observables will fluctuate or oscillate
+substantially.  In addition, the influence of Kolmogorov-Arnold-Moser (KAM) orbits may play a role
+in preventing thermalization; it is generally believed that the fraction of phase space where KAM
+physics might be relevant decreases rapidly with particle number \cite{Dumas_book_KAMstory}.
+
+In our work, we examine the relaxation of our trapped interacting classical system, explicity for
+finite numbers of particles.  We look for thermalization within finite timescales, by sampling
+single-particle energies periodically until such timescales and comparing the distribution of
+single-particle energies with the Boltzmann distribution.  We show that whether or not the system
+thermalizes in this sense depends on the ratio of interaction strength and energy per particle.  We
+also show that this result is reflected in the finite-time Lyapunov exponents of the system.
+%
+We also examine another notion of thermalization, according to which a system is thermalized when it
+loses memory of initial state, by following the dynamics of the particle distribution in phase
+space.  Remarkably, we find that one can observe energy thermaliztion even at timescales when the
+shape of the phase space distribution continues to perform seemingly coherent oscillations.
+
+There is a significant literature on calculating Lyapunov exponents in model statistical-mechanics
+systems and thus exploring ergodicity \cite{Dorfman_book_1999, } (CITE).  This provides intuition of
+what types of microscopic interactions are likely to produce thermalizability, and is an important
+step in the programme of understanding statistical mechanics ``from the bottom up''.  However, we
+are not aware of a significant literature on following explicitly the microcanonical dynamics of
+statistical-mechanical or few-body systems.  A few studies have examined thermalization dynamics in
+one dimensional gravitational systems \cite{Yawn1997, Tsuchiya2000}.  Several such studies have
+appeared recently (CITE), motivated by the quantum dynamics literature, like the present work.
+
+
+
+
+
+---------
+
+Stat-mech from the `bottom up'.  
+
+The words ergodic, relaxation and thermalization --- distinguish carefully? 
+
+Loss of memory of initial state --- our two definitions 
+
+------------------
+
+
+This paper is organized as follows: In Section \ref{section:preparation}, we perform a scaling to
+reduce the number of parameters of the system. In addition, we briefly observe the ground state and
+reveal two dynamically distinct regime of the system, i.e. strong interaction regime and weak
+interaction regime. In Section \ref{section:breathing frequency}, we evaluate the breathing
+frequency according to its mechanism, and compare that with our numerical simulation
+result. Besides, we also introduce a rotating frame method of treating this problem, which is a
+convenient tool to analyze simple harmonic systems. In section \ref{section:Thermalization}, we
+focus on the thermalization property. We first examine the canonical distribution of energy to find
+out the threshold of thermalization, i.e. under what parameter the thermalization time scale is very
+large. In the end of this section, we measure the Lyapunov Exponent to quantify the time scales and
+confirm the former discussion. Then we point out that there are two kind of thermalization behavior
+that could be measured in this system, one is about energy distribution while another is about shape
+of cloud in phase-space. Since here we find two sense of ``thermalizing", we will redefine our terms
+-- When a system's energy distribution goes to equilibrium, we still call it ``thermalized".  But
+when a system's distribution in phase-space goes to equilibrium, we call it ``relaxed" to distiguish
+it from ``thermalized". So in section \ref{section:Shape} we actually study the ``thermalizing" of
+the shape of the cloud in phase-space, or the ``relaxation" behavior of the system. There we
+discovered a long-lasting mode, which turns out to be a quadruple mode in phase-space.
+
+
+
+
+\section{The model and its equilibrium properties}\label{section:preparation}
+
+\subsection{Model and Scaling}
+
+Our model for the interacting classical gas involves particles with a simple finite-range repulsive
+interaction.  Two particles repel each other whenever they are within a distance $\sigma$ from each
+other.  The force of repulsion is a constant, $F_0$, within this distance and zero when the distance
+is larger. 
+%
+\begin{equation}
+\Big| F(x) \Big| ~=~ \begin{cases}
+F_0  &\quad |x|<\sigma\\
+0  &\quad |x|>\sigma
+\end{cases}
+\label{eq:preparation1}
+\end{equation}
+where $|x|$ is the distance between two particles.  This equation describes the magnitude of the
+interparticle force; the direction is always repulsive.
+
+The gas contains $N$ such identical particles, each of mass $m$, in a harmonic trap.  The
+Hamiltonian describing the gas is 
+\begin{equation}
+H=\frac{1}{2}m\omega_0^2\sum_{i}x_i^2+\frac{1}{2}m\sum_i
+v_i^2+\sum_{\left|x_i-x_j\right|\textless\sigma}F_0\left(\sigma-\left|x_i-x_j\right|\right)
+\label{eq:preparation2}
+\end{equation}
+%
+It is useful to rescale the quantities.  We will measure distance, time, energy and force in units
+of $\sigma$, $1/\omega$, $m\omega_0^2\sigma^2$ and $m\omega_0^2\sigma$ respectively:
+\begin{equation} \label{eq:transform}
+  \tilde{x_i} = \frac{x_i}{\sigma}\ , \quad 
+  \tilde{H} = \frac{H}{m\omega_0^2\sigma^2}\ ,  \quad \tilde{t} = \omega_0t \ ,  \quad 
+\tilde{F_0} = \frac{F_0}{m\omega_0^2\sigma}\ .
+\end{equation}
+%
+Eq.~\ref{eq:preparation2} is then rewritten as
+\begin{equation}
+  \tilde{H} =
+  \frac{1}{2}\sum_{i}\tilde{x_i}^2
+  + \frac{1}{2}\sum_i\left(\frac{d\tilde{x}_i}{d\tilde{t}}\right)^2 
+  + \sum_{\left|\tilde{x_i}-\tilde{x_j}\right|\textless
+    1}\tilde{F}_0\left(1-\left|\tilde{x_i}-\tilde{x_j}\right|\right)  
+\end{equation}
+%
+Through this rescaling, we have reduced the number of the parameters in our model to three: the
+energy $\tilde{H}$, the interaction strength $\tilde{F_0}$, and the number of particles $N$.  The
+rescaling is equivalent to setting $\sigma$, $\omega_0$ and $m$ to $1$; this is what we do in our
+numerical simulation.  In the rest of this paper, we will use ``E" and ``$F_0$" to denote the
+reduced versions $\tilde{H}$ and $\tilde{F_0}$.
+
+We will be concerned with the size of the cloud.  We quantify the size through the root-mean-square
+of particle positions $\left\lbrace x_i\right\rbrace$, 
+\begin{equation}
+R\equiv\left(\overline{x_i^2}\right)^\frac{1}{2} \, ,
+\label{eq:def_of_R}
+\end{equation}
+and refer to this quantity as the `radius' or `cloud radius'.
+
+In the dilute gas limit, there are few or no interactions occuring at most times.  Thus the energy
+$E$ is dominated by the trap energy, i.e., $E\approx m\omega_0^2\sum_{i}x_i^2= Nm\omega_0^2R^2$, or,
+in our units,
+\begin{equation}
+  E\approx NR^2 \, .
+  \label{eq:E_and_R}
+\end{equation}
+%
+This approximation is good when the average distance betwen particles is much larger than the
+interaction range $\sigma=1$, i.e., whenever $R\gg1$, which is the regime we consider dynamics in.
+Another way of describing this dilute-gas regime is that the gas is far from the ground state
+(described in the next subsection).  Neglecting the interaction energy to estimate $E$ is reasonable
+even at very large interactions ($F_0\gg E/N$), because for very large interactions, the particles
+behave as hard rods which bounce off each other very rapidly, so that at most instants one can
+expect no collisions to be taking place.  It is also expected to be a good approximation at very
+small $F_0$ since we can then simply neglect the interaction energy.  Thus, we will use this as a
+common estimate for $R$ in terms of the energy.  
+
+
+%%%%% FIGURE %%%%% FIGURE %%%%% FIGURE %%%%% FIGURE %%%%% 
+\begin{figure}[tbhp]
+\centering
+\includegraphics[scale=0.6]{ZhiyuPictures/N=5_GS_pre_2_rev.eps}
+\caption{The ground state of a system with $N=5$ particles, shown via the positions of each
+  particle, labeled 1 through 5.  At large interactions, the particles position themselves just
+  outside the range of interactions of the neighboring particles.}
+\label{fig:GS1}
+\end{figure}
+%%%%% FIGURE %%%%% FIGURE %%%%% FIGURE %%%%% FIGURE %%%%% 
+
+
+
+
+\subsection{Ground states}
+
+The lowest-energy state of the system has zero kinetic energy; in this state the particles find
+stationary positions which minimize the trap (potential) and interaction energies.  The trap
+potential tries to squeeze the particles towards the trap center, while the interaction tries to push
+them apart.
+
+Because of the `Heaviside theta' form of our interaction, at large enough interactions (large $F_0$)
+the particles are spaced exactly at distance equal to the range $\sigma$, which is distance $1$ in
+our rescaled units.  The interaction is then effectively a `hard-core' interaction.
+
+At very small $F_0$, the particles in the ground state are close enough to the trap center that each
+particle interacts with every other particle.  Equating the interaction force due to all the other
+particles with the trapping force, one finds that the position of the $i$-th particle is
+\begin{equation}
+x_i ~=~ \frac{2F_0}{m\omega_0^2} \left( i - \frac{N+1}{2} \right) ~=~ 2F_0 \left( i - \frac{N+1}{2} \right)
+\end{equation}
+where the particles are labeled $i=1$ to $i=N$ from left to right.  Thus the particles are
+equidistant in this regime.  In this `solid'-like state, the low-lying
+excitation involves independent oscillation of the particles around their equilibrium position.
+
+In this regime, the distance between the leftmost and rightmost particles is at most $\sigma=1$.
+Thus, this situation extends up to $F_0 = \frac{1}{2(N-1)}$.  For the $N=5$ case shown in Figure
+\ref{fig:GS1}, this behavior is seen up to $F_0 < 1/8$.
+
+
+In Figure \ref{fig:GS1}, we can see this crossover from the ``solid-like'' limit (left) to the
+``hardcore gas'' limit (right).  In between, there is a rich staircase-like structure, as the
+particles attempt to minimize the interaction by being at distance $>1$ from as many other particles
+as is compatible with the trap energy.
+
+
+\subsection{Phase space snapshots}
+
+
+%%%%% FIGURE %%%%% FIGURE %%%%% FIGURE %%%%% FIGURE %%%%% 
+\begin{figure*}[tbph]
+\includegraphics[width=0.9\textwidth]{ZhiyuPictures/stationary_and_rotating_frame_t=1-5_5T.pdf}
+%
+\caption{Upper (lower) panels are snapshots of the cloud configuration in phase space in the
+  stationary (rotating) frame, at instants within the first trap period.  Here $N=50$, $F_0=100$,
+  and $E=50000$.  }
+\label{fig:Breathingfrequency2_0}
+\end{figure*}
+%%%%% FIGURE %%%%% FIGURE %%%%% FIGURE %%%%% FIGURE %%%%% 
+
+
+%%%%% FIGURE %%%%% FIGURE %%%%% FIGURE %%%%% FIGURE %%%%% 
+\begin{figure*}
+\includegraphics[width=0.9\textwidth]{ZhiyuPictures/rotating_frame_t=0-80T.pdf}  
+\caption{Phase space snapshots of the cloud dynamics viewed in the rotating frame, at longer
+  timescales.  The broadening and rotation observed here are interaction effects: in the
+  non-interacting gas the particles are stationary in this frame.}
+\label{fig:Breathingfrequency2_1}
+\end{figure*}
+%%%%% FIGURE %%%%% FIGURE %%%%% FIGURE %%%%% FIGURE %%%%%
+
+A useful way to visualize the state and evolution of the gas is to plot the position and momentum of
+each particle, i.e., to plot the locations of the particles in the single-particle phase space.
+This will be useful for visualizing both the breathing mode and relaxation. 
+
+Figures \ref{fig:Breathingfrequency2_0} and \ref{fig:Breathingfrequency2_1} show such phase space
+snapshots.  We generally start with particles distributed at random positions around the trap
+center, initially with no velocity (zero momentum).  The initial state thus has the points lined up
+along the $X$ axis.  In the absence of interactions, each particle would undergo simple harmonic
+oscillation with period $T=2\pi/\omega_0 = 2\pi$.  The point corresponding to each particle executes
+clockwise elliptical motion around the $X$-$P$ plane.  (In our units, the elliptical trajectory is
+actually circular.)  This results in the initial line remaining a straight line and rotating
+clockwise with exact period $T$.  The effect of the interaction is to smear out the line and spread
+the points out toward a rotationally invariant distribution in the $X$-$P$ plane.  The top panel of
+Figure \ref{fig:Breathingfrequency2_0} shows this during the first period and Figure
+\ref{fig:Breathingfrequency2_1} shows this process over a much longer timescale.
+
+Since the rotation of the initial line of points is simple to understand as a single-particle
+(non-interacting) effect, we can focus on interaction effects by viewing the phase space in a
+`rotating' frame.  The rotating frame is used in the lower panel of Figure
+\ref{fig:Breathingfrequency2_0} and in Figure \ref{fig:Breathingfrequency2_1}.  In this picture, the
+`real' $X$ and $P$ axes are rotating counter-clockwise.  This rotating frame picture may be regarded
+as a classical version of the ``interaction picture'' of quantum dynamics.  This picture highlights
+effects of interactions because the other effects are already encoded in the frame rotation.
+
+In the absence of interactions, each point (each particle) is stationary in the rotating-frame
+phase-space picture.  As seen in lower panel of Figure \ref{fig:Breathingfrequency2_0} and in Figure
+\ref{fig:Breathingfrequency2_1}, interactions cause a gradual distortion of the line as well as some
+degree of rotation.
+%
+The rotation that is visible in the already rotating $X_{\rm rot}$-$P_{\rm rot}$ frame is the
+interaction-induced shift of the breathing frequency from the noninteracting value,
+$\omega_B=2\omega_0$.  The distortion of the line toward an eventually rotationally invariant
+distribution may be regarded as thermalization or ergodicity.  In the next sections we explore these
+two interaction-induced effects.
+
+
+
+
+\subsection{Numerical calculations}
+
+We use the Verlet algorithm (molecular dynamics) to numerically simulate the cloud, using particle
+numbers between 5 and 50.  Our force is simple, so that calculating the force at each step is
+inexpensive, however, the theta function dependence of the force on particle positions requires the
+use of fine timesteps at the beginning and end of each collision process.
+
+The initial state is taken to have particles with zero velocity and random positions; hence the line
+distribution in the phase space picture.  This has the advantage that the breathing motion is
+prominently visible.  In addition, the question of long-time relaxation has the simple
+interpretation of evolving from the line distribution to a circularly symmetric distribution.
+
+
+
+
+
+%%%%% FIGURE %%%%% FIGURE %%%%% FIGURE %%%%% FIGURE %%%%% 
+\begin{figure}[tbp]
+\center
+\includegraphics[scale=0.32]{ZhiyuPictures/freq_scanF_differentE_log_2_with_oscillation_demo.png}
+\caption{Breathing mode frequency measured at different $E$ and $F_0$, for $N=5$ particles. Inset: a
+  demonstration of the oscillation of $E_{trap}$, the total potential energy of particles in the
+  trap, Since $E_{trap}\propto \sum_{is}{x_i^2}$, it manifests the oscillation behavior of the
+  radius $R(t)$ as defined in Eq.~\ref{eq:def_of_R}.  The breathing frequency is obtained from the
+  Fourier transform of $R(t)$.}
+\label{fig:Breathingfrequency1}
+\end{figure}
+%%%%% FIGURE %%%%% FIGURE %%%%% FIGURE %%%%% FIGURE %%%%% 
+
+
+\section{Breathing Frequency}\label{section:breathing frequency}
+
+
+We are interested in the oscillations of the size $R(t)$ of the cloud.  It is convenient that our
+finite-size simulations start with a line distribution in phase space.  If we started with a state
+whose configuration in phase-space deviates only slightly from circular symmetry, the oscillating
+amplitude would be too small to be distinguished from noise.
+
+Without interaction, the breathing mode frequency is exactly 2.  This is visualized readily from the
+top panel of \ref{fig:Breathingfrequency2_0}, where $R(t)$ is the extent of the distribution in the
+horizontal ($X$) direction.  As the line rotates clockwise with frequency $\omega_0=1$, within each
+period the line is twice horizontally aligned (maximum $R$) and twice vertically aligned (minimum
+$R$), so that the frequency of $R(t)$ is $\omega_B=2$.  When there is interaction, the frequency
+will get shifted: $\omega_B = 2+\delta$.  We measure the radius of the cloud $R(t)$ and get the
+frequency spectrum of its oscillation behavior by Fourier transform. Then we take the peak frequency
+near 2 as the breathing mode frequency.
+
+The frequency measured in this way for different $E$ and $F_0$ is shown in the
+Fig.\ref{fig:Breathingfrequency1}, plotted as a function of $F_0$.  The points each correspond to
+breathing-mode dynamics following from a single initial state; there is no averaging.  The curves
+therefore show some randomness.  However, two prominent features are clear from these curves.  At
+large interactions, $F_0\gg E$, the breathing frequency is larger than $2$, and saturates around a
+value which decreases with the system energy $E$.  At small interactions, the breathing frequency is
+actually smaller than the non-interacting value $2$.   
+
+Below, we will provide a detailed phase-space argument for these behaviors.  However, a simple
+real-space picture explains both effects qualitatively as well.  For very large $F_0$, when the
+interaction is `hard-core'-like, two particles exchange momentum immediately at a collision.  By
+exchanging the labels of the particles during the collision, this can be interpreted as follows:
+particle $A$ carrying momentum $P_A$ jumps by distance $\sigma$ to the right, while particle $B$
+carries its momentum $P_B$ and jumps by distance $\sigma$ to the left.  In this manner, every
+collision will save a particle some time, $\frac{\sigma}{v}$.  This translates into an increase of
+the breathing frequency.  The speed $v$ per particle is on average $\sim\sqrt{E/N}$, and the number
+of collision each particle experiences in one period of harmonic oscillation is $\sim N$; hence we
+obtain $\delta\sim N^{\frac{3}{2}}E^{-\frac{1}{2}}$.  When $F_0$ is smaller, we can no longer think
+of the particles as hard rods; the collisions now take finite time during which the speeds of the
+particles are actually slowed down and then sped up again, as they either cross paths or bounce from
+each other.  When $F_0$ is small enough, this approaching time will at some critical value of $F_0$
+consume the time saved by the finite range of the interaction.  This explains why there is a
+small-$F_0$ regime for which the shift $\delta$ is negative.  Figure \ref{fig:Breathingfrequency1}
+shows that this critical value of $F_0$, where $\delta$ changes sign and $\omega_B$ crosses $2$,
+increases with energy.
+
+
+\subsection{Estimates using the rotating phase space}
+
+Since we are interested in the deviation $\delta=\omega_B-2$ from the non-interacting breathing
+frequency, it is useful to work in the rotating frame, in which a non-interacting cloud would be
+stationary (non-rotating).  The rotation frequency of the cloud in this frame is then $\delta$.
+
+
+%%%%% FIGURE %%%%% FIGURE %%%%% FIGURE %%%%% FIGURE %%%%% 
+\begin{figure}[h
+]
+\subfigure[]{
+\begin{minipage}[b]{0.4\textwidth}
+\includegraphics[width=1\textwidth]{ZhiyuPictures/bounce.png}
+\end{minipage}
+}
+\subfigure[]{
+\begin{minipage}[b]{0.4\textwidth}
+\includegraphics[width=1\textwidth]{ZhiyuPictures/pass.png}
+\end{minipage}
+}
+\caption{Schematic diagrams of two-particle collision process in the $X_{\rm rot}$-$P_{\rm rot}$
+  plane. \textbf{(a)}When $F_0$ is large, particles cannot pass each other.  Being subject to a
+  constant repulsive force, their trajectories during collision are circular arcs.  For very strong
+  interactions (red dashed line, straight), they exchange momenta instantaneously.  The yellow,
+  green, and blue dashed curves are for successively weaker interactions.  \textbf{(b)} When $F_0$
+  is small, particles pass each other, so that the force they feel is not continuous.  Their
+  trajectory has a turning point. The dashed bright blue trajectory is identical with the one in
+  (a), which is the critical situation between passing and bouncing. In that case, particles have
+  zero relative velocity when they collide. }
+\label{fig:Breathingfrequency3}
+\end{figure}
+%%%%% FIGURE %%%%% FIGURE %%%%% FIGURE %%%%% FIGURE %%%%% 
+
+
+
+To analyze the rotation relative to the $X_{\rm rot}$-$P_{\rm rot}$ frame, we consider two-particle
+collisions.  In Figure \ref{fig:Breathingfrequency3}(a), we show schematics of such a collision near
+the trap center at strong interactions.  For very large $F_0$, the particles simply exchange momentum
+when they are at distance $\sigma$ from each other; this process is shown in red as two straight
+lines.  (The particles are initially at $X=\pm\frac{1}{2}\sigma$ and remain at these $X$ values,
+but exchange their momenta.)   For smaller $F_0$, there is change of both position and momentum, as shown in yellow, green
+and blue for successively weaker interactions. The blue line shows a case where $F_0$ is smaller
+enough such that the particles can actually cross each other.
+
+In Figure \ref{fig:Breathingfrequency3}(a) we show collisions for small $F_0$, so that the particles
+pass each other.  The force changes direction discontinuously when the particles cross.  In the
+$X_{\rm rot}$-$P_{\rm rot}$ plane, this is seen as a sharp turning point in the trajectory.
+
+We now estimate $\delta$ at large $F_0$.  The relevant collision process is that shown by the red
+lines in Figure \ref{fig:Breathingfrequency3}(a).  The two particles, which are initially on the
+$X_{\rm rot}$ axis, are moved to two other points, on the thick gray line, which deviates a small
+angle $\alpha$ away from original configuration.  In every period of the harmonic oscillation, each
+particle meets each of the other particles twice.  Half of these collisions (about $N$ collisions)
+are between particles with large difference in momentum, which is the process shown in
+Fig.\ref{fig:Breathingfrequency3}.  (As for the remaining half of the collisions, colliding
+particles have smaller difference in their momenta.  In this estimate we ignore the effects of these
+collisions, as they clearly contribute far less to the rotation of the particle distribution.)
+
+The precession angle is $\alpha\sim \sigma/P$.  In our rescaled units, the typical momenta of
+interacting partilces is of the order $R$.  (In phase space $R$ can be interpreted either as the
+extent in real space when the velocities are small, or as the extent in momentum space when the
+particles approach $x=0$, i.e. when the distribution is along the $P$ direction.)  Thus, we can
+estimate $\alpha\sim \sigma/R$, i.e., $\alpha\sim 1/R$, since our unit of length is $\sigma$.  This
+is the rotation per unit collision.  Since there are $\sim N$ collistions per period $T=2\pi$, we
+have the estimate for the interaction-induced rotation per unit time as
+\begin{equation}
+\delta ~=~ 2 \frac{N}{2\pi} \frac{1}{R} ~=~  \frac{1}{\pi}  N^{3/2}E^{-1/2}
+\label{eq:breathingfrequency1}
+\end{equation}
+The factor $2$ accounts for the fact that each rotation of the elongated cloud in phase space
+corresponds to two breathing mode periods.  In the last step we have used the estimate $E\sim
+NR^2$. 
+
+The effect of interaction on breathing frequency is more complicated at smaller $F_0$.  As we have
+seen in Figure \ref{fig:Breathingfrequency1}, the effect of a small $F_0$ is to \emph{decrease} the
+breathing frequency from its non-interacting value $\omega_B=2$.  This can also be understood using
+phase-space pictures of collision processes.  For $F_0$ is not very big, the finite interaction time
+needs to be taken into consideration.  During this time, the motion of each particle in phase-space
+is moving exactly along the direction of the real $P$ axis at the rate $F_0/m$. Since the real $P$
+axis is rotating counter-clockwise, the particle will follow a circular trajectory, e.g., following
+the orange or green dashed lines in Fig.~\ref{fig:Breathingfrequency3}(a).  The angle $\alpha$ that
+we used above to estimate $\delta$ thus decreases with the increase of interaction time; it is
+smaller for the yellow line and even opposite for the green line.  This explains the negative
+contribution of interaction to $\delta$, for small enough values of $F_0$.  At even smaller values
+of $F_0$, shown in Fig.~\ref{fig:Breathingfrequency3})(b), the particles cross each other.  The
+resulting final values are such that the line joining the post-interaction locations of the two
+particles has negative $\alpha$, i.e., is tilted clockwise with respect to the $X_{\rm rot}$ axis,
+meaning a negative contribution to the breathing frequency.
+
+We can also estimate the critical value of $F_0$ for a given energy (or alternatively the critical
+value of $E$ for a given $F_0$) between positive and negative contributions to the breathing
+frequency.  Since the $P$ axis rotates with frequency $\omega_0=1$ in the $X_{\rm rot}$-$P_{\rm
+  rot}$ plane, the post-collistion position of the particle in the $X_{\rm rot}$-$P_{\rm rot}$ plane
+makes angle $\omega_0\tau$ with the red line in Figure \ref{fig:Breathingfrequency3}(a).  Here
+$\tau$ is the time over which the interaction acts.  The crossover between positive and negative
+$\delta$ is found by comparing this angle to $\alpha$:
+\begin{equation}
+\omega_0 \tau=\alpha
+\end{equation}
+The time $\tau$ is approximately the time it takes for the momentum to change sign due to a constant
+force $F_0$, since the momentum is $\sim R$, this means $\tau\sim R/F_0$.  Using our previous
+estimate  $\alpha\sim \sigma/R$, together with $E\sim NR^2$, gives us the condition
+\begin{equation}
+  \frac{E}{N} \sim F_0
+  \label{eq_freq_turning_condition}
+\end{equation}
+for the breathing frequency to cross the non-interacting value $\omega_B=2$.  This is roughly the
+same criterion for whether two particles will bounce or cross each other in a typical collision.
+
+The condition \eqref{eq_freq_turning_condition} is consistent with Figure
+\ref{fig:Breathingfrequency1}, where we noted that the critical $F_0$ grows with increasing energy.
+
+
+\subsection{Comparisons with numerical data}
+
+
+%%%%% FIGURE %%%%% FIGURE %%%%% FIGURE %%%%% FIGURE %%%%% 
+\begin{figure}[h]
+\centering
+\includegraphics[scale=0.6]{ZhiyuPictures/freq_scanF_scanE_pre_Font18.eps}
+\caption{Dependence of breathing frequency, calculated for $N=20$ particles, on energy.  Different
+  colors represent different $F_0$ --- red for $F_0=2\times10^3$, yellow for $F_0=3\times10^3$,
+  green for $F_0=1\times10^4$, and blue for $F_0=1\times10^5$.  Runs with three different initial
+  states are shown in each case.  In each run, the frequency is measured both in the time window
+  0-100 (labeled as crosses) and in the time window 900-1000 (labeled as circles). The black dashed
+  line is the prediction of Eq.~\eqref{eq:breathingfrequency1}.}
+\label{fig:Breathingfrequency4}
+\end{figure}
+%%%%% FIGURE %%%%% FIGURE %%%%% FIGURE %%%%% FIGURE %%%%% 
+
+
+In Figure \ref{fig:Breathingfrequency4} we show a quantitative test of the main rotating-phase-space
+prediction, Eq.~\eqref{eq:breathingfrequency1}.  For large $F_0$, the frequency indeed scales as
+$E^{-1/2}$ and for $F_0=10^5$ is quite close to the actual numerical values prediction
+\eqref{eq:breathingfrequency1}.  Even for smaller $F_0$, at small enough energies (larger $E^{-1/2}$
+values) the breathing mode becomes proportional to  $E^{-1/2}$. 
+
+One might ask whether the breathing frequency predictions are also valid at late times, after the
+system has `relaxed' from the initial line distribution in phase space to a more spread-out cloud,
+as we have seen in Figure \ref{fig:Breathingfrequency2_1}.  In \ref{fig:Breathingfrequency4} we show
+the breathing frequency calculated from $R(t)$ oscillations in the first 100 time units, and also
+the frequency from data in a later time window. The frequencies appear to be overall stable and dependent
+primarily on $F_0$ and $E$.  
+
+
+
+
+\section{Relaxation and Thermalization}\label{section:Thermalization}
+
+
+For any nonzero interaction, the system is expected to be ergodic for $N>2$.  Once there are many
+particles, one expects thermalization in the long-time limit.  From the few-particle perspective,
+several interesting questions pose themselves.  First, although we expect ergodicity, the question
+of how long it takes to thermalize is an open question for small $N$. We treat below a
+coarse-grained version of this question: namely, we ask whether particles show ergodic behavior
+within reasonable timescales chosen to be (somewhat arbitrarily) in the timestep range of
+$10^3$--$10^4$.  Another question is the connection between thermalization, as defined by the
+appearance of a Boltzmann distribution and other intuitive characteristics of ergodic behavior such
+as whether the single-particle phase space is isotropically occupied.  We find cases where one
+aspect is seen while the other is not.  
+
+In the subsections below, we first ***  then **** 
+
+
+
+
+
+
+\subsection{Few-particle considerations}
+
+Since we are interested in thermalization within finite timescales, it is useful to consider
+mechanisms which hinder relaxation or thermalization.  We begin with considerations of few-particle
+motion.  Since ergodicity and relaxation are generally expected to be more robust and efficient with
+larger particle numbers, consideration of small particle numbers will highlight effects which slow
+down relaxation.
+
+
+
+%%%%% FIGURE %%%%% FIGURE %%%%% FIGURE %%%%% FIGURE %%%%% 
+\begin{figure}[tbph]
+\centering
+\includegraphics[width=0.9\textwidth]{ZhiyuPictures/two_particles_a_01.pdf}
+\caption{Two-particle dynamics.  Left: Effective potential for relative motion.  Center and right:
+  evolution of the individual energies of the two particles.  The two panels correspond to internal
+  energy $E_i=2$ and $E_i=5$; the interaction is $F_0=1$.  The beat frequency is lower for larger
+  $E_i$. }
+\label{fig:thermalization2}
+\end{figure}
+%%%%% FIGURE %%%%% FIGURE %%%%% FIGURE %%%%% FIGURE %%%%% 
+
+
+\subsubsection{Two particles}
+
+We consider the two-particle motion in their center of mass frame.  The center of mass itself
+executes simple harmonic oscillation.  In the absence of interactions ($F_0=0$), the effective
+potential within the center of mass frame is itself parabolic, with the same frequency.  So their
+relative motion is also a harmonic oscillation, with the same frequency $\omega_0$.
+
+With interactions, a term $F_0(1-|r|)\theta(1-|r|)$ is added, where $r$ is the relative
+displacement; as shown in Figure \ref{fig:thermalization2}.  Now, the relative motion is no longer
+harmonic.  When the internal energy is much larger than $F_0$, one could regard the resulting motion
+as having a slightly different frequency, or a collection of frequencies whose center is shifted
+slightly from $\omega_0$.  Since the center-of-mass motion is still of frequency $\omega_0$, we have
+a superposition of slightly different frequencies, resulting in beating dynamics.  This is clearly
+seen in the time evolution of individual energies shown in Figure \ref{fig:thermalization2}.  The
+two panels correspond to different internal energy $E_i$ (defined as the total energy minus the
+center-of-mass energy).  For larger $E_i$, the distortion of the effective potential (at constant
+$F_0$) plays a smaller role in shifting the effective frequency of relative motion; hence the beat
+frequency is smaller.
+
+This illustrates a simple mechanism hindering the redistribution of energy between particles, which
+is necessary for thermalization or relaxation.  As seen in the example dynamics shown in Figure
+\ref{fig:thermalization2}, the difference in energy between the two particles is sustained over
+time.  Of course thermalization is not expected anyway in a two-particle system, but we will see
+below how this basic effect continues to play a role for larger $N$.
+
+
+
+\subsubsection{More particles}
+
+Once we have more than two particles, we expect chaotic or ergodic behavior.  However, it is easy to
+imagine mechanisms which drastically slow down redistribution of energy.
+
+Generally, whenever we have some particles with energy very different from others, the dynamics
+occurs mostly independently within particle groups of different energies.  For example, considering
+a situation with three particles, consider the situation where two of them, say A and B, have small
+internal energy, which means their mutual distance and relative velocity are both small, whereas the
+third particle (C) has some energy quite different from A and B.
+%
+Then, A and B will often be interacting, and if their internal energy is smaller than $F_0$,
+significant energy exchange can occur between them.  C will generally exchange little energy with
+the pair during interactions, in which (due to larger internal energy between C and either A or B),
+the interaction is not effective in energy exchange.
+%
+An example is shown in Figure \ref{fig:thermalization4}, showing the dynamics of $N=5$ particles.
+Two pairs of particles persist in performing `internal' dynamics.  The lone particle participates
+only in some slow beating motion with the center of mass of one of the pairs.  Clearly, the energy
+mismatch acts as a hurdle to the relaxation process.
+
+
+
+%%%%% FIGURE %%%%% FIGURE %%%%% FIGURE %%%%% FIGURE %%%%% 
+\begin{figure}
+\centering
+\includegraphics[width=0.5\textwidth]{ZhiyuPictures/pair1_pre.eps}
+\caption{Time evolution of single-particle energies in a system of five particles, showing a case of
+  inefficient energy redistribution.  The energies of the two particles with highest energy (4 \& 5)
+  show a clear beating similar to the two-particle case, as does the pair 2 \& 3, although less
+  visible.  The `unpaired' particle 1 performs slow beating dynamics with the center of mass of the
+  2 \& 3 pair.}
+\label{fig:thermalization4}
+\end{figure}
+%%%%% FIGURE %%%%% FIGURE %%%%% FIGURE %%%%% FIGURE %%%%% 
+
+
+%% The argument above still holds in many-particle case. Once we start from some configuration where n
+%% particles have a set of close energy levels $\left\lbrace E_n\right\rbrace $ and another m particles
+%% have another set of energy levels close to each other $\left\lbrace E_m\right\rbrace $, and
+%% $\left\lbrace E_n\right\rbrace $ is quite different from $\left\lbrace E_n\right\rbrace $, we will
+%% find these two systems oscillating on the energy level diagram at low frequency.  The discussion
+%% above gives us some pictures about the non-ergodic state. For these state, life time is rather long
+%% so that once the system reach such configuration (or certain energy distribution), it will take a
+%% long time(more than $10^4$ periods for N=5 case) to decay.
+
+
+\subsection{Relaxation condition and the Boltzmann distribution}
+
+Our consideration of few-particle motion has shown that relaxation is slow when the internal energy
+of pairs is large compared to $F_0$.  This allows us to conjecture a condition for relaxation in
+reasonable time.  Although it is impossible to express the internal energy of every pair in terms of
+the total energy $E$, we can estimate the typical internal energy by the average energy,
+$\frac{E}{N}$. At least they are of the same order.  Thus we have the condition
+\begin{equation}
+F_0 \gtrsim \frac{E}{N}
+\label{eq:thermalizatiton_condition}
+\end{equation}
+for relaxation.  This is the same condition we obtained for the breathing frequency to be increased
+(rather than decreased) by the interaction. 
+
+
+
+%%%%% FIGURE %%%%% FIGURE %%%%% FIGURE %%%%% FIGURE %%%%% 
+\begin{figure}[tbhp]
+\centering
+%\includegraphics[scale=0.2]{ZhiyuPictures/distribution1_scanF0_E=100_3.eps}
+%\caption{Distribution scan $F_0$, $E=100$, $N=5$, $\sigma=1$ {\color{red}{Run again!}} }
+% \includegraphics[width=0.32\textwidth]{ZhiyuPictures/N=5_energydistribution_500_400_Font16.eps} 
+% \includegraphics[width=0.32\textwidth]{ZhiyuPictures/N=10_energydistribution_500_400_Font16.eps}
+% \includegraphics[width=0.32\textwidth]{ZhiyuPictures/N=20_energydistribution_500_400_Font16.eps}
+%
+\includegraphics[width=0.85\textwidth]{ZhiyuPictures/Boltzmann_2panels_01-crop.pdf}
+%
+\caption{The distribution of single-particle energies measured in $\sim 10000$ time units. Green
+  curves obey the relaxation condition \eqref{eq:thermalizatiton_condition}, and yellow/orange
+  corresponds to smaller $F_0$.  In each panel (different $N$), we choose $E/N$ identical ($=1000$),
+  so that the threshold interaction between the two behaviors is  $F_0\sim1000$. }
+\label{fig:thermalization5}
+\end{figure}
+%%%%% FIGURE %%%%% FIGURE %%%%% FIGURE %%%%% FIGURE %%%%% 
+
+
+
+Because the model is expected to be ergodic for $N>2$ particles, we expect the same condition to
+lead to thermalization.  In fact, the proposed condition works even quantitatively, as we show in
+Figure \ref{fig:thermalization5}.  Here, the distribution of energies among the different particles
+is presented.  Given our small particle number, a single snapshot of the energies will not yield
+enough statistics to investigate the distribution of single-particle energies.  Therefore,
+single-particle energies are recorded at once every time unit (i.e., at time intervals of
+$1/omega_0$) as the simulation evolves, up to around $t\sim10^4$.  The distribution of these
+observed values then shows whether or not the system has thermalized to a Boltzmann distribution.
+In the two panels of Figure \ref{fig:thermalization5}, we show the distributions obtained for a
+$N=5$ system and a $N=20$ system.  In both cases, we choose the total energy to be $E=1000N$.  In
+accordance with our conjectured condition, we find that the observed single-particle distributions
+are qualitatively different for $F_0\gtrsim10^3$ and for smaller interactions.  When the
+``thermalization condition'' $F_0\gtrsim E/N$ is satisfied, the distribution is roughly exponential
+($\sim e^{-\beta\epsilon}$.  For smaller $F_0$, thermalization in this sense is not seen in the
+single-particle energy distribution.  Since the systems are expected to be ergodic, it is assumed
+that the smaller-$F_0$ systems will also eventually show a Boltzmann distribution of energy, but
+that this appears only at (much) longer timescales.
+
+
+
+%%%%% FIGURE %%%%% FIGURE %%%%% FIGURE %%%%% FIGURE %%%%% 
+\begin{figure}[tbph]
+\includegraphics[width=0.8\textwidth]{ZhiyuPictures/Boltzmann_log_2panels_01-crop.pdf}
+%
+\caption{\label{fig:thermalization9} Complaring the single-particle energy distribution
+  $\rho(\epsilon)$ with the Boltzmann distribution.  The energy values all satisfy the relaxation
+  condition \eqref{eq:thermalizatiton_condition}.  The Boltzmann distribution $\propto
+  e^{-\beta\epsilon}$, with the temperature defined as $\beta^{-1}= E/N$, is the thick dashed line.}
+\end{figure}
+%%%%% FIGURE %%%%% FIGURE %%%%% FIGURE %%%%% FIGURE %%%%% 
+
+
+In several `thermalizing' situations, $F_0\gtrsim E/N$, we display the agreement with the Boltzmann
+distribution in Figure \ref{fig:thermalization9}.  In each panel, the calculated distributions from
+simulations is plotted against the Boltzmann distribution.  The overall agreement shows that the
+energy is well-thermalized among the particles on average within the timescales under consideration.
+
+
+There are some small deviations from the Boltzmann distribution visible in Figure
+\ref{fig:thermalization9}.  Most of the deviation is probably due to numerical noise, and
+unsurprising given our small system sizes.  However, some deviation is also expected due to the
+contribution of the density of states (DOS).  The probability of finding an energy is actually
+proportional to the Boltzmann exponential factor multiplied by the DOS.  For the simple harmonic
+oscillator, the DOS is constant.  The interaction deforms the energy shell in the small region
+$|x_i-x_j|<\sigma$; so that the DOS is no longer a constant.  The effect of interaction is
+conspicuous in low energy part: when interaction is weak, particles prefer to stay near zero energy
+according to Boltzmann distribution, but when interaction grows, they are no longer allowed to
+accumulate near zero energy, in another word DOS at low energy decreases with the increase of
+interaction. Therefore, counts at the low energy part of Fig.\ref{fig:thermalization9} is slightly
+lower than the Boltzmann prediction.  The correction to the density of states is not simple to
+calculate explicitly.  Since we are in the regime of a dilute gas ($\sigma\ll R$), the effect is
+very small.
+
+
+
+\subsection{Lyapunov Exponents}
+
+The general idea that thermalization is faster for larger $F_0$ can be seen through the Lyapunov
+exponents.  For high-dimensional systems, there is a spectrum of exponents which manifests the
+instability of the trajectory along each direction. The largest Lyapunov exponent (LLE) reflects
+the shortest time scale for the system lose memory of the initial state.  We follow the method
+described in Ref.~\cite{EckmannRuelle_RMP85}.  If the calculation is carried out upto sufficiently
+late times, the LLE for an ergodic system is uniquely defined and independent of the starting
+state.  We would like to deal with parameter regimes both within and outside our relaxation
+condition $E<F_0N$ and $E>F_0N$, and in the latter case we have seen that ergodicity does not become
+apparent at reasonable timescales.  Therefore, we carry out the computation of the LLE upto
+$t\sim10^3$, which means that we can only get initial-configuration-dependent estimates.  The
+collection of these estimates forms a distribution which we show in Figure
+\ref{fig:LLEdistribution1}. 
+
+%% The Lyapunov Exponents is a good tool to quantify the time scale of ``thermalization". Lyapunov
+%% Exponents(LE) describes how fast one orbit diverge from its nearby orbits in $\Gamma$-space. But for
+%% high dimensional system, LE is a spectrum that manifest the instability of the trajectory along each
+%% direction. The largest Lyapunov exponents (LLE) reflects the shortest time scale that system lose
+%% its memory. Each point along one trajectory in $\Gamma$-space could have different LLE value, but
+%% the distribution of LLE is dependent on macroscopic parameters. As is shown in
+%% Fig.\ref{fig:LLEdistribution1}, we measured the LLEs along our trajectory and plot its distribution
+%% as a function of total energy.
+
+
+%%%%% FIGURE %%%%% FIGURE %%%%% FIGURE %%%%% FIGURE %%%%% 
+\begin{figure}[tbph]
+\centering
+%\includegraphics[scale=0.4]{ZhiyuPictures/LLEdistribution_1_11_pre_hot1_screenshot.png}
+\includegraphics[scale=0.4]{ZhiyuPictures/LLEdistribution_1_11_pre_hot2_screenshot.png}
+\caption{The distribution of largest Lyapunov exponents, for $N=5$, $F_0=1000$, at different
+  energies.  The color indicates the probability of a measured LLE value being found in a bin; the
+  bins are of size 0.01}\label{fig:LLEdistribution1}
+\end{figure}
+%%%%% FIGURE %%%%% FIGURE %%%%% FIGURE %%%%% FIGURE %%%%% 
+
+
+%% \begin{figure}[h]
+%% \centering
+%% \includegraphics[scale=0.4]{ZhiyuPictures/LLEdistribution_1_11_pre_bone1_screenshot.png}
+%% \includegraphics[scale=0.4]{ZhiyuPictures/LLEdistribution_1_11_pre_bone2_screenshot.png}
+%% \caption{``bone". top(bottom):modified(reversed)}
+%% \end{figure}
+
+
+The LLE decreases with the growth of energy. The critical part is near $E=5000$. The most probable
+value of LLE goes down from around 1 to around 0.1,which indicates that the shortest time scale
+becomes longer than an oscillation period when $E\gtrsim5000$.  This is consistent with our
+predicted thermalization threshold.  As $E$ increases far beyond the thermalization threshold value,
+the LLE distribution is close to zero, suggesting a divergence of relaxation time.
+%
+We have thus shown a correspondence between energy thermalization and LLE.
+
+
+
+\subsection{Shape of distribution in single-particle phase space}\label{section:Shape}
+
+We have studied thermalization in terms of energy.  More generally, thermalization may be taken to
+mean that a many-body system loses memory of its initial state.  In the single-particle phase-space
+picture, Figures \ref{fig:Breathingfrequency2_0} and \ref{fig:Breathingfrequency2_1}, our initial
+state is very special: The particles are lined up along the $X$ axis.  The effect of interaction is
+to distort this line toward a circularly symmetric distribution.  Thus, we would consider that the
+memory of the initial state is lost when the distribution of points in the $X$-$P$ plane are not
+elongated in any one direction.
+
+To quantify the shape of distribution in phase-space, we define a shape parameter $S$ measuring the
+degree of ellipticity:
+\begin{equation}
+S=\frac{a-b}{a+b}
+\end{equation}
+where $a$ and $b$ are long axis and short axis of inertia ellipse in phase space respectively. These
+can be calculated by diagonalizing the inertia tensor I: $I_{xx}=\sum{p^2},
+I_{xp}=I_{px}=-\sum{xp},I_{pp}=\sum{x^2}$.  The shape parameter is $S=1$ for line-shaped
+distributions and $S=0$ for circularly symmertic distributions.
+
+
+
+
+
+
+------
+
+
+
+\section{Shape of Distribution in Phase-space}\label{section:Shape}
+
+When describing simple harmonic motion, it is usually convenient to use the language of phase-space
+(of single particle). In the phase-space, the motion becomes circular, so each of these particles
+has two independent degrees of freedom, i.e., modulus and phase angle. Here, ``independent" means
+that the simple harmonic oscillation never ``mix" these two degrees of freedom. In view of this,
+when it comes to ``thermalization", one will expect that the thermalization of energy, which is just
+the modulus, does not ensure the thermalization of phase angle. As ins explained in the Introduction
+part, in order to distinguish two kinds of meanings of ``thermalization", we will call the process
+of energy distribution going to equilibrium ``thermalization", while the process of phase angle
+going to equilibrium ``relaxation". The time scale of thermalization and relaxation could be quite
+different in principle. We will start with the configuration where particles' velocities are set to
+be zero, which means in phase-space the cloud is a rotating narrow ellipse at the beginning. If the
+time scale of thermalization is much longer than that of relaxation, we will see cloud going to some
+stable shape in a short time (a circle if interaction is not significant compared to total energy)
+while the distribution of particle number along radius slowly evolves to Boltzmann distribution. If
+the relaxation time is longer than the thermalization time, the cloud will maintain elliptical shape
+or some oscillation between different shapes for a long time while the energy distribution is
+already Boltzmann.
+
+To quantify the shape of distribution in phase-space, we defined a shape polarization S:
+\begin{equation}
+S=\frac{a-b}{a+b}
+\end{equation}
+where a and b are long axis and short axis of inertia ellipse in phase space respectively. a,b can
+be calculated by diagonalizing the inertia tensor I: $I_{xx}=\sum{p^2},
+I_{xp}=I_{px}=-\sum{xp},I_{pp}=\sum{x^2}$. S=1 for line-shape distribution, S=0 for circular
+distribution. The advantage of defining the S lies in that S is independent of all rotating behavior
+of the cloud in phase-space and thus extract the information of shape alone. One could also use
+eigenvalues of quadrupole moment Q to define S. Two choice of definition is equivalent, since I and
+Q are only different up to a factor and an identity matrix.
+
+
+
+%First, let's see the overall value of S in Fig.\ref{fig:shape}. In Fig.\ref{fig:shape}, each data point is the average of S over several periods to show the overall value of S. If the shape relax to equilibrium, the overall value should decrease to zero. At first sight, it seems S does relax, and the conclusion looks similar to the one we got from Boltzmann distribution--When energy is lower than thermalizing threshold(top pannel), S relax in almost no time; when energy is higher than thermalizing threshold(bottom pannel), it takes a relativly long time for S to relax. The reason why S never decay to zero could be explained as the contribution of random fluctuation, since S is defined to be positive.
+
+%However, it is not the whole story. If we inspect the original data or smoothen it by taking a finer average, e.g. average over 0.2 time units (Fig.\ref), we will see the ''sinusoidal"  oscillation of S (S is defined to be positive) with a period of about $2\pi$ time units. So the whole picture is that the shape of the cloud is oscillating: \\elliptical with long axis lying along x axis $\rightarrow$ circular $\rightarrow$ elliptical with long axis lying along y axis $\rightarrow$ circular ...
+
+%If we think of the cloud as 2D cloud in x-p space, we have 2D monopole, dipole and quadrupole mode. In our system, since energy conserves, $x^2+p^2$ is a constant interaction energy is neglected), the monopole mode do not exist. And dipole mode describes the center of mass of the cloud oscillate along x or p, but since we set center of mass to be stationary and at x=0, neither does this mode exist. The lowest order mode is quadrupole mode.
+
+The time evolution of S is shown in Fig.\ref{fig:time_evolution_of_S}. The top three pannels are the overall value of S, where every data point is the average value of original data over several period (about $2\pi$ time unit). The lower six pannels are the original data measured in the beginning and after thousands of time units, which shows the finer structure in one period. 
+
+\begin{figure*}[h]
+\subfigure[$N=20, F_0=1000, E=3000$]{
+\begin{minipage}[b]{0.3\linewidth}
+\includegraphics[scale=0.4]{ZhiyuPictures/N=20_shape_F=1000_E=3000_1.eps}
+\includegraphics[scale=0.4]{ZhiyuPictures/N=20_shape_F=1000_E=3000_2_crude_begin.eps}
+\includegraphics[scale=0.4]{ZhiyuPictures/N=20_shape_F=1000_E=3000_2_crude_end.eps}
+\end{minipage}
+}
+\subfigure[$N=20, F_0=1000, E=20000$]{
+\begin{minipage}[b]{0.3\linewidth}
+\includegraphics[scale=0.4]{ZhiyuPictures/N=20_shape_F=1000_E=20000_1.eps}
+\includegraphics[scale=0.4]{ZhiyuPictures/N=20_shape_F=1000_E=20000_2_crude_begin.eps}
+\includegraphics[scale=0.4]{ZhiyuPictures/N=20_shape_F=1000_E=20000_2_crude_end.eps}
+\end{minipage}
+}
+\subfigure[$N=20, F_0=1000, E=100000$]{
+\begin{minipage}[b]{0.3\linewidth}
+\includegraphics[scale=0.4]{ZhiyuPictures/N=20_shape_F=1000_E=100000_1.eps}
+\includegraphics[scale=0.4]{ZhiyuPictures/N=20_shape_F=1000_E=100000_2_crude_begin.eps}
+\includegraphics[scale=0.4]{ZhiyuPictures/N=20_shape_F=1000_E=100000_2_crude_end.eps}
+\end{minipage}
+}
+\caption{Time evolution of S in low-energy regime(a), intermidiate(b), high-energy regime(c). The overall value (top three pannels), where every point represent the average of original data over several periods, show that S decays to a low value in a short time in low-energy case, but persist for a relative long time in high-energy case. The snapshots of original data at beginning and after thousands of periods evolution are shown in the lower six pannels. The finer structure of S(t) indicates that there is some long-lasting oscillating mode. Especially in low-energy case, the amplitude is more conspicuous.}\label{fig:time_evolution_of_S}
+\end{figure*}
+
+%\begin{figure}
+%\centering
+%\includegraphics[scale=0.4]{ZhiyuPictures/N=20_shape_F=1000_E=3000_1.eps}
+%\includegraphics[scale=0.4]{ZhiyuPictures/N=20_shape_F=1000_E=20000.eps}
+%\includegraphics[scale=0.4]{ZhiyuPictures/N=20_shape_F=1000_E=100000.eps}
+%\caption{N=20, F=1000, E=3000(top), E=20000(middle), E=100000(bottom). All start with initial states S=1. Five different curves in each picture represent simulating with 5 random initial states in each case. \label{fig:shape}}
+%\end{figure}
+
+
+%\begin{figure*}
+%\centering
+%\includegraphics[scale=0.4]{ZhiyuPictures/N=20_shape_F=1000_E=3000_original1.eps}
+%\includegraphics[scale=0.4]{ZhiyuPictures/N=20_shape_F=1000_E=3000_original2.eps}
+%\caption{N=20, F=1000, E=3000. Original data}
+%\end{figure*}
+
+%\begin{figure*}
+%\centering
+%\includegraphics[scale=0.4]{ZhiyuPictures/N=20_shape_F=1000_E=3000_1_fine1.eps}
+%\includegraphics[scale=0.4]{ZhiyuPictures/N=20_shape_F=1000_E=3000_1_fine2.eps}
+%\caption{N=20, F=1000, E=3000. Start with initial states S=1. Smoothened (every point represents taking the average of S in 0.2 time unit)}
+%\end{figure*}
+
+The original data can be decomposed into two components: the background value and the frequent fluctuation(sharp peaks and dips) on the background. The fluctuation is generated from the two-particle transportation process(See Fig.\ref{fig:Breathingfrequency3}), e.g. a pair transportation event along the long-axis of the cloud makes a dip. In the thermalized regime (Fig.\ref{fig:time_evolution_of_S}), the background value of S is oscillating with an amplitude of 0.2-0.4 and does not decay to zero over 4000 time unit. In the high-energy case, the amplitude of background oscillation is small compared with fluctuation. We assume that over a long enough time, all macroscopic quantity should be constant because the randomness has wash out all possible orders to make entropy as large as possible. Since we see a periodical behavior of S, we know the whole system doesn't relax to its equilibrium state.  
+
+The oscillating background value of S indicate that the shape of the cloud in phase space is deformed periodically between a circle and an ellipse($S=0.4$ means $\frac{a}{b}\sim 2.5$). To further reveal the nature of this oscillating mode, we focus on the low-energy case and plot the distribution of the cloud in the phase-space as Fig.\ref{fig:N=50_F=1000_E=30000_movie}. The time interval between each pannels is $0.1*2\pi$ time units. The direction of the yellow arrows and red arrows are the eigenvector of inertia tensor, while their lengths are the square root of correspondent eigenvalue (I take the squareroot to maintain the length unit). In most of the pannels in Fig.\ref{fig:N=50_F=1000_E=30000_movie}, the long and short axis are rotating and extending or contracting continuosly. The exception is the 3rd and 4th pannel in the first row, 2nd and 3rd pannel in the second row, 1st and 2nd pannel in the third row. At those moment, the long and short axis are almost equal, giving the system a chance to choose a new preferred axis to polarize. The whole picture of this collective mode can be described by Fig.\ref{fig:Schemetic_description_of_the_mode}, which is consistant with the pattern of time evolution of S shown in Fig.\ref{fig:N=50_F=1000_E=30000_Send}.
+
+
+%% \begin{figure*}[h]
+%% \centering
+%% \includegraphics[scale=0.5]{ZhiyuPictures/N=50_F=1000_E=30000_shapemovie_interval0_628_2_500s_1100_600_Font18.eps}
+%% \caption{Distribution in phase-space after evolving for about 500 time units ($N=50, F_0=1000, E=30000$). Please notice that the yellow(red) arrows shows the length of long(short) axis of inertia ellipse, which is prependicular to the long(short) axis of distribution cloud. For instance, if the yellow arrow lies in p-axis, it means the long axis of distribution cloud is lying along x-axis.}\label{fig:N=50_F=1000_E=30000_movie}
+%% \end{figure*}
+
+
+%% \begin{figure*}[h]
+%% \centering
+%% \includegraphics[scale=0.4]{ZhiyuPictures/quadrupole_mode_2.png}
+%% \caption{Schemetic description of the excited mode.  Red ellipse is the shape of cloud in low-energy regime when there is repulsive interaction. Gray cloud is the imaginary shape of cloud when there is no interaction, which is plotted here as a reference. One may think of the effect of interaction as a kind of potential that prefer to place particles along x axis, because in low energy regime the system is not allowed to be squeezed too much along x axis since doing this cost a large amount of interaction energy.}\label{fig:Schemetic_description_of_the_mode}
+%% \end{figure*}
+
+%% \begin{figure*}[h]
+%% \centering
+%% \includegraphics[scale=0.4]{ZhiyuPictures/N=50_F=1000_E=30000_shapemovie_interval0_628_2_500s_Send.eps}
+%% \caption{Time evolution of S after evolving for about 500 time units ($N=50, F_0=1000, E=30000$). The oscillating behaviour of S persists over 500 time units.}\label{fig:N=50_F=1000_E=30000_Send}
+%% \end{figure*}
+
+To sum up, the existence of the long-lasting oscillation of S indicate that the system does not relax to its equilibrium state in terms of shape although it is already thermalized in terms of energy distribution. With this long-lasting mode, the radius R of the cloud will keep oscillating, enabling the breathing mode to last for a long time.
+
+\section{Conclusion}
+
+Other forms of interaction.
+
+We studied the nonequilibrium property of one-dimensional classical gas with finite range repulsive
+interaction. We first studied the relation between breathing mode frequency and interaction
+parameter as well as total energy. We found the breathing frequency could be estimated by
+eq.\ref{eq:breathingfrequency1}. And the mechanism behind this relation is that the momentum
+transfer which happens instantly in collision saves the particles some time from traveling this
+distance. So the physics is completely the same as hardcore particle.
+
+We found that the thermalization behavior is controlled by the competition between the interaction
+strength and the average energy. We point out that there could be two independent time scales in
+simple harmonic system in principle. One of them corresponds to the relaxation time of the energy
+distribution. The other one corresponds to the relaxation time of the angular distribution in phase
+space, which will determine the decay rate of the amplitude of the breathing mode. We have shown
+that in the low-energy regime, although the energy distribution reach Boltzmann distribution within
+several periods of oscillation, the shape keep oscillating for thousands of periods.
+
+%However, with the form of interaction we used, i.e. finite range constant repulsive force, we found
+%those two time scales diverge only when interaction vanish, which is a trivial singular point. In
+%addition, the relaxation behavior of the angular distribution and radial distribution in phase
+%space are similar. We attribute it to the fact that there is no essential bias between angular and
+%radial transfer in phase-space for this simple form of interaction. The shortest time scale is
+%verified numerically by Largest Lyapunov Exponent. A further question could be asked is whether
+%there is a subtle form of interaction that could give those two time scales essentially different
+%behavior. The observation of two different time scales in one system would be interesting.
+
+
+
+%\begin{comment}
+%\section{others(those I haven't organized it into the text in logical order but may be useful)}
+
+%\subsection{Evolution of $R(t)$ and $\sqrt{\delta^2R(t)}/R(t)$} 
+%Results are shown in Fig.\ref{fig:others1}
+
+%\begin{figure}[h]
+
+%\centering
+%\includegraphics[scale=0.3]{D:/matlab2016/MolecularDynamics/figure/fluc_of_R_with_time2.eps}
+%\caption{fluctuation of R with time }
+%sigma=0.01(short range), $F_0=0.1(black), 1(blue), 10(green) ,100(red)$
+%\label{fig:others1}
+%\end{figure}
+
+
+%\subsection{Detailed discussion of two-particle motion}
+%{\color{red}{This chapter previously follow the subsection ``two-particle case" in subsection ``Dynamics study" in section ``Thermalization". But then I found we haven't used these result. So I put it at the end for the time being}}.
+  
+
+%From now on, let's stand in the the frame of center of mass to observe the motion of two-particle system. In this frame, without interaction, we will find two particles sitting symmetrically in an equivalent harmonic trap (black curve), whose shape is identical to the trap we see in the static frame. As a result, there frequency of relative motion is exactly $2\omega$(since two particle are identical). We label the position of center of mass as 0. And we may only analyze the motion on positive axis since positive and negative are symmetric. 
+
+%Now, let's consider the interaction between them. Because of interaction, the potential curve between $+-\frac{\sigma}{2}$ should be modified to another parabolic curve that simultaneously satisfies the following two condition:\\
+%1) intersect with black curve at $+-\frac{\sigma}{2}$\\
+%2) minima is $+-\frac{F_0}{m\omega_0^2}$, which comes from a simple harmonic oscillator with an extra constant force $F_0$\\
+%Thus, it is obvious that by comparing $\frac{F_0}{m\omega_0^2}$ and $\sigma$, we can at least divide our parameter into several regime:\\
+%1) When $\frac{F_0}{m\omega_0^2\sigma}>0.5$, we will have the blue curve (see figure \ref{fig:thermalization2})\\
+%2) When $\frac{F_0}{m\omega_0^2\sigma}<0.5$, the red curve\\
+%3) When $\frac{F_0}{m\omega_0^2\sigma}=0.5$, the green one.\\
+%For those three types of curve, the significant difference is only at low energy case:\\
+%For the red one, particle will oscillate at constant frequency $\omega$;
+%For the blue one, when energy is lower, since the first derivative of the curve in the neighbourhood is non-zero, the frequency goes to infinity;
+%For the green curve, in low energy limit, it takes finite time to finish half period of oscillation, while infinitesimal time is spent on the slope part. Thus, frequency will converge to  $2\omega$.
+
+%\begin{figure}
+%\subfigure[]{
+%\begin{minipage}[b]{0.3\textwidth}
+%\includegraphics[scale=0.17]{ZhiyuPictures/freq_scanE_1.png} 
+%\end{minipage}
+%}
+%\subfigure[]{
+%\begin{minipage}[b]{0.3\textwidth}
+%\includegraphics[scale=0.17]{ZhiyuPictures/freq_scanE_2.png} 
+%\end{minipage}
+%}
+%\subfigure[]{
+%\begin{minipage}[b]{0.3\textwidth}
+%\includegraphics[scale=0.17]{ZhiyuPictures/freq_scanE_3.png} 
+%\end{minipage}
+%}
+%\centering
+%\caption{Frequency of relative motion with internal energy in three regime} Numbers in the legend is the value %of $\frac{F_0}{m\omega_0^2\sigma}$
+%\label{fig:thermalization3}
+%\end{figure}
+%\end{comment}
+
+
+
+%\bibliography{mybib}
+%\bibliographystyle{ieeetr} 
+
+
+
+\begin{thebibliography}{1}
+
+
+\bibitem{Dorfman_book_1999} J.~P.~Dorfman, ``An Introduction to Chaos in Non-equilibrium Statistical
+  Mechanics'', Cambridge University Press, 1999.
+
+\bibitem{Dumas_book_KAMstory} H.~S.~Dumas: ``The KAM Story: A Friendly Introduction to the Content,
+History, and Significance of Classical Kolmogorov-Arnold-Moser Theory'', World Scientific, 2014. 
+
+\bibitem{Boltzmann_legacy_book} ``Boltzmann's Legacy'', edited by G.~Gallavotti, W.~L.~Reiter, and
+  J.~Yngvason; European Mathematical Society (2007).
+
+\bibitem{EckmannRuelle_RMP85}  
+  J.-P.~Eckmann and D.~Ruelle,
+  ``Ergodic theory of chaos and strange attractors'', 
+  \emph{Rev. Mod. Phys.}, {\bf 57}, 617  (1985).
+
+
+\bibitem{NewtonsCradle_Nature06}  
+T.~Kinoshita, T.~Wenger, and D.~S.~Weiss, ``A quantum Newton's cradle'', {\em Nature}, {\bf 440,} 900 (2006). 
+
+
+\bibitem{Naegerl_Science2009} E.~Haller, M.~Gustavsson, M.~J.~Mark, J.~G.~Danzl, R.~Hart,
+  G.~Pupillo, H.-C.~N\"agerl, ``Realization of an excited, strongly correlated quantum gas phase,''
+  {\em Science}, \textbf{325}, 1224 (2009).
+
+ 
+
+\bibitem{collective_modes_early_papers}
+S.~Stringari, Phys.\ Rev.\ Lett.\ \textbf{77}, 2360 (1996); 
+%
+\\ 
+%
+M.-O.~Mewes, M.~R.~Andrews, N.~J.~van~Druten, D.~M.~Kurn, D.~S.~Durfee, 
+C.~G.~Townsend, and W.~Ketterle, Phys.\ Rev.\ Lett.\ \textbf{77}, 988 (1996);
+%
+\\ 
+%
+M.~Amoruso, I.~Meccoli, A.~Minguzzi, and M.~P.~Tosi, Eur.\ Phys.\ J.~D \textbf{8}, 361 (2000);
+%
+\\ 
+%
+R.~Combescot and X.~Leyronas, Phys.\ Rev.\ Lett.\ \textbf{89}, 190405 (2002);
+%
+\\ 
+%
+F.~Chevy, V.~Bretin, P.~Rosenbusch, K.~W.~Madison, and J.~Dalibard, 
+Phys.\ Rev.\ Lett.\ \textbf{88}, 250402 (2002);
+%
+\\ 
+%
+C.~Menotti and S.~Stringari, ``Collective oscillations of a one-dimensional trapped Bose-Einstein
+gas'', {\em Phys.\ Rev.\ A} \textbf{66}, 043610 (2002).
+%
+\\ 
+%
+J.~Fuchs, X.~Leyronas, and R.~Combescot, Phys.\ Rev.\ A \textbf{68}, 043610 (2003).
+
+
+\bibitem{PitaevskiiRosch_PRA97}
+%
+L.~P.~Pitaevskii and A.~Rosch, {\em Phys.\ Rev.\ A} \textbf{55}, R853 (1997);
+
+
+\bibitem{Esslinger_exp_PRL2003} H.~Moritz, T.~St\"oferle, M.~K\"ohl, and 
+T.~Esslinger,
+Phys.\ Rev.\ Lett.\ \textbf{91}, 250402 (2003).
+
+
+\bibitem{Wetterich_JPB2011}
+I.~Boettcher, S.~Floerchinger, and C.~Wetterich, J.~Phys.\ B \textbf{44}, 235301 (2011).
+
+
+\bibitem{Tschischik_BHbreathing_PRA_2013} W.~Tschischik, R.~Moessner, M.~Haque, Phys.\ Rev.~A 
+  \textbf{88}, 063636 (2013).
+
+\bibitem{KroenkeSchmelcher_BM} R.~Schmitz, S.~Kr\"onke, L.~Cao, and 
+  P.~Schmelcher, Phys.\ Rev.\ A \textbf{88}, 043601 (2013).
+
+\bibitem{Mazets_1Dbreathing_EPJD11}
+I. E. Mazets, ``Integrability breakdown in longitudinaly trapped, one-dimensional bosonic gases'', 
+{\em Eur.~Phys.~J.~D} {\bf 65}, 43 (2011).
+  
+%%  \bibitem{GaoYu_fermionbreathing_PRA12} 
+%% Chao Gao and Zhenhua Yu, 
+%%   ``Breathing mode of two-dimensional atomic Fermi gases in harmonic traps'', 
+%% {\em Phys. Rev. A} {\bf 86}, 043609 (2012).
+
+\bibitem{fermion2Dbreathing}
+%
+
+E.~Vogt, M.~Feld, B.~Fr\"ohlich, D.~Pertot, M.~Koschorreck, and M.~K\"ohl, ``Scale Invariance and
+Viscosity of a Two-Dimensional Fermi Gas'', {\em Phys. Rev. Lett.} {\bf 108}, 070404 (2012).
+%
+\\ 
+%
+Chao Gao and Zhenhua Yu, ``Breathing mode of two-dimensional atomic Fermi gases in harmonic traps'',
+{\em Phys. Rev. A} {\bf 86}, 043609 (2012).
+%
+\\ 
+%
+J.~Hofmann, ``Quantum Anomaly, Universal Relations, and Breathing Mode of a Two-Dimensional Fermi
+Gas'', {\em Phys. Rev. Lett.} {\bf 108}, 185303 (2012).
+%
+\\ 
+%
+S.~K.~Baur, E.~Vogt, M.~K\"ohl, and G.~M.~Bruun, ``Collective modes of a two-dimensional spin-1/2
+Fermi gas in a harmonic trap'', {\em Phys. Rev. A} {\bf 87}, 043612 (2013).
+%
+\\ 
+%
+B.~P.~van~Zyl, E.~Zaremba, and J.~Towers,
+``Collective excitations of a harmonically trapped, two-dimensional, spin-polarized dipolar Fermi
+gas in the hydrodynamic regime'', 
+{\em Phys. Rev. A} {\bf 90}, 043621 (2014). 
+%
+\\ 
+%
+Yi-Cai Zhang and Shizhong Zhang, ``Strongly interacting p -wave Fermi gas in two dimensions:
+Universal relations and breathing mode'', {\em Phys. Rev. A} {\bf 95}, 023603 (2017).
+
+
+%% \bibitem{ZarembaTowers_PRA2014} B.~P.~van~Zyl, E.~Zaremba, and J.~Towers, Phys. Rev. A \textbf{90},
+%%   043621 (2014).
+
+\bibitem{Stringari_lowDcollective_PRA15}
+G.~De~Rosi and S.~Stringari, ``Collective oscillations of a trapped quantum gas in low dimensions'', 
+{\em Phys. Rev. A} {\bf 92}, 053617 (2015).
+
+\bibitem{GrimmSmith_unitaryfermions_PRA08}
+S.~Riedl, E.~R.~S\'anchez~Guajardo, C.~Kohstall, A.~Altmeyer, M.~J.~Wright, J.~Hecker~Denschlag,
+R.~Grimm, G.~M.~Bruun, and H.~Smith, ``Collective oscillations of a Fermi gas in the unitarity
+limit: Temperature effects and the role of pair correlations'', Phys. Rev. A {\bf 78}, 053609
+(2008).
+
+\bibitem{Bouchoule_PRL2014}
+B.~Fang, G.~Carleo, A.~Johnson, and I.~Bouchoule,  Phys.\ Rev.\ Lett.\ 
+\textbf{113}, 035301 (2014).   
+
+\bibitem{our_superTG_PRA_2015} W.~Tschischik and M.~Haque, Phys.\ Rev.~A 
+  \textbf{91}, 053607 (2015).
+
+\bibitem{Tschischik_ladder_PRA15} W.~Tschischik, R.~Moessner, and M.~Haque, ``Bose-Hubbard ladder
+  subject to effective magnetic field: Quench dynamics in a harmonic trap'',
+{\em Phys. Rev. A},  {\bf 92}, 023845 (2015). 
+
+  
+% Dipole mode of a strongly correlated one-dimensional Bose gas in a split trap: 
+% parity effect and barrier renormalization
+\bibitem{Cominotti_2015} M.~Cominotti, F.~Hekking, and A.~Minguzzi, 
+arXiv:1503.07776.
+
+\bibitem{STG_Chen-etal_PRA2010} S.~Chen, L.~Guan, X.~Yin, Y.~Hao, and X-W.~Guan,   Phys.\ Rev.\ A
+  \textbf{81}, 031609(R) (2010). 
+
+\bibitem{STG_Astrakharchik_PRL2005} G.~E.~Astrakharchik, J.~Boronat, J.~Casulleras, and
+  S.~Giorgini, Phys.\ Rev.\ Lett.\ \textbf{95}, 190407 (2005).
+
+  
+\bibitem{1D_breathing_mode_recent}  
+A.~Iu.~Gudyma, G. E.~Astrakharchik, and M.~B.~Zvonarev, ``Reentrant behavior of the
+breathing-mode-oscillation frequency in a one-dimensional Bose gas'', 
+Phys. Rev. A \textbf{92}, 021601(R) (2015). \\ 
+%
+S. Choi, V. Dunjko, Z.~D.~Zhang, and M.~Olshanii,
+``Monopole Excitations of a Harmonically Trapped One-Dimensional Bose Gas from the Ideal Gas to the
+Tonks-Girardeau Regime'', 
+{\em Phys. Rev. Lett.} \textbf{115}, 115302 (2015)
+%
+\\
+%
+X.-L.~Chen, Y.~Li, and H.~Hu,  Phys.\ Rev.\ A \textbf{91}, 063631 (2015).
+
+
+\bibitem{br_mode_long_range_interactions} 
+%
+S.~Bauch, K.~Balzer, C.~Henning, and M.~Bonitz, Phys. Rev. B \textbf{80}, 054515 
+(2009);
+%
+\\
+%
+J.~W.~Abraham, K.~Balzer, D.~Hochstuhl, and M.~Bonitz, Phys. Rev. B \textbf{86}, 
+125112 (2012);
+%
+\\
+%
+C.~R.~McDonald, G.~Orlando, J.~W.~Abraham, D.~Hochstuhl, M.~Bonitz, and T.~Brabec, Phys.\ Rev.\
+Lett.\ \textbf{111}, 256801 (2013);
+%
+\\
+%
+J.~W.~Abraham, M.~Bonitz, C.~McDonald, G.~Orlando, and T.~Brabec, New J.~Phys \textbf{16}, 013001
+(2014).
+
+
+
+\bibitem{Bonitz_Review} J.~W.~Abraham, and M.~Bonitz, ``Quantum Breathing Mode of Trapped Particles:
+  from nanoplasmas to ultracold gases'', {\em Contributions to Plasma Physics}, \textbf{54}, 27
+  (2014).
+
+
+\bibitem{KohnMode}
+%
+L.~Brey, N.~F.~Johnson, and B.~I.~Halperin, Phys.\ Rev.\ B \textbf{40}, 10647 (1989).
+%
+\\ 
+%
+M.~Bonitz, K.~Balzer, and R.~van~Leeuwen, {\em Phys. Rev. B} \textbf{76}, 045341 (2007).
+
+
+
+\bibitem{DoyonSpohn_JSTAT17} B.~Doyon and H.~Spohn, ``Dynamics of hard rods with initial domain wall
+  state'', {\em J.~Stat. Mech.}, {\bf 2017}, 073210 (2017).
+
+\bibitem{Moore_arXiv17.10} X.~Cao, V.~B.~Bulchandani, J.~E.~Moore, ``Incomplete thermalization from
+  trap-induced integrability breaking: lessons from classical hard rods'', arXiv:1710.09330.
+
+
+  
+\bibitem{Guery-Odelin1999}
+D.~Gu\'ery-Odelin, F.~Zambelli, J.~Dalibard, and S.~Stringari, ``Collective
+  oscillations of a classical gas confined in harmonic traps,'' {\em Phys. Rev.
+  A}, {\bf 60}, 4851 (1999).
+
+\bibitem{Cornell_classsical_3Dexpt_NatPhys15} D.~S.~Lobser, A.~E.~S.~Barentine, E.~A.~Cornell, and
+  H.~J.~Lewandowski, ``Observation of a persistent non-equilibrium state in cold atoms'', Nat Phys
+  {\bf 11}, 1009 (2015).
+
+
+\bibitem{Dalfovo1997}
+F.~Dalfovo, S.~Giorgini, M.~Guilleumas, L.~Pitaevskii, and S.~Stringari,
+  ``Collective and single-particle excitations of a trapped bose gas,'' {\em
+  Phys. Rev. A}, {\bf 56}, 3840 (1997).
+
+\bibitem{Jin1996}
+D.~S. Jin, J.~R. Ensher, M.~R. Matthews, C.~E. Wieman, and E.~A. Cornell,
+  ``Collective excitations of a bose-einstein condensate in a dilute gas,''
+  {\em Phys. Rev. Lett.}, vol.~77, pp.~420--423, July 1996.
+
+\bibitem{Dalfovo1999}
+F.~Dalfovo, S.~Giorgini, L.~P. Pitaevskii, and S.~Stringari, ``Theory of
+  bose-einstein condensation in trapped gases,'' {\em Rev. Mod. Phys.},
+  vol.~71, pp.~463--512, Apr. 1999.
+
+\bibitem{Stringari1996}
+S.~Stringari, ``Collective excitations of a trapped bose-condensed gas,'' {\em
+  Phys. Rev. Lett.}, vol.~77, pp.~2360--2363, Sept. 1996.
+
+
+\bibitem{Tsuchiya2000}
+T.~Tsuchiya and N.~Gouda, ``Relaxation and Lyapunov time scales in a
+  one-dimensional gravitating sheet system,'' {\em Phys. Rev. E}, {\bf 61}, 948 (2000).
+
+\bibitem{Yawn1997}
+K.~R. Yawn and B.~N. Miller, ``Ergodic properties and equilibrium of
+  one-dimensional self-gravitating systems,'' {\em Phys. Rev. E}, vol.~56,
+  pp.~2429--2436, Sept. 1997.
+
+\bibitem{Jin2013}
+F.~Jin, T.~Neuhaus, K.~Michielsen, S.~Miyashita, M.~A. Novotny, M.~I.
+  Katsnelson, and H.~D. Raedt, ``Equilibration and thermalization of classical
+  systems,'' {\em New Journal of Physics}, vol.~15, no.~3, p.~033009, 2013.
+
+\bibitem{GueryOdelin_thermalization_PRA06} M.~Anderlini and D.~Gu\'ery-Odelin, ``Thermalization in
+  mixtures of ultracold gases'', {\em Phys. Rev. A} {\bf 73}, 032706 (2006).
+
+  
+\end{thebibliography}
+
+
+
+
+ \end{document}

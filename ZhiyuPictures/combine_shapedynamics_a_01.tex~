@@ -1,0 +1,58 @@
+\documentclass{report} 
+
+
+\usepackage{amsmath}
+ \usepackage{amsfonts}
+ \usepackage{amssymb}
+ \usepackage{graphicx}
+ \usepackage{subfigure}
+ \usepackage{enumerate}
+ \usepackage{verbatim}% for \begin{comment} \end{comment}
+ \usepackage{color}
+ \usepackage{xcolor}
+ \usepackage{bm}
+
+
+\newlength{\widthadd}  \setlength{\widthadd}{+2.2cm}
+\addtolength{\textwidth}{\widthadd}   \addtolength{\oddsidemargin}{-0.5\widthadd}
+
+
+\newlength{\wfct}  \setlength{\wfct}{0.3\textwidth}
+
+ 
+\usepackage{epstopdf}
+
+\begin{document}
+
+\thispagestyle{empty}
+
+
+\begin{figure*}
+\subfigure[$E=3000$]{
+\begin{minipage}[b]{0.3\textwidth}
+\includegraphics[width=\wfct]{N=20_shape_F=1000_E=3000_1.eps}
+%\includegraphics[scale=0.4]{ZhiyuPictures/N=20_shape_F=1000_E=3000_2_crude_begin.eps}
+\includegraphics[width=\wfct]{N=20_shape_F=1000_E=3000_2_crude_end.eps}
+\end{minipage}
+}
+\subfigure[$E=20000$]{
+\begin{minipage}[b]{0.3\textwidth}
+\includegraphics[width=\wfct]{N=20_shape_F=1000_E=20000_1.eps}
+%\includegraphics[scale=0.4]{ZhiyuPictures/N=20_shape_F=1000_E=20000_2_crude_begin.eps}
+\includegraphics[width=\wfct]{N=20_shape_F=1000_E=20000_2_crude_end.eps}
+\end{minipage}
+}
+\subfigure[$E=100000$]{
+\begin{minipage}[b]{0.3\textwidth}
+\includegraphics[width=\wfct]{N=20_shape_F=1000_E=100000_1.eps}
+%\includegraphics[scale=0.4]{ZhiyuPictures/N=20_shape_F=1000_E=100000_2_crude_begin.eps}
+\includegraphics[width=\wfct]{N=20_shape_F=1000_E=100000_2_crude_end.eps}
+\end{minipage}
+}
+\end{figure*}
+
+
+
+
+
+ \end{document}
